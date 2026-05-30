@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Opsio</title>
+<meta name="description" content="Benieuwd wat Opsio voor u kan doen? Plan een gesprek van 20 minuten. Geen verplichtingen, wel een duidelijk antwoord." />
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="icon" href="assets/opsio_mark.svg" />
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span><span>Opsio</span></a>
+    <div class="nav-menu">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Diensten</button>
+        <div class="nav-dropdown-menu">
+          <a href="essential.html" class="nav-dropdown-item">Voice Essential</a>
+          <a href="pro.html" class="nav-dropdown-item">Voice Pro</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Branches</button>
+        <div class="nav-dropdown-menu">
+          <a href="tandartsen.html" class="nav-dropdown-item">Tandartsen &amp; praktijken</a>
+          <a href="makelaars.html" class="nav-dropdown-item">Makelaars</a>
+          <a href="installateurs.html" class="nav-dropdown-item">Installateurs &amp; vakbedrijven</a>
+        </div>
+      </div>
+      <a href="prijzen.html">Prijzen</a>
+      <a href="over-ons.html">Over ons</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-cta">
+<a href="#form" class="btn btn-primary">Plan een gesprek</a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="subhero">
+  <div class="container">
+    <div class="eyebrow">Contact</div>
+    <h1>Laten we samen kijken hoe uw bedrijf bereikbaar kan blijven.</h1>
+    <p>In een kort gesprek kijken we samen hoe Opsio uw bereikbaarheid kan versterken, zodat u geen potentiële klanten meer misloopt.</p>
+  </div>
+</section>
+
+<section class="section" id="form">
+  <div class="container">
+    <div class="contact-grid">
+
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="ba51a457-0553-42e8-af17-5520cc4d1195" />
+        <input type="hidden" name="redirect" value="https://calendly.com/chris-opsio/30min" />
+        <input type="hidden" name="subject" value="Nieuwe aanvraag via opsio.nl" />
+        <div class="success-msg">Dank u, we nemen binnen één werkdag contact op.</div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="firstname">Voornaam</label>
+            <input id="firstname" name="voornaam" type="text" required placeholder="Marieke" />
+          </div>
+          <div class="field">
+            <label for="lastname">Achternaam</label>
+            <input id="lastname" name="achternaam" type="text" required placeholder="van der Veld" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="company">Naam van uw zaak</label>
+          <input id="company" name="bedrijf" type="text" required placeholder="Studio Knip" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="email">E-mailadres</label>
+            <input id="email" name="email" type="email" required placeholder="marieke@studioknip.nl" />
+          </div>
+          <div class="field">
+            <label for="phone">Telefoonnummer</label>
+            <input id="phone" name="telefoon" type="tel" placeholder="06 12 34 56 78" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="branche">Branche</label>
+          <select id="branche" name="branche">
+            <option>Tandarts of praktijk</option>
+            <option>Fysiotherapie of kliniek</option>
+            <option>Advocaat of financieel adviseur</option>
+            <option>Makelaar of hypotheekadviseur</option>
+            <option>Installatiebedrijf of vakbedrijf</option>
+            <option>Schoonheidskliniek of premium salon</option>
+            <option>Hospitality of hotel</option>
+            <option>Anders</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="pakket">Pakketkeuze</label>
+          <select id="pakket" name="pakket">
+            <option value="">Kies een pakket</option>
+            <option value="essential">Opsio Voice Essential — €399/maand</option>
+            <option value="pro">Opsio Voice Pro — €549/maand</option>
+            <option value="weet_niet">Nog niet zeker</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Add-ons (optioneel)</label>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px;">
+            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 400; color: var(--opsio-ink);">
+              <input type="checkbox" name="addon_agenda" value="agenda" style="margin-top: 2px; accent-color: var(--opsio-action-blue); width: 16px; height: 16px; flex-shrink: 0;" />
+              <span><strong>Agenda-boeking</strong> — €75/mnd + €150 eenmalige setup<br><span style="color: var(--opsio-slate); font-size: 13px;">Afspraken direct in uw agenda via Google Calendar of Cal.com</span></span>
+            </label>
+            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 400; color: var(--opsio-ink);">
+              <input type="checkbox" name="addon_sms" value="sms" style="margin-top: 2px; accent-color: var(--opsio-action-blue); width: 16px; height: 16px; flex-shrink: 0;" />
+              <span><strong>SMS herinnering</strong> — €25/mnd + €50 eenmalige setup<br><span style="color: var(--opsio-slate); font-size: 13px;">Automatische sms 24 uur voor een afspraak</span></span>
+            </label>
+          </div>
+        </div>
+
+        <div id="price-summary" style="display:none; background: var(--opsio-stone); border-radius: 12px; padding: 18px 20px; border: 1px solid var(--opsio-hairline);">
+          <div style="font-size: 13px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.4px; color: var(--opsio-slate); margin-bottom: 12px;">Uw selectie</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 15px; color: var(--opsio-ink);">Maandbedrag</span>
+            <strong id="price-monthly" style="font-size: 18px; color: var(--opsio-navy);">€0/mnd</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid var(--opsio-hairline);">
+            <span style="font-size: 15px; color: var(--opsio-ink);">Eenmalige setup</span>
+            <strong id="price-setup" style="font-size: 18px; color: var(--opsio-navy);">€0</strong>
+          </div>
+          <p style="font-size: 12px; color: var(--opsio-slate); margin: 10px 0 0;">Alle bedragen zijn excl. btw.</p>
+        </div>
+
+        <div class="field">
+          <label for="message">Vertel ons over uw zaak (optioneel)</label>
+          <textarea id="message" name="bericht" placeholder="Wat zou u willen dat Opsio voor u oppakt?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="justify-content: center;">Verstuur en plan een demo in &rarr;</button>
+        <p style="font-size: 12px; color: var(--opsio-slate); margin: 0; text-align: center;">Na het versturen kunt u direct een moment inplannen via Calendly. Door dit formulier te versturen gaat u akkoord met ons <a href="#" style="color: var(--opsio-action-blue);">privacybeleid</a>.</p>
+      </form>
+
+      <aside class="contact-aside">
+        <div class="panel">
+          <h3>Direct contact</h3>
+          <p>Liever even iemand spreken? Bel of mail ons gerust.</p>
+          <a class="contact-line" href="mailto:info@opsio.nl">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@opsio.nl
+          </a>
+          <a class="contact-line" href="#">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            WhatsApp ons
+          </a>
+        </div>
+
+        <div class="panel dark">
+          <h3>Direct bereikbaar</h3>
+          <p>Geen tickets of lange wachttijden. U spreekt direct met iemand die uw situatie begrijpt.</p>
+          <div style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.85); padding: 14px 0; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12);">
+            We werken op afspraak en online vanuit Nederland.<br />
+            Liever bellen of videobellen?<br />
+            Dan plannen we graag een moment in.
+          </div>
+          <p style="margin: 16px 0 0; font-family: var(--font-mono); font-size: 13px; color: rgba(255,255,255,0.6);">Ma–vr · 09:00 — 18:00</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<section class="section tight" style="background: var(--opsio-stone);">
+  <div class="container">
+    <div class="section-eyebrow">Snel antwoord nodig?</div>
+    <h2 class="section-title">Misschien staat het er al bij.</h2>
+    <div class="features" style="margin-top: 32px;">
+      <div class="feature" style="background: #fff;">
+        <h3 class="feature-title">Hoe werkt het?</h3>
+        <p class="feature-body">Wat doet Opsio precies, voor welke branches, en wat krijgt u uit handen?</p>
+        <a href="tandartsen.html" style="color: var(--opsio-action-blue); font-size: 14px; text-decoration: underline; text-underline-offset: 3px;">Bekijk de diensten →</a>
+      </div>
+      <div class="feature" style="background: #fff;">
+        <h3 class="feature-title">Wat kost het?</h3>
+        <p class="feature-body">Heldere pakketten voor bedrijven die professioneel bereikbaar willen blijven.</p>
+        <a href="prijzen.html" style="color: var(--opsio-action-blue); font-size: 14px; text-decoration: underline; text-underline-offset: 3px;">Bekijk prijzen →</a>
+      </div>
+      <div class="feature" style="background: #fff;">
+        <h3 class="feature-title">Wie zijn jullie?</h3>
+        <p class="feature-body">Opsio bouwt digitale assistenten voor ondernemers die bereikbaar willen blijven.</p>
+        <a href="over-ons.html" style="color: var(--opsio-action-blue); font-size: 14px; text-decoration: underline; text-underline-offset: 3px;">Lees ons verhaal →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-eyebrow">Klaar om te beginnen?</div>
+    <h2 class="footer-headline">Laat de telefoon weer werken voor u.</h2>
+    <div class="footer-cta">
+      <a href="contact.html" class="btn btn-light btn-lg">Plan een gesprek</a>
+      <a href="prijzen.html" class="btn btn-ghost" style="color: rgba(255,255,255,0.85);">Bekijk prijzen &rarr;</a>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand-block">
+        <div class="footer-text-logo">OPSIO</div>
+        <p>Digitale assistent voor ondernemers in Nederland en België.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="essential.html">Voice Essential</a></li>
+          <li><a href="pro.html">Voice Pro</a></li>
+          <li><a href="prijzen.html">Prijzen</a></li>
+          <li><a href="contact.html">Gesprek aanvragen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="tandartsen.html">Tandartsen</a></li>
+          <li><a href="makelaars.html">Makelaars</a></li>
+          <li><a href="installateurs.html">Installateurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mailto:info@opsio.nl">info@opsio.nl</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Juridisch</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Voorwaarden</a></li>
+          <li><a href="#">Verwerkersovereenkomst</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Opsio B.V. &middot; KvK 92831745 &middot; Culemborg</span>
+      <span>Gemaakt in Nederland.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const pakket = params.get('pakket');
+  if (pakket) {
+    const select = document.getElementById('pakket');
+    if (select) select.value = pakket;
+  }
+
+  const prijzen = {
+    pakket: {
+      essential: { monthly: 399, setup: 450 },
+      pro:       { monthly: 549, setup: 650 },
+      weet_niet: { monthly: 0,   setup: 0   }
+    },
+    addons: {
+      agenda: { monthly: 75, setup: 150 },
+      sms:    { monthly: 25, setup: 50  }
+    }
+  };
+
+  function updatePrice() {
+    const pakketVal = document.getElementById('pakket').value;
+    const pakketPrijs = prijzen.pakket[pakketVal] || { monthly: 0, setup: 0 };
+
+    let monthly = pakketPrijs.monthly;
+    let setup = pakketPrijs.setup;
+
+    document.querySelectorAll('input[name="addon_agenda"]:checked, input[name="addon_sms"]:checked').forEach(cb => {
+      const addon = prijzen.addons[cb.value];
+      if (addon) { monthly += addon.monthly; setup += addon.setup; }
+    });
+
+    const summary = document.getElementById('price-summary');
+    if (pakketVal && pakketVal !== 'weet_niet') {
+      summary.style.display = 'block';
+      document.getElementById('price-monthly').textContent = '€' + monthly + '/mnd';
+      document.getElementById('price-setup').textContent = '€' + setup;
+    } else {
+      summary.style.display = 'none';
+    }
+  }
+
+  document.getElementById('pakket').addEventListener('change', updatePrice);
+  document.querySelectorAll('input[name="addon_agenda"], input[name="addon_sms"]').forEach(cb => cb.addEventListener('change', updatePrice));
+
+  if (pakket) updatePrice();
+</script>
+</body>
+</html>

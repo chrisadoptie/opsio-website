@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Over ons — Opsio</title>
+<meta name="description" content="Waarom bestaat Opsio? Omdat elke gemiste oproep geld kost. Lees het verhaal achter de digitale assistent voor Nederlandse ondernemers." />
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="icon" href="assets/opsio_mark.svg" />
+<style>
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 64px;
+  align-items: start;
+}
+.about-story-right p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--opsio-ink);
+  margin: 0 0 20px;
+}
+.about-quote {
+  margin-top: 36px;
+  padding: 24px 28px;
+  border-left: 3px solid #0284C7;
+  background: rgba(2,132,199,0.05);
+  border-radius: 0 12px 12px 0;
+}
+.about-quote blockquote {
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--opsio-near-black);
+  margin: 0 0 12px;
+  font-style: italic;
+}
+.about-quote-attr {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: var(--opsio-slate);
+  text-transform: uppercase;
+}
+.about-diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 56px;
+}
+.about-diff-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.about-diff-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.about-diff-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #0284C7;
+}
+.about-diff-item h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--opsio-near-black);
+}
+.about-diff-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--opsio-slate);
+  margin: 0;
+}
+.about-bg-strip {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0;
+  margin-top: 48px;
+  align-items: start;
+}
+.about-bg-item { padding: 0 32px; }
+.about-bg-item:first-child { padding-left: 0; }
+.about-bg-item:last-child  { padding-right: 0; }
+.about-bg-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #0284C7;
+  margin-bottom: 12px;
+}
+.about-bg-item p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--opsio-ink);
+  margin: 0;
+}
+.about-bg-divider {
+  width: 1px;
+  background: var(--opsio-hairline);
+  align-self: stretch;
+  margin-top: 4px;
+}
+@media (max-width: 960px) {
+  .about-story-grid   { grid-template-columns: 1fr; gap: 32px; }
+  .about-diff-grid    { grid-template-columns: 1fr; gap: 32px; }
+  .about-bg-strip     { grid-template-columns: 1fr; }
+  .about-bg-divider   { display: none; }
+  .about-bg-item      { padding: 0 0 24px; border-bottom: 1px solid var(--opsio-hairline); }
+  .about-bg-item:last-child { border-bottom: 0; padding-bottom: 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span><span>Opsio</span></a>
+    <div class="nav-menu">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Diensten</button>
+        <div class="nav-dropdown-menu">
+          <a href="essential.html" class="nav-dropdown-item">Voice Essential</a>
+          <a href="pro.html" class="nav-dropdown-item">Voice Pro</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Branches</button>
+        <div class="nav-dropdown-menu">
+          <a href="tandartsen.html" class="nav-dropdown-item">Tandartsen &amp; praktijken</a>
+          <a href="makelaars.html" class="nav-dropdown-item">Makelaars</a>
+          <a href="installateurs.html" class="nav-dropdown-item">Installateurs &amp; vakbedrijven</a>
+        </div>
+      </div>
+      <a href="prijzen.html">Prijzen</a>
+      <a href="over-ons.html" class="active">Over ons</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Plan een gesprek</a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="subhero">
+  <div class="container">
+    <div class="eyebrow">Over ons</div>
+    <h1>Gebouwd door iemand die weet wat een gemiste oproep kost.</h1>
+    <p>Opsio is ontstaan vanuit de praktijk, niet vanuit een whiteboard. We kennen het gevoel van een volle agenda, een rinkelende telefoon en de wetenschap dat je er gewoon niet bij kunt.</p>
+  </div>
+</section>
+
+<section class="section" style="background: var(--opsio-stone);">
+  <div class="container">
+    <div class="about-story-grid">
+      <div class="about-story-left">
+        <div class="section-eyebrow">Waarom Opsio bestaat</div>
+        <h2 class="section-title">Het probleem zat dichter bij huis dan gedacht.</h2>
+      </div>
+      <div class="about-story-right">
+        <p>Vanuit jaren ervaring in horeca, sales en klantcontact is één ding altijd teruggekomen: leads die niet konden worden opgevolgd door tijdgebrek en drukte. Niet omdat er geen wil was, maar omdat er simpelweg geen tijd was.</p>
+        <p>Elke gemiste oproep is een gemiste kans. Soms is dat een nieuwe patiënt die de praktijk verderop belt. Soms een lead die duizenden euro's waard had kunnen zijn. Soms gewoon een trouwe klant die zich niet gehoord voelt.</p>
+        <p>Dat is een probleem dat geld kost en frustratie oplevert. Het is een probleem dat verleden tijd moet zijn. Dat is precies waarom Opsio er is.</p>
+        <div class="about-quote">
+          <blockquote>"Ik heb van dichtbij meegemaakt wat er gebeurt als bereikbaarheid achterblijft. Opsio is mijn antwoord op dat probleem."</blockquote>
+          <span class="about-quote-attr">— Oprichter, Opsio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">Hoe we werken</div>
+    <h2 class="section-title">Geen grote beloftes. Wel een duidelijke aanpak.</h2>
+    <p class="section-lead">Opsio is klein, direct en gefocust. Dat is bewust zo.</p>
+    <div class="about-diff-grid">
+      <div class="about-diff-item">
+        <div class="about-diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <h3>U belt, wij nemen op.</h3>
+        <p>Geen ticketsysteem, geen wachtrij, geen automatisch doorsturen. Als u een vraag heeft, spreekt u direct met iemand die uw situatie kent en kan schakelen.</p>
+      </div>
+      <div class="about-diff-item">
+        <div class="about-diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Ingericht op uw bedrijf, niet andersom.</h3>
+        <p>We nemen de tijd om uw werkwijze, uw toon en uw klanten te begrijpen. De assistent past zich aan u aan, niet u aan de technologie.</p>
+      </div>
+      <div class="about-diff-item">
+        <div class="about-diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Live binnen zeven dagen.</h3>
+        <p>Geen maandenlang traject. Gemiddeld staat de assistent binnen een week klaar, inclusief testen, afstemmen en uw akkoord.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" style="background: var(--opsio-stone);">
+  <div class="container">
+    <div class="section-eyebrow">Achtergrond</div>
+    <h2 class="section-title">Gebouwd vanuit de praktijk.</h2>
+    <div class="about-bg-strip">
+      <div class="about-bg-item">
+        <div class="about-bg-label">Horeca</div>
+        <p>Weten hoe het voelt als de telefoon gaat terwijl je midden in de bediening staat, en wat het kost als je niet opneemt.</p>
+      </div>
+      <div class="about-bg-divider"></div>
+      <div class="about-bg-item">
+        <div class="about-bg-label">Sales</div>
+        <p>Begrijpen hoe snel een warme lead koud wordt als opvolging te laat komt of een oproep onbeantwoord blijft.</p>
+      </div>
+      <div class="about-bg-divider"></div>
+      <div class="about-bg-item">
+        <div class="about-bg-label">Klantcontact</div>
+        <p>Weten wat klanten verwachten aan de telefoon, en hoe je dat consistent levert, ook als je er zelf niet bij kunt zijn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">Waar we voor staan</div>
+    <h2 class="section-title">Drie dingen die we nooit loslaten.</h2>
+    <div class="values" style="margin-top: 56px;">
+      <div class="value">
+        <div class="value-num">01</div>
+        <h3>De ondernemer houdt controle.</h3>
+        <p>U bepaalt wat de assistent doet, wanneer er wordt doorgeschakeld en hoe gesprekken worden afgehandeld. Geen black box, alles is transparant.</p>
+      </div>
+      <div class="value">
+        <div class="value-num">02</div>
+        <h3>Direct bereikbaar, niet via een ticket.</h3>
+        <p>U krijgt rechtstreeks contact met mensen die meedenken en kunnen schakelen. Gemiddeld staat alles binnen zeven dagen.</p>
+      </div>
+      <div class="value">
+        <div class="value-num">03</div>
+        <h3>Professioneel aan de telefoon, altijd.</h3>
+        <p>Uw klanten krijgen direct een nette en consistente ervaring — ook buiten openingstijden. Afgestemd op uw toon en uw manier van werken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <div class="section-eyebrow" style="color: var(--opsio-coral);">Volgende stap</div>
+        <h2 class="section-title">Klaar om geen oproep meer te missen?</h2>
+        <p class="section-lead">In een gesprek van 20 minuten kijken we samen wat Opsio voor uw bedrijf kan betekenen. Geen verplichtingen, wel een duidelijk antwoord.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">Plan een gesprek</a>
+          <a href="prijzen.html" class="btn btn-ghost">Bekijk prijzen →</a>
+        </div>
+      </div>
+      <div class="cta-stat-card">
+        <div class="row"><div class="num">7 dagen</div><div class="lbl">Gemiddelde implementatietijd</div></div>
+        <div class="row"><div class="num">20 min</div><div class="lbl">Kennismakingsgesprek</div></div>
+        <div class="row"><div class="num">NL / EN</div><div class="lbl">Ondersteunde talen</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-eyebrow">Klaar om te beginnen?</div>
+    <h2 class="footer-headline">Laat de telefoon weer werken voor u.</h2>
+    <div class="footer-cta">
+      <a href="contact.html" class="btn btn-light btn-lg">Plan een gesprek</a>
+      <a href="prijzen.html" class="btn btn-ghost" style="color: rgba(255,255,255,0.85);">Bekijk prijzen &rarr;</a>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand-block">
+        <div class="footer-text-logo">OPSIO</div>
+        <p>Digitale assistent voor ondernemers in Nederland en België.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="essential.html">Voice Essential</a></li>
+          <li><a href="pro.html">Voice Pro</a></li>
+          <li><a href="prijzen.html">Prijzen</a></li>
+          <li><a href="contact.html">Gesprek aanvragen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="tandartsen.html">Tandartsen</a></li>
+          <li><a href="makelaars.html">Makelaars</a></li>
+          <li><a href="installateurs.html">Installateurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mailto:info@opsio.nl">info@opsio.nl</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Juridisch</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Voorwaarden</a></li>
+          <li><a href="#">Verwerkersovereenkomst</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Opsio B.V. &middot; KvK 92831745 &middot; Culemborg</span>
+      <span>Gemaakt in Nederland.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

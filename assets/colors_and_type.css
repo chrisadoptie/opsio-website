@@ -1,0 +1,241 @@
+/* ============================================================
+   Opsio Design System — Colors & Type
+   Editorial restraint with bursts of brand imagery.
+   ============================================================ */
+
+/* --- Webfont stack (Google Fonts substitution) --------------
+   Cohere uses proprietary CohereText / Unica77 / CohereMono.
+   We substitute Space Grotesk (display), Inter (UI), and
+   JetBrains Mono (technical labels). Flagged in README. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Brand & Accent ---------- */
+  --opsio-black: #000000;
+  --opsio-near-black: #17171c;
+  --opsio-deep-blue: #075985;
+  --opsio-dark-navy: #071829;
+  --opsio-action-blue: #0284C7;
+  --opsio-coral: #ff7759;
+  --opsio-coral-soft: #ffad9b;
+
+  /* ---------- Surfaces ---------- */
+  --opsio-canvas: #ffffff;
+  --opsio-stone: #eeece7;
+  --opsio-pale-blue: #F0F9FF;
+  --opsio-pale-blue: #f1f5ff;
+  --opsio-card-border: #f2f2f2;
+
+  /* ---------- Text ---------- */
+  --opsio-ink: #212121;
+  --opsio-muted: #93939f;
+  --opsio-slate: #75758a;
+  --opsio-hairline: #d9d9dd;
+  --opsio-border-light: #e5e7eb;
+
+  /* ---------- Semantic ---------- */
+  --opsio-focus-blue: #0EA5E9;
+  --opsio-focus-violet: #9b60aa;
+  --opsio-error: #b30000;
+
+  /* ---------- Foreground / Background semantics ---------- */
+  --bg: var(--opsio-canvas);
+  --bg-warm: var(--opsio-stone);
+  --bg-dark: var(--opsio-near-black);
+  --bg-deep-blue: var(--opsio-deep-blue);
+  --bg-dark-navy: var(--opsio-dark-navy);
+
+  --fg: var(--opsio-ink);
+  --fg-muted: var(--opsio-slate);
+  --fg-faint: var(--opsio-muted);
+  --fg-on-dark: #ffffff;
+
+  --border: var(--opsio-hairline);
+  --border-soft: var(--opsio-border-light);
+  --border-card: var(--opsio-card-border);
+
+  /* ---------- Typography Families ---------- */
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', 'Arial', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', ui-monospace, monospace;
+
+  /* ---------- Type Scale ---------- */
+  --fs-hero: 96px;
+  --fs-product-display: 72px;
+  --fs-section-display: 60px;
+  --fs-section-heading: 48px;
+  --fs-card-heading: 32px;
+  --fs-feature-heading: 24px;
+  --fs-body-large: 18px;
+  --fs-body: 16px;
+  --fs-button: 14px;
+  --fs-caption: 14px;
+  --fs-mono-label: 14px;
+  --fs-micro: 12px;
+
+  /* ---------- Letter Spacing ---------- */
+  --ls-hero: -1.92px;
+  --ls-product-display: -1.44px;
+  --ls-section-display: -1.2px;
+  --ls-section-heading: -0.48px;
+  --ls-card-heading: -0.32px;
+  --ls-mono-label: 0.28px;
+
+  /* ---------- Spacing (8px base + alignment values) ---------- */
+  --space-2: 2px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-36: 36px;
+  --space-40: 40px;
+  --space-56: 56px;
+  --space-60: 60px;
+  --space-64: 64px;
+  --space-80: 80px;
+
+  /* ---------- Radii ---------- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+  --radius-pill: 32px;
+  --radius-full: 9999px;
+}
+
+/* ============================================================
+   Semantic typographic styles
+   ============================================================ */
+
+.opsio-hero {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: var(--ls-hero);
+  color: var(--fg);
+}
+
+.opsio-product-display {
+  font-family: var(--font-display);
+  font-size: var(--fs-product-display);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: var(--ls-product-display);
+}
+
+.opsio-section-display {
+  font-family: var(--font-body);
+  font-size: var(--fs-section-display);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: var(--ls-section-display);
+}
+
+.opsio-section-heading {
+  font-family: var(--font-body);
+  font-size: var(--fs-section-heading);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: var(--ls-section-heading);
+}
+
+.opsio-card-heading {
+  font-family: var(--font-body);
+  font-size: var(--fs-card-heading);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: var(--ls-card-heading);
+}
+
+.opsio-feature-heading {
+  font-family: var(--font-body);
+  font-size: var(--fs-feature-heading);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.opsio-body-large {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-large);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.opsio-body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.opsio-button-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  line-height: 1.71;
+}
+
+.opsio-caption {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--fg-muted);
+}
+
+.opsio-mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-label);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: var(--ls-mono-label);
+  text-transform: uppercase;
+}
+
+.opsio-micro {
+  font-family: var(--font-body);
+  font-size: var(--fs-micro);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   Element defaults — usable as global resets within a kit
+   ============================================================ */
+
+body.opsio,
+.opsio-surface {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.opsio h1 { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-hero); line-height: 1.0; letter-spacing: var(--ls-hero); }
+.opsio h2 { font-family: var(--font-body); font-weight: 400; font-size: var(--fs-section-heading); line-height: 1.2; letter-spacing: var(--ls-section-heading); }
+.opsio h3 { font-family: var(--font-body); font-weight: 400; font-size: var(--fs-card-heading); line-height: 1.2; letter-spacing: var(--ls-card-heading); }
+.opsio h4 { font-family: var(--font-body); font-weight: 400; font-size: var(--fs-feature-heading); line-height: 1.3; }
+.opsio p  { font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.5; color: var(--fg); }
+.opsio a  { color: var(--opsio-action-blue); text-decoration: underline; text-underline-offset: 3px; }
+.opsio code { font-family: var(--font-mono); font-size: 0.9em; }
+
+/* ============================================================
+   Surfaces & utility
+   ============================================================ */
+
+.opsio-band-dark { background: var(--bg-dark); color: var(--fg-on-dark); }
+.opsio-band-green { background: var(--bg-deep-blue); color: var(--fg-on-dark); }
+.opsio-band-navy { background: var(--bg-dark-navy); color: var(--fg-on-dark); }
+.opsio-band-stone { background: var(--bg-warm); color: var(--fg); }
+.opsio-band-pale-blue { background: var(--opsio-pale-blue); color: var(--fg); }
+.opsio-band-pale-blue { background: var(--opsio-pale-blue); color: var(--fg); }

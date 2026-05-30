@@ -1,0 +1,27 @@
+# Opsio
+
+> Opsio is een Nederlandse Voice AI-assistent voor lokale ondernemers. Wij zorgen dat elk telefoongesprek wordt beantwoord, ook buiten openingstijden.
+
+## Diensten
+
+- Voice AI receptionist: beantwoordt inkomende gesprekken 24/7 in vloeiend Nederlands
+- Afsprakenbeheer: boekt afspraken direct in Google Calendar of Cal.com
+- Doorverbinden en terugbelmeldingen
+- SMS-herinneringen voor afspraken
+
+## Doelgroep
+
+Lokale ondernemers in Nederland en België: tandartsen, fysiotherapeuten, makelaars, installatiebedrijven, schoonheidsklinieken, advocaten en meer.
+
+## Pakketten
+
+- Opsio Voice Essential: €399/maand
+- Opsio Voice Pro: €549/maand
+- Implementatietijd: gemiddeld 7 dagen
+
+## Contact
+
+Website: https://opsio.nl
+E-mail: info@opsio.nl
+Gevestigd in Nederland (Culemborg)
+KvK: 92831745

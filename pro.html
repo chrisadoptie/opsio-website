@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Opsio Voice Pro — AI-receptionist met dashboard voor €549/maand</title>
+<meta name="description" content="Opsio Voice Pro: alles van Essential plus uw eigen call-dashboard, opnames, transcripten en WhatsApp-bevestigingen. Volledig inzicht in uw telefonische bereikbaarheid." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://opsio.nl/pro.html" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Opsio Voice Pro — AI-receptionist met dashboard voor €549/maand" />
+<meta property="og:description" content="Maximale controle en inzicht. Voice Pro geeft u een eigen dashboard, opnames, transcripten en WhatsApp-bevestigingen." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://opsio.nl/pro.html" />
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Opsio Voice Pro",
+  "description": "AI-receptionist met eigen call-dashboard, opnames, transcripten, WhatsApp- en sms-bevestigingen en telefonische support.",
+  "brand": { "@type": "Brand", "name": "Opsio" },
+  "offers": {
+    "@type": "Offer",
+    "price": "549",
+    "priceCurrency": "EUR",
+    "priceValidUntil": "2027-01-01",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="icon" href="assets/opsio_mark.svg" />
+
+<style>
+/* ── Pakket-hero ── */
+.pkg-hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--opsio-hairline);
+}
+.pkg-hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.pkg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--opsio-near-black);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+.pkg-badge .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--opsio-coral);
+  animation: pulse 1.6s ease-out infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255,119,89,0.5); }
+  100% { box-shadow: 0 0 0 8px rgba(255,119,89,0); }
+}
+.pkg-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5.5vw, 68px);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin: 0 0 24px;
+  color: var(--opsio-near-black);
+}
+.pkg-hero-lead {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--opsio-slate);
+  max-width: 520px;
+  margin: 0 0 36px;
+}
+.pkg-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pkg-hero-note {
+  font-size: 13px;
+  color: var(--opsio-slate);
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pkg-hero-note svg {
+  width: 15px; height: 15px;
+  stroke: var(--opsio-coral);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* Pro-stijl hero card — coral/dark */
+.pkg-price-card {
+  background: linear-gradient(160deg, #071829 0%, #1a3354 100%);
+  border-radius: 24px;
+  padding: 40px 36px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.pkg-price-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 50% at 80% 20%, rgba(255,119,89,0.18), transparent 70%);
+  pointer-events: none;
+}
+.pkg-price-card > * { position: relative; z-index: 1; }
+.pkg-price-badge {
+  display: inline-block;
+  background: var(--opsio-coral);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+.pkg-price-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+.pkg-price-num {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.pkg-price-num small {
+  font-size: 18px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+}
+.pkg-price-setup {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.pkg-price-items {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.pkg-price-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+}
+.pkg-price-item svg {
+  width: 17px; height: 17px;
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pkg-price-item.inherited svg { stroke: rgba(255,255,255,0.45); }
+.pkg-price-item.pro-only svg { stroke: var(--opsio-coral); }
+.pkg-price-item.pro-only { color: #fff; }
+.pkg-price-card .btn {
+  width: 100%;
+  justify-content: center;
+}
+.pkg-price-card .btn-primary {
+  background: var(--opsio-coral);
+  color: #fff;
+  border: none;
+}
+.pkg-price-card .btn-primary:hover { background: #e6603d; }
+
+/* ── Feature cards ── */
+.feature-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.feature-detail {
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  background: #fff;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 240ms cubic-bezier(0.22,1,0.36,1), box-shadow 240ms;
+}
+.feature-detail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -16px rgba(0,0,0,0.10);
+}
+.feature-detail.pro-highlight {
+  border-color: #FDDDD6;
+  background: #FFF7F5;
+}
+.feature-detail-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature-detail.pro-highlight .feature-detail-icon {
+  background: #FFF0EB;
+  border-color: #FDDDD6;
+}
+.feature-detail-icon svg {
+  width: 22px; height: 22px;
+  stroke: #0284C7;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.feature-detail.pro-highlight .feature-detail-icon svg { stroke: var(--opsio-coral); }
+.feature-detail h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--opsio-near-black);
+}
+.feature-detail p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--opsio-slate);
+  margin: 0;
+}
+.pro-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #FFF0EB;
+  color: var(--opsio-coral);
+  border: 1px solid #FDDDD6;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+/* ── Voor wie ── */
+.voor-wie-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.voor-wie-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 16px;
+}
+.voor-wie-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--opsio-ink);
+}
+.voor-wie-list li svg {
+  width: 20px; height: 20px;
+  stroke: var(--opsio-coral);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.voor-wie-visual {
+  background: linear-gradient(160deg, #071829 0%, #1a3354 100%);
+  border-radius: 22px;
+  padding: 40px 36px;
+  color: #fff;
+  display: grid;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.voor-wie-visual::before {
+  content: \'\';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(50% 40% at 70% 20%, rgba(255,119,89,0.18), transparent 70%);
+  pointer-events: none;
+}
+.voor-wie-visual > * { position: relative; z-index: 1; }
+.voor-wie-stat {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 20px 24px;
+}
+.voor-wie-stat-num {
+  font-family: var(--font-display);
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 4px;
+  color: #fff;
+}
+.voor-wie-stat-lbl {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+.voor-wie-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ── Dashboard mockup strip ── */
+.dashboard-strip {
+  background: var(--opsio-stone);
+  border-radius: 22px;
+  padding: 40px;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.dashboard-item {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--opsio-hairline);
+  padding: 24px;
+}
+.dashboard-item-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--opsio-slate);
+  margin-bottom: 12px;
+}
+.dashboard-item-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: var(--opsio-near-black);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.dashboard-item-sub {
+  font-size: 13px;
+  color: var(--opsio-slate);
+}
+
+/* ── Compare table ── */
+.compare {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--opsio-hairline);
+  background: #fff;
+}
+.compare table { width: 100%; border-collapse: collapse; }
+.compare th, .compare td {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid var(--opsio-hairline);
+  background: #fff;
+}
+.compare th {
+  background: #fff;
+  font-weight: 500;
+  font-size: 13px;
+}
+.compare th:first-child {
+  background: #fff;
+}
+.compare td:first-child {
+  background: #fff;
+}
+.compare th:not(:first-child),
+.compare td:not(:first-child) { text-align: center; }
+.compare tr:last-child td { border-bottom: 0; }
+.compare svg { width: 18px; height: 18px; stroke: #0284C7; fill: none; stroke-width: 2; display: inline; vertical-align: middle; }
+.compare .dash { color: var(--opsio-muted); }
+/* Pro column — strong blue */
+.compare th.highlight-col {
+  background: #0284C7;
+  color: #fff;
+  font-weight: 600;
+}
+.compare td.highlight-col {
+  background: #0369A1;
+  color: rgba(255,255,255,0.95);
+  border-bottom-color: rgba(255,255,255,0.12);
+}
+.compare td.highlight-col svg { stroke: #fff; }
+.compare td.highlight-col .dash { color: rgba(255,255,255,0.3); }
+.compare tr:last-child .highlight-col {
+  border-bottom: 0;
+}
+
+/* ── Steps ── */
+.pkg-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.pkg-step {
+  border-top: 2px solid var(--opsio-coral);
+  padding-top: 20px;
+}
+.pkg-step-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--opsio-coral);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.pkg-step h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  color: var(--opsio-near-black);
+  line-height: 1.2;
+}
+.pkg-step p {
+  font-size: 14px;
+  color: var(--opsio-slate);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .pkg-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .feature-detail-grid { grid-template-columns: 1fr; }
+  .voor-wie-grid { grid-template-columns: 1fr; }
+  .pkg-steps { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .voor-wie-stat-grid { grid-template-columns: 1fr; }
+  .dashboard-strip { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .pkg-steps { grid-template-columns: 1fr; }
+  .pkg-price-num { font-size: 48px; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span><span>Opsio</span></a>
+    <div class="nav-menu">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger active">Diensten</button>
+        <div class="nav-dropdown-menu">
+          <a href="essential.html" class="nav-dropdown-item">Voice Essential</a>
+          <a href="pro.html" class="nav-dropdown-item active">Voice Pro</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Branches</button>
+        <div class="nav-dropdown-menu">
+          <a href="tandartsen.html" class="nav-dropdown-item">Tandartsen &amp; praktijken</a>
+          <a href="makelaars.html" class="nav-dropdown-item">Makelaars</a>
+          <a href="installateurs.html" class="nav-dropdown-item">Installateurs &amp; vakbedrijven</a>
+        </div>
+      </div>
+      <a href="prijzen.html">Prijzen</a>
+      <a href="over-ons.html">Over ons</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html?pakket=pro" class="btn btn-primary">Plan een gesprek</a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="pkg-hero">
+  <div class="container">
+    <div class="pkg-hero-inner">
+      <div>
+        <div class="pkg-badge"><span class="dot"></span>Opsio Voice Pro</div>
+        <h1>Volledige controle over elk gesprek.</h1>
+        <p class="pkg-hero-lead">Voice Pro geeft u alles van Essential, aangevuld met uw eigen call-dashboard, opnames, transcripten en een directe WhatsApp- of sms-bevestiging ná elk gesprek. Voor ondernemers die niet alleen bereikbaar willen zijn, maar ook volledig inzicht willen.</p>
+        <div class="pkg-hero-actions">
+          <a href="contact.html?pakket=pro" class="btn btn-primary btn-lg">Start met Pro</a>
+          <a href="essential.html" class="btn btn-ghost">Bekijk Voice Essential →</a>
+        </div>
+        <p class="pkg-hero-note">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Inclusief alle functionaliteiten van Voice Essential.
+        </p>
+      </div>
+
+      <div class="pkg-price-card">
+        <div class="pkg-price-badge">Meest compleet</div>
+        <div class="pkg-price-label">Maandelijks tarief</div>
+        <div class="pkg-price-num">€549<small>/mnd</small></div>
+        <div class="pkg-price-setup">+ €650 eenmalige setup · excl. btw</div>
+        <div class="pkg-price-items">
+          <div class="pkg-price-item inherited">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Alles van Voice Essential inbegrepen
+          </div>
+          <div class="pkg-price-item pro-only">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Eigen dashboard met call-overzicht
+          </div>
+          <div class="pkg-price-item pro-only">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Opnames en transcripten inzien
+          </div>
+          <div class="pkg-price-item pro-only">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            WhatsApp- en sms-bevestiging na elk gesprek
+          </div>
+          <div class="pkg-price-item pro-only">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Telefonische support inbegrepen
+          </div>
+        </div>
+        <a href="contact.html?pakket=pro" class="btn btn-primary btn-lg">Plan een gesprek</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FEATURES ═══════════════════════════════ -->
+<section class="section" style="background: var(--opsio-stone);">
+  <div class="container">
+    <div class="section-eyebrow">Wat u krijgt</div>
+    <h2 class="section-title">Bereikbaar én volledig in beeld.</h2>
+    <p class="section-lead">Voice Pro combineert de betrouwbare AI-receptionist van Essential met krachtige inzichttools, zodat u niet alleen geen bellers meer mist, maar ook precies ziet wat er speelt.</p>
+
+    <div class="feature-detail-grid">
+
+      <!-- Inherited from Essential -->
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>AI-receptionist</h3>
+        <p>Dezelfde betrouwbare AI-receptionist als in Essential. Inkomende oproepen professioneel opgenomen, FAQ's beantwoord en afspraakinformatie doorgegeven in vloeiend Nederlands.</p>
+      </div>
+
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <h3>Notitie + melding na elk gesprek</h3>
+        <p>Direct na elk gesprek ontvangt u een melding met de kerninformatie. Zo weet u altijd wie er gebeld heeft en kunt u snel opvolgen als dat nodig is.</p>
+      </div>
+
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Dagelijkse samenvatting per mail</h3>
+        <p>Een overzichtelijke e-mail met alle gesprekken van de dag. Zodat u niets mist en altijd weet wat er is binnengekomen, ook als u in gesprek was.</p>
+      </div>
+
+      <!-- Pro-only features -->
+      <div class="feature-detail pro-highlight">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <span class="pro-tag">Alleen in Pro</span>
+        <h3>Eigen dashboard</h3>
+        <p>Bekijk al uw gesprekken in één overzichtelijk dashboard. Zie wanneer er gebeld is, hoe lang het gesprek duurde en wat er besproken is. Volledige transparantie over uw telefonische bereikbaarheid.</p>
+      </div>
+
+      <div class="feature-detail pro-highlight">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <span class="pro-tag">Alleen in Pro</span>
+        <h3>Opnames en transcripten</h3>
+        <p>Beluister elk gesprek terug of lees het volledige transcript. Ideaal als u een discussie wilt verifiëren, kwaliteit wilt bewaken of gesprekken als referentie wilt bijhouden.</p>
+      </div>
+
+      <div class="feature-detail pro-highlight">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <span class="pro-tag">Alleen in Pro</span>
+        <h3>WhatsApp- en sms-bevestiging na elk gesprek</h3>
+        <p>Direct nadat een beller heeft opgehangen, ontvangt u én uw beller een bevestiging via WhatsApp of sms: het gesprek is ontvangen en wordt opgevolgd. Dit is iets anders dan een afspraakherinnering — dat is een aparte add-on die 24 uur vóór een afspraak verstuurd wordt.</p>
+      </div>
+
+      <div class="feature-detail pro-highlight" style="grid-column: span 1;">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <span class="pro-tag">Alleen in Pro</span>
+        <h3>Telefonische support</h3>
+        <p>Met Voice Pro kunt u ons ook telefonisch bereiken. Geen e-mailwachttijden, maar direct iemand aan de lijn die uw situatie kent en snel kan schakelen als u iets wilt aanpassen of een vraag heeft.</p>
+      </div>
+
+      <div class="feature-detail" style="grid-column: span 2;">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Professionele Nederlandse stem, 24/7</h3>
+        <p>Uw bellers horen altijd dezelfde heldere, afgestemde stem. Dag en nacht, ook buiten openingstijden of op feestdagen. De assistent spreekt vloeiend Nederlands en past zijn toon aan uw bedrijf aan.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ DASHBOARD ═══════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">Inzicht op uw dashboard</div>
+    <h2 class="section-title">Altijd weten wat er speelt.</h2>
+    <p class="section-lead">Uw persoonlijke call-dashboard geeft u in één oogopslag inzicht in het belverkeer van uw bedrijf. Geen verborgen gesprekken, geen blinde vlekken.</p>
+
+    <div class="dashboard-strip">
+      <div class="dashboard-item">
+        <div class="dashboard-item-label">Gesprekken vandaag</div>
+        <div class="dashboard-item-num">12</div>
+        <div class="dashboard-item-sub">+3 ten opzichte van gisteren</div>
+      </div>
+      <div class="dashboard-item">
+        <div class="dashboard-item-label">Gemiddelde gespreksduur</div>
+        <div class="dashboard-item-num">2:14</div>
+        <div class="dashboard-item-sub">min per gesprek</div>
+      </div>
+      <div class="dashboard-item">
+        <div class="dashboard-item-label">Opgenomen oproepen</div>
+        <div class="dashboard-item-num">100%</div>
+        <div class="dashboard-item-sub">Geen gemiste bellers</div>
+      </div>
+    </div>
+
+    <p style="text-align: center; font-size: 13px; color: var(--opsio-slate); margin-top: 20px;">Illustratieve weergave van het dashboard. Uw eigen gegevens worden live weergegeven na activatie.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ HOE HET WERKT ═══════════════════════════════ -->
+<section class="section tight" style="background: var(--opsio-stone);">
+  <div class="container">
+    <div class="section-eyebrow">Van aanmelding tot live</div>
+    <h2 class="section-title">Live in zeven dagen.</h2>
+    <p class="section-lead">Inclusief dashboard-activatie, inrichting van WhatsApp-bevestigingen en volledige test vóór livegang.</p>
+
+    <div class="pkg-steps">
+      <div class="pkg-step">
+        <div class="pkg-step-num">Stap 01</div>
+        <h3>Kennismakingsgesprek</h3>
+        <p>In 20 minuten bespreken we uw situatie, wensen en de gewenste dashboardinrichting.</p>
+      </div>
+      <div class="pkg-step">
+        <div class="pkg-step-num">Stap 02</div>
+        <h3>Inrichten en koppelen</h3>
+        <p>We richten de assistent, het dashboard en de WhatsApp-bevestigingen volledig voor u in.</p>
+      </div>
+      <div class="pkg-step">
+        <div class="pkg-step-num">Stap 03</div>
+        <h3>Testen en akkoord</h3>
+        <p>U test alles: de stem, het dashboard, de meldingen. We passen aan totdat alles klopt.</p>
+      </div>
+      <div class="pkg-step">
+        <div class="pkg-step-num">Stap 04</div>
+        <h3>Live met volledig inzicht</h3>
+        <p>De assistent gaat live. Uw dashboard is actief. U heeft direct overzicht over alle gesprekken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ VOOR WIE ═══════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="voor-wie-grid">
+      <div>
+        <div class="section-eyebrow">Voor wie is dit?</div>
+        <h2 class="section-title">Voor ondernemers die meer willen dan alleen bereikbaarheid.</h2>
+        <p style="font-size: 17px; color: var(--opsio-slate); line-height: 1.6; margin: 0 0 8px;">Voice Pro is de juiste keuze als u niet alleen gemiste oproepen wilt voorkomen, maar ook volledig inzicht wilt in uw telefonische bereikbaarheid.</p>
+        <ul class="voor-wie-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Groeiende MKB-bedrijven waarbij meerdere medewerkers betrokken zijn bij het opvolgen van telefoongesprekken
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Praktijken of kantoren die gesprekken willen kunnen terugluisteren voor kwaliteitsbewaking of training
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Bedrijven met hoge belvolumes waarbij directe WhatsApp-bevestigingen de klantervaring versterken
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Ondernemers die naast bereikbaarheid ook data willen om hun telefonische service te verbeteren
+          </li>
+        </ul>
+      </div>
+
+      <div class="voor-wie-visual">
+        <div style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 4px;">Opsio Voice Pro</div>
+        <div style="font-family: var(--font-display); font-size: 26px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 20px;">Alles inbegrepen</div>
+        <div class="voor-wie-stat-grid">
+          <div class="voor-wie-stat">
+            <div class="voor-wie-stat-num">100%</div>
+            <div class="voor-wie-stat-lbl">Gesprekken opgenomen en opgeslagen</div>
+          </div>
+          <div class="voor-wie-stat">
+            <div class="voor-wie-stat-num">Direct</div>
+            <div class="voor-wie-stat-lbl">WhatsApp-bevestiging na elk gesprek</div>
+          </div>
+          <div class="voor-wie-stat">
+            <div class="voor-wie-stat-num">7 dgn</div>
+            <div class="voor-wie-stat-lbl">Implementatietijd inclusief dashboard</div>
+          </div>
+          <div class="voor-wie-stat">
+            <div class="voor-wie-stat-num">Tel.</div>
+            <div class="voor-wie-stat-lbl">Support via telefoon inbegrepen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ VERGELIJKING ═══════════════════════════════ -->
+<section class="section tight" style="background: var(--opsio-stone);">
+  <div class="container">
+    <div class="section-eyebrow">Pakketvergelijking</div>
+    <h2 class="section-title">Essential of Pro: wat past bij u?</h2>
+    <p class="section-lead">Voice Essential biedt alles voor professionele bereikbaarheid. Voice Pro voegt dashboard, opnames, transcripten en directe bevestigingen toe voor maximale controle.</p>
+
+    <div class="compare">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 40%; font-size: 18px; font-weight: 600; font-family: var(--font-display); background: #fff;">Functionaliteit</th>
+            <th style="font-size: 18px; font-weight: 600; font-family: var(--font-display);">Essential</th>
+            <th class="highlight-col" style="font-size: 18px; font-weight: 600; font-family: var(--font-display);">Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI-receptionist (FAQ + afspraakinformatie)</td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Professionele Nederlandse stem</td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Notitie + melding naar assistent na elk gesprek</td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Samenvatting per e-mail</td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>E-mail support</td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Maandelijks opzegbaar</td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Eigen dashboard met call-overzicht</td>
+            <td><span class="dash">—</span></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Opnames en transcripten inzien</td>
+            <td><span class="dash">—</span></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>WhatsApp- en sms-bevestiging na elk gesprek<br><span style="font-size:12px; color:var(--opsio-slate);">Direct na het gesprek — niet te verwarren met de afspraakherinnering add-on</span></td>
+            <td><span class="dash">—</span></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Telefonische support</td>
+            <td><span class="dash">—</span></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 500;">Eenmalige setup</td>
+            <td style="color: var(--opsio-slate);">€450</td>
+            <td class="highlight-col" style="font-weight: 500; color: #fff;">€650</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display: flex; gap: 12px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
+      <a href="contact.html?pakket=pro" class="btn btn-primary btn-lg">Start met Pro</a>
+      <a href="essential.html" class="btn btn-ghost">Meer over Voice Essential →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <div class="section-eyebrow" style="color: var(--opsio-coral);">Volgende stap</div>
+        <h2 class="section-title">Klaar om volledig in controle te zijn?</h2>
+        <p class="section-lead">In een gesprek van 20 minuten kijken we samen of Voice Pro bij uw situatie past. Geen verplichtingen, wel een helder beeld.</p>
+        <div class="cta-actions">
+          <a href="contact.html?pakket=pro" class="btn btn-primary btn-lg">Plan een gesprek</a>
+          <a href="prijzen.html" class="btn btn-ghost">Bekijk alle prijzen →</a>
+        </div>
+      </div>
+      <div class="cta-stat-card">
+        <div class="row"><div class="num">€549</div><div class="lbl">Per maand, excl. btw</div></div>
+        <div class="row"><div class="num">€650</div><div class="lbl">Eenmalige setup</div></div>
+        <div class="row"><div class="num">7 dgn</div><div class="lbl">Gemiddelde implementatietijd</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-eyebrow">Klaar om te beginnen?</div>
+    <h2 class="footer-headline">Laat de telefoon weer werken voor u.</h2>
+    <div class="footer-cta">
+      <a href="contact.html" class="btn btn-light btn-lg">Plan een gesprek</a>
+      <a href="prijzen.html" class="btn btn-ghost" style="color: rgba(255,255,255,0.85);">Bekijk prijzen &rarr;</a>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand-block">
+        <div class="footer-text-logo">OPSIO</div>
+        <p>Digitale assistent voor ondernemers in Nederland en België.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="essential.html">Voice Essential</a></li>
+          <li><a href="pro.html">Voice Pro</a></li>
+          <li><a href="prijzen.html">Prijzen</a></li>
+          <li><a href="contact.html">Gesprek aanvragen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="tandartsen.html">Tandartsen</a></li>
+          <li><a href="makelaars.html">Makelaars</a></li>
+          <li><a href="installateurs.html">Installateurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mailto:info@opsio.nl">info@opsio.nl</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Juridisch</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Voorwaarden</a></li>
+          <li><a href="#">Verwerkersovereenkomst</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Opsio B.V. &middot; KvK 92831745 &middot; Culemborg</span>
+      <span>Gemaakt in Nederland.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Opsio Voice Essential — AI-receptionist voor €399/maand</title>
+<meta name="description" content="Opsio Voice Essential: een professionele AI-receptionist die uw telefoon beantwoordt, FAQ's afhandelt en elke beller netjes opvolgt. Maandelijks opzegbaar vanaf €399." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://opsio.nl/essential.html" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Opsio Voice Essential — AI-receptionist vanaf €399/maand" />
+<meta property="og:description" content="Nooit meer een gemiste oproep. Opsio Voice Essential beantwoordt uw telefoon 24/7 in vloeiend Nederlands." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://opsio.nl/essential.html" />
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Opsio Voice Essential",
+  "description": "AI-receptionist die inkomende gesprekken beantwoordt, FAQ's afhandelt en na elk gesprek een notitie en samenvatting stuurt.",
+  "brand": { "@type": "Brand", "name": "Opsio" },
+  "offers": {
+    "@type": "Offer",
+    "price": "399",
+    "priceCurrency": "EUR",
+    "priceValidUntil": "2027-01-01",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="assets/site.css" />
+<link rel="icon" href="assets/opsio_mark.svg" />
+
+<style>
+/* ── Pakket-hero ── */
+.pkg-hero {
+  padding: 80px 0 64px;
+  border-bottom: 1px solid var(--opsio-hairline);
+}
+.pkg-hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.pkg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  color: #0284C7;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+.pkg-badge .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #0284C7;
+  animation: pulse 1.6s ease-out infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(2,132,199,0.5); }
+  100% { box-shadow: 0 0 0 8px rgba(2,132,199,0); }
+}
+.pkg-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5.5vw, 68px);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin: 0 0 24px;
+  color: var(--opsio-near-black);
+}
+.pkg-hero-lead {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--opsio-slate);
+  max-width: 520px;
+  margin: 0 0 36px;
+}
+.pkg-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pkg-hero-note {
+  font-size: 13px;
+  color: var(--opsio-slate);
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pkg-hero-note svg {
+  width: 15px; height: 15px;
+  stroke: #0284C7;
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* Pricing card in hero */
+.pkg-price-card {
+  background: var(--opsio-near-black);
+  border-radius: 24px;
+  padding: 40px 36px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.pkg-price-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 50% at 80% 20%, rgba(2,132,199,0.25), transparent 70%);
+  pointer-events: none;
+}
+.pkg-price-card > * { position: relative; z-index: 1; }
+.pkg-price-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+.pkg-price-num {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.pkg-price-num small {
+  font-size: 18px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+}
+.pkg-price-setup {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.pkg-price-items {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.pkg-price-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+}
+.pkg-price-item svg {
+  width: 17px; height: 17px;
+  stroke: #0EA5E9;
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pkg-price-card .btn {
+  width: 100%;
+  justify-content: center;
+}
+.pkg-price-card .btn-primary {
+  background: #fff;
+  color: var(--opsio-near-black);
+}
+.pkg-price-card .btn-primary:hover { background: #eee; }
+
+/* ── Feature cards ── */
+.feature-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.feature-detail {
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  background: #fff;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 240ms cubic-bezier(0.22,1,0.36,1), box-shadow 240ms;
+}
+.feature-detail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -16px rgba(0,0,0,0.10);
+}
+.feature-detail-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature-detail-icon svg {
+  width: 22px; height: 22px;
+  stroke: #0284C7;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.feature-detail h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--opsio-near-black);
+}
+.feature-detail p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--opsio-slate);
+  margin: 0;
+}
+
+/* ── Voor wie ── */
+.voor-wie-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.voor-wie-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 16px;
+}
+.voor-wie-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--opsio-ink);
+}
+.voor-wie-list li svg {
+  width: 20px; height: 20px;
+  stroke: #0284C7;
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.voor-wie-visual {
+  background: linear-gradient(160deg, #0284C7 0%, #0369A1 60%, #0EA5E9 100%);
+  border-radius: 22px;
+  padding: 40px 36px;
+  color: #fff;
+  display: grid;
+  gap: 20px;
+}
+.voor-wie-stat {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 14px;
+  padding: 20px 24px;
+}
+.voor-wie-stat-num {
+  font-family: var(--font-display);
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.voor-wie-stat-lbl {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+.voor-wie-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ── Compare table (pakketpagina stijl) ── */
+.compare-section {
+  margin-top: 0;
+}
+.compare {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--opsio-hairline);
+  background: #fff;
+}
+.compare table { width: 100%; border-collapse: collapse; }
+.compare th, .compare td {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid var(--opsio-hairline);
+  background: #fff;
+}
+.compare th {
+  background: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: var(--font-display);
+}
+.compare th:not(:first-child),
+.compare td:not(:first-child) { text-align: center; }
+.compare tr:last-child td { border-bottom: 0; }
+.compare svg { width: 18px; height: 18px; stroke: #0284C7; fill: none; stroke-width: 2; display: inline; vertical-align: middle; }
+.compare .dash { color: var(--opsio-muted); }
+/* Essential column — dark navy */
+.compare th.highlight-col {
+  background: #0284C7;
+  color: #fff;
+  font-weight: 600;
+}
+.compare td.highlight-col {
+  background: #0369A1;
+  color: rgba(255,255,255,0.95);
+  border-bottom-color: rgba(255,255,255,0.12);
+}
+.compare td.highlight-col svg { stroke: #fff; }
+.compare td.highlight-col .dash { color: rgba(255,255,255,0.3); }
+.compare tr:last-child .highlight-col { border-bottom: 0; }
+
+/* ── Hoe het werkt (steps) ── */
+.pkg-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.pkg-step {
+  border-top: 2px solid #0284C7;
+  padding-top: 20px;
+}
+.pkg-step-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #0284C7;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.pkg-step h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  color: var(--opsio-near-black);
+  line-height: 1.2;
+}
+.pkg-step p {
+  font-size: 14px;
+  color: var(--opsio-slate);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .pkg-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .feature-detail-grid { grid-template-columns: 1fr; }
+  .voor-wie-grid { grid-template-columns: 1fr; }
+  .pkg-steps { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .voor-wie-stat-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .pkg-steps { grid-template-columns: 1fr; }
+  .pkg-price-num { font-size: 48px; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="nav">
+    <a href="index.html" class="brand"><span class="brand-mark"></span><span>Opsio</span></a>
+    <div class="nav-menu">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger active">Diensten</button>
+        <div class="nav-dropdown-menu">
+          <a href="essential.html" class="nav-dropdown-item active">Voice Essential</a>
+          <a href="pro.html" class="nav-dropdown-item">Voice Pro</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger">Branches</button>
+        <div class="nav-dropdown-menu">
+          <a href="tandartsen.html" class="nav-dropdown-item">Tandartsen &amp; praktijken</a>
+          <a href="makelaars.html" class="nav-dropdown-item">Makelaars</a>
+          <a href="installateurs.html" class="nav-dropdown-item">Installateurs &amp; vakbedrijven</a>
+        </div>
+      </div>
+      <a href="prijzen.html">Prijzen</a>
+      <a href="over-ons.html">Over ons</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html?pakket=essential" class="btn btn-primary">Plan een gesprek</a>
+      <button class="nav-toggle" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="pkg-hero">
+  <div class="container">
+    <div class="pkg-hero-inner">
+      <div>
+        <div class="pkg-badge"><span class="dot"></span>Opsio Voice Essential</div>
+        <h1>Uw telefoon, professioneel beantwoord.</h1>
+        <p class="pkg-hero-lead">Een slimme AI-receptionist die uw inkomende oproepen opneemt, veelgestelde vragen beantwoordt en na elk gesprek een nette samenvatting stuurt. Zodat u zich kunt focussen op uw werk.</p>
+        <div class="pkg-hero-actions">
+          <a href="contact.html?pakket=essential" class="btn btn-primary btn-lg">Start met Essential</a>
+          <a href="pro.html" class="btn btn-ghost">Bekijk Voice Pro →</a>
+        </div>
+        <p class="pkg-hero-note">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Maandelijks opzegbaar. Geen jaarcontract vereist.
+        </p>
+      </div>
+
+      <div class="pkg-price-card">
+        <div class="pkg-price-label">Maandelijks tarief</div>
+        <div class="pkg-price-num">€399<small>/mnd</small></div>
+        <div class="pkg-price-setup">+ €450 eenmalige setup · excl. btw</div>
+        <div class="pkg-price-items">
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            AI-receptionist (FAQ + afspraakinformatie)
+          </div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Professionele Nederlandse stem
+          </div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Notitie + melding na elk gesprek
+          </div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Samenvatting per e-mail
+          </div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            E-mail support inbegrepen
+          </div>
+        </div>
+        <a href="contact.html?pakket=essential" class="btn btn-primary btn-lg">Plan een gesprek</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FEATURES ═══════════════════════════════ -->
+<section class="section" style="background: var(--opsio-stone);">
+  <div class="container">
+    <div class="section-eyebrow">Wat u krijgt</div>
+    <h2 class="section-title">Alles wat u nodig hebt om bereikbaar te blijven.</h2>
+    <p class="section-lead">Opsio Voice Essential dekt de basisbehoeften van elke ondernemer die professioneel telefonisch bereikbaar wil zijn, zonder de kosten van een fulltime medewerker.</p>
+
+    <div class="feature-detail-grid">
+
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>AI-receptionist</h3>
+        <p>Uw assistent beantwoordt inkomende oproepen professioneel, beantwoordt veelgestelde vragen over uw bedrijf en geeft callers duidelijke afspraakinformatie. Geen gemiste bellers meer, ook niet tijdens drukke momenten of buiten openingstijden.</p>
+      </div>
+
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Professionele Nederlandse stem</h3>
+        <p>Uw bellers horen een heldere, natuurlijke stem in vloeiend Nederlands. De stem wordt afgestemd op de toon van uw bedrijf, zodat het aanvoelt als een echte medewerker, niet als een automatisch systeem.</p>
+      </div>
+
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <h3>Notitie + melding na elk gesprek</h3>
+        <p>Na elk afgehandeld gesprek ontvangt u of uw assistent direct een melding met de kerninformatie van het gesprek. Zo weet u altijd wie er gebeld heeft en wat de reden was, ook als u er zelf niet bij was.</p>
+      </div>
+
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3>Samenvatting per mail</h3>
+        <p>U ontvangt een overzichtelijke e-mail met een samenvatting van alle gesprekken van de dag. Zo houdt u grip op uw telefonische bereikbaarheid zonder elk gesprek zelf te hoeven afhandelen of terugluisteren.</p>
+      </div>
+
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>E-mail support</h3>
+        <p>Heeft u een vraag of wilt u iets aanpassen aan de manier waarop uw assistent gesprekken afhandelt? Ons team staat voor u klaar via e-mail en reageert binnen één werkdag.</p>
+      </div>
+
+      <div class="feature-detail">
+        <div class="feature-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Maandelijks opzegbaar</h3>
+        <p>Geen lange contracten, geen jaarverplichtingen. U betaalt maand voor maand en kunt op elk moment opzeggen. Zo heeft u volledige controle over uw abonnement, zonder risico.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ HOE HET WERKT ═══════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">Van aanmelding tot live</div>
+    <h2 class="section-title">Live in zeven dagen.</h2>
+    <p class="section-lead">Geen lange implementaties of technisch gedoe. Wij regelen alles, u goedkeurt en de assistent gaat aan het werk.</p>
+
+    <div class="pkg-steps">
+      <div class="pkg-step">
+        <div class="pkg-step-num">Stap 01</div>
+        <h3>Kennismakingsgesprek</h3>
+        <p>In 20 minuten bespreken we uw situatie, uw branche en wat u van de assistent verwacht.</p>
+      </div>
+      <div class="pkg-step">
+        <div class="pkg-step-num">Stap 02</div>
+        <h3>Inrichten op uw bedrijf</h3>
+        <p>We stellen de assistent in op basis van uw FAQ, uw toon en de informatie die bellers nodig hebben.</p>
+      </div>
+      <div class="pkg-step">
+        <div class="pkg-step-num">Stap 03</div>
+        <h3>Testen en akkoord</h3>
+        <p>U hoort de assistent in actie en geeft goedkeuring. We passen aan totdat het precies klopt.</p>
+      </div>
+      <div class="pkg-step">
+        <div class="pkg-step-num">Stap 04</div>
+        <h3>Live</h3>
+        <p>De assistent neemt uw telefoon over. U ontvangt direct meldingen en samenvattingen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ VOOR WIE ═══════════════════════════════ -->
+<section class="section tight" style="background: var(--opsio-stone);">
+  <div class="container">
+    <div class="voor-wie-grid">
+      <div>
+        <div class="section-eyebrow">Voor wie is dit?</div>
+        <h2 class="section-title">Gemaakt voor ondernemers die geen oproep meer willen missen.</h2>
+        <p style="font-size: 17px; color: var(--opsio-slate); line-height: 1.6; margin: 0 0 8px;">Voice Essential is de juiste keuze als u een ZZP'er of klein MKB-bedrijf heeft en professioneel bereikbaar wil zijn, zonder grote investeringen of technische kennis.</p>
+        <ul class="voor-wie-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Zelfstandige professionals zoals tandartsen, fysiotherapeuten, advocaten of adviseurs die geen vaste receptie hebben
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Kleine MKB-bedrijven met maximaal 10 medewerkers waarbij de telefoon regelmatig onbeantwoord blijft
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Installateurs, makelaars en dienstverlenende bedrijven die ook buiten kantooruren bereikbaar willen zijn
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Ondernemers die de stap naar Voice AI willen zetten zonder langdurig contract of hoge opstartkosten
+          </li>
+        </ul>
+      </div>
+
+      <div class="voor-wie-visual">
+        <div style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 4px;">Opsio Voice Essential</div>
+        <div style="font-family: var(--font-display); font-size: 26px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 20px;">Resultaat in de praktijk</div>
+        <div class="voor-wie-stat-grid">
+          <div class="voor-wie-stat">
+            <div class="voor-wie-stat-num">100%</div>
+            <div class="voor-wie-stat-lbl">Van uw oproepen beantwoord</div>
+          </div>
+          <div class="voor-wie-stat">
+            <div class="voor-wie-stat-num">7 dgn</div>
+            <div class="voor-wie-stat-lbl">Gemiddelde implementatietijd</div>
+          </div>
+          <div class="voor-wie-stat">
+            <div class="voor-wie-stat-num">24/7</div>
+            <div class="voor-wie-stat-lbl">Beschikbaar, ook 's avonds</div>
+          </div>
+          <div class="voor-wie-stat">
+            <div class="voor-wie-stat-num">NL</div>
+            <div class="voor-wie-stat-lbl">Vloeiend Nederlands</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ VERGELIJKING ═══════════════════════════════ -->
+<section class="section compare-section">
+  <div class="container">
+    <div class="section-eyebrow">Pakketvergelijking</div>
+    <h2 class="section-title">Essential of Pro: wat past bij u?</h2>
+    <p class="section-lead">Beide pakketten geven u een professionele AI-receptionist. Voice Pro voegt een eigen dashboard, opnames, transcripten en een directe WhatsApp- of sms-bevestiging ná elk gesprek toe voor bedrijven die meer inzicht en controle willen.</p>
+
+    <div class="compare">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 40%;">Functionaliteit</th>
+            <th class="highlight-col">Essential</th>
+            <th>Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI-receptionist (FAQ + afspraakinformatie)</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Professionele Nederlandse stem</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Notitie + melding naar assistent na elk gesprek</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Samenvatting per e-mail</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>E-mail support</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Maandelijks opzegbaar</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Eigen dashboard met call-overzicht</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Opnames en transcripten inzien</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>WhatsApp- en sms-bevestiging na elk gesprek<br><span style="font-size:12px; color:var(--opsio-slate);">Direct na het gesprek — niet te verwarren met de afspraakherinnering add-on</span></td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td>Telefonische support</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 500;">Eenmalige setup</td>
+            <td class="highlight-col" style="font-weight: 500; color: #fff;">€450</td>
+            <td style="color: var(--opsio-slate);">€650</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display: flex; gap: 12px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
+      <a href="contact.html?pakket=essential" class="btn btn-primary btn-lg">Start met Essential</a>
+      <a href="pro.html" class="btn btn-ghost">Meer over Voice Pro →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <div class="section-eyebrow" style="color: var(--opsio-coral);">Volgende stap</div>
+        <h2 class="section-title">Klaar om geen oproep meer te missen?</h2>
+        <p class="section-lead">In een gesprek van 20 minuten kijken we samen of Voice Essential bij uw situatie past. Geen verplichtingen.</p>
+        <div class="cta-actions">
+          <a href="contact.html?pakket=essential" class="btn btn-primary btn-lg">Plan een gesprek</a>
+          <a href="prijzen.html" class="btn btn-ghost">Bekijk alle prijzen →</a>
+        </div>
+      </div>
+      <div class="cta-stat-card">
+        <div class="row"><div class="num">€399</div><div class="lbl">Per maand, excl. btw</div></div>
+        <div class="row"><div class="num">€450</div><div class="lbl">Eenmalige setup</div></div>
+        <div class="row"><div class="num">7 dgn</div><div class="lbl">Gemiddelde implementatietijd</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-eyebrow">Klaar om te beginnen?</div>
+    <h2 class="footer-headline">Laat de telefoon weer werken voor u.</h2>
+    <div class="footer-cta">
+      <a href="contact.html" class="btn btn-light btn-lg">Plan een gesprek</a>
+      <a href="prijzen.html" class="btn btn-ghost" style="color: rgba(255,255,255,0.85);">Bekijk prijzen &rarr;</a>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand-block">
+        <div class="footer-text-logo">OPSIO</div>
+        <p>Digitale assistent voor ondernemers in Nederland en België.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="essential.html">Voice Essential</a></li>
+          <li><a href="pro.html">Voice Pro</a></li>
+          <li><a href="prijzen.html">Prijzen</a></li>
+          <li><a href="contact.html">Gesprek aanvragen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="tandartsen.html">Tandartsen</a></li>
+          <li><a href="makelaars.html">Makelaars</a></li>
+          <li><a href="installateurs.html">Installateurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Bedrijf</h4>
+        <ul>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mailto:info@opsio.nl">info@opsio.nl</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Juridisch</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Voorwaarden</a></li>
+          <li><a href="#">Verwerkersovereenkomst</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Opsio B.V. &middot; KvK 92831745 &middot; Culemborg</span>
+      <span>Gemaakt in Nederland.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

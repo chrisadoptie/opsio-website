@@ -221,26 +221,18 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(220, 232, 245, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow:
-    0 8px 32px 0 rgba(7, 24, 41, 0.28),
-    0 20px 48px -4px rgba(7, 24, 41, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    inset 0 -2px 0 rgba(7, 24, 41, 0.15);
-  color: rgba(255,255,255,0.85);
-  padding: 9px 16px;
-  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.95);
+  padding: 0;
   font-size: 14px;
   font-family: var(--font-body);
   cursor: pointer;
-  transition: background 180ms;
+  transition: opacity 180ms;
   text-decoration: none;
   white-space: nowrap;
 }
-.hero-demo-pill:hover { background: rgba(255,255,255,0.18); }
+.hero-demo-pill:hover { opacity: 0.84; }
 .hero-demo-pill-icon {
   display: inline-flex;
   align-items: center;
@@ -257,21 +249,35 @@
   justify-content: center;
   width: 38px;
   height: 38px;
-  background: rgba(111, 168, 245, 0.2);
-  border: 1px solid rgba(111, 168, 245, 0.4);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow:
-    0 8px 32px 0 rgba(7, 24, 41, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    inset 0 -2px 0 rgba(7, 24, 41, 0.15);
-  color: #6fa8f5;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.26);
+  color: #ffffff;
   border-radius: 50%;
   cursor: pointer;
   transition: background 180ms, transform 180ms;
   flex-shrink: 0;
 }
-.hero-demo-orb:hover { background: rgba(111, 168, 245, 0.32); transform: scale(1.08); }
+.hero-demo-orb:hover { background: rgba(255,255,255,0.26); transform: scale(1.08); }
+
+.hero-demo-section {
+  width: max-content;
+  max-width: calc(100% - 44px);
+  margin: 24px auto 0;
+  background: #0284C7;
+  border-radius: 999px;
+  padding: 4px 5px 4px 16px;
+  box-shadow:
+    0 8px 32px 0 rgba(7, 24, 41, 0.16),
+    0 16px 36px -16px rgba(2, 132, 199, 0.48);
+  white-space: nowrap;
+}
+
+.hero-demo-section-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
 
 .hero-demo-bar {
   margin: 32px -32px -56px;
@@ -340,6 +346,9 @@
 }
 .hero-demo-bar-btn:hover { background: #0369A1; transform: scale(1.08); }
 @media (max-width: 680px) {
+  .hero-demo-section { white-space: normal; }
+  .hero-demo-section-inner { max-width: 100%; }
+  .hero-demo-pill { white-space: normal; text-align: left; }
   .hero-demo-bar { margin: 24px -22px -40px; }
   .hero-demo-bar-inner { flex-direction: column; align-items: flex-start; gap: 14px; padding: 16px 22px; }
   .hero-demo-bar-btn { width: 100%; justify-content: center; }
@@ -397,31 +406,32 @@
         24/7 bereikbaar
       </a>
       <h1 class="hero-h1">
-        Nooit meer<br />
-        een gemiste <span>oproep.</span>
+        Elke beller<br />
+        geholpen. <span>Altijd.</span>
       </h1>
       <p class="hero-sub">
-        Met Opsio krijgt uw bedrijf een digitale assistent die oproepen opvangt, afspraken verwerkt en vragen beantwoordt. Dag en nacht, in vloeiend Nederlands en Engels.
+        Wordt er niet opgenomen? Opsio doet het. Dag en nacht, in vloeiend Nederlands.
       </p>
       <div class="hero-actions">
         <a href="contact.html" class="btn btn-primary btn-lg">Plan een gesprek</a>
         <a href="#waarom" class="btn btn-ghost" style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2);">Hoe het werkt &rarr;</a>
       </div>
 
-      <!-- Demo pill + icoon -->
-      <div style="margin-top: 32px; display: flex; justify-content: center; align-items: center; gap: 6px;">
-        <button class="hero-demo-pill" onclick="window.open('https://agent.retellai.com/orb/agent_2fe15da7467f0b28b6d912d019?token=fb1fb3e809876e40d5ca1e749f4017cb', 'opsioDemo', 'width=420,height=640,menubar=no,toolbar=no,location=no,status=no')" aria-label="Start een gesprek">
-          <span class="hero-demo-dot"></span>
-          Spreek direct met onze digitale assistent
-        </button>
-        <button class="hero-demo-orb" onclick="window.open('https://agent.retellai.com/orb/agent_2fe15da7467f0b28b6d912d019?token=fb1fb3e809876e40d5ca1e749f4017cb', 'opsioDemo', 'width=420,height=640,menubar=no,toolbar=no,location=no,status=no')" aria-label="Start een gesprek">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-        </button>
-      </div>
-
     </div>
+  </div>
+</section>
+
+<section class="hero-demo-section" aria-label="Digitale assistent demo">
+  <div class="hero-demo-section-inner">
+    <button class="hero-demo-pill" onclick="window.open('https://agent.retellai.com/orb/agent_2fe15da7467f0b28b6d912d019?token=fb1fb3e809876e40d5ca1e749f4017cb', 'opsioDemo', 'width=420,height=640,menubar=no,toolbar=no,location=no,status=no')" aria-label="Start een gesprek">
+      <span class="hero-demo-dot"></span>
+      Spreek direct met onze digitale assistent
+    </button>
+    <button class="hero-demo-orb" onclick="window.open('https://agent.retellai.com/orb/agent_2fe15da7467f0b28b6d912d019?token=fb1fb3e809876e40d5ca1e749f4017cb', 'opsioDemo', 'width=420,height=640,menubar=no,toolbar=no,location=no,status=no')" aria-label="Start een gesprek">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+    </button>
   </div>
 </section>
 

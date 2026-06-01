@@ -357,43 +357,6 @@
 }
 
 /* ── Dashboard mockup strip ── */
-.dashboard-strip {
-  background: var(--opsio-stone);
-  border-radius: 22px;
-  padding: 40px;
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-}
-.dashboard-item {
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid var(--opsio-hairline);
-  padding: 24px;
-}
-.dashboard-item-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--opsio-slate);
-  margin-bottom: 12px;
-}
-.dashboard-item-num {
-  font-family: var(--font-display);
-  font-size: 36px;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-  color: var(--opsio-near-black);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.dashboard-item-sub {
-  font-size: 13px;
-  color: var(--opsio-slate);
-}
-
 /* ── Compare table ── */
 .compare {
   border-radius: 22px;
@@ -427,12 +390,12 @@
 .compare .dash { color: var(--opsio-muted); }
 /* Premium column — navy blue */
 .compare th.highlight-col {
-  background: #1e78b4;
+  background: #0284C7;
   color: #fff;
   font-weight: 600;
 }
 .compare td.highlight-col {
-  background: #154a6b;
+  background: #0369A1;
   color: rgba(255,255,255,0.95);
   border-bottom-color: rgba(255,255,255,0.12);
 }
@@ -484,7 +447,6 @@
   .voor-wie-grid { grid-template-columns: 1fr; }
   .pkg-steps { grid-template-columns: 1fr 1fr; gap: 20px; }
   .voor-wie-stat-grid { grid-template-columns: 1fr; }
-  .dashboard-strip { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {
   .pkg-steps { grid-template-columns: 1fr; }
@@ -784,9 +746,9 @@
         <thead>
           <tr>
             <th style="width: 40%; font-size: 18px; font-weight: 600; font-family: var(--font-display); background: #fff;">Functionaliteit</th>
-            <th style="font-size: 18px; font-weight: 600; font-family: var(--font-display);">Essential</th>
-            <th style="font-size: 18px; font-weight: 600; font-family: var(--font-display);">Pro</th>
-            <th class="highlight-col" style="font-size: 18px; font-weight: 600; font-family: var(--font-display);">Premium</th>
+            <th style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Essential</th>
+            <th style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Pro</th>
+            <th class="highlight-col" style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Premium</th>
           </tr>
         </thead>
         <tbody>
@@ -921,6 +883,18 @@
             <td class="dash">—</td>
             <td class="dash">—</td>
             <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Maandelijks tarief</td>
+            <td>€399</td>
+            <td>€599</td>
+            <td class="highlight-col">Vanaf €999/maand</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 500;">Eenmalige setup</td>
+            <td>€449</td>
+            <td>€799</td>
+            <td class="highlight-col" style="font-weight: 500; color: #fff;">Vanaf €1.499</td>
           </tr>
         </tbody>
       </table>

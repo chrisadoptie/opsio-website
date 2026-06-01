@@ -393,44 +393,6 @@
   gap: 14px;
 }
 
-/* ── Dashboard mockup strip ── */
-.dashboard-strip {
-  background: var(--opsio-stone);
-  border-radius: 22px;
-  padding: 40px;
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-}
-.dashboard-item {
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid var(--opsio-hairline);
-  padding: 24px;
-}
-.dashboard-item-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--opsio-slate);
-  margin-bottom: 12px;
-}
-.dashboard-item-num {
-  font-family: var(--font-display);
-  font-size: 36px;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-  color: var(--opsio-near-black);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.dashboard-item-sub {
-  font-size: 13px;
-  color: var(--opsio-slate);
-}
-
 /* ── Compare table ── */
 .compare {
   border-radius: 22px;
@@ -521,7 +483,6 @@
   .voor-wie-grid { grid-template-columns: 1fr; }
   .pkg-steps { grid-template-columns: 1fr 1fr; gap: 20px; }
   .voor-wie-stat-grid { grid-template-columns: 1fr; }
-  .dashboard-strip { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {
   .pkg-steps { grid-template-columns: 1fr; }
@@ -803,80 +764,155 @@
         <thead>
           <tr>
             <th style="width: 40%; font-size: 18px; font-weight: 600; font-family: var(--font-display); background: #fff;">Functionaliteit</th>
-            <th style="font-size: 18px; font-weight: 600; font-family: var(--font-display);">Essential</th>
-            <th class="highlight-col" style="font-size: 18px; font-weight: 600; font-family: var(--font-display);">Pro</th>
-            <th style="font-size: 18px; font-weight: 600; font-family: var(--font-display);">Premium</th>
+            <th style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Essential</th>
+            <th class="highlight-col" style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Pro</th>
+            <th style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Premium</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>AI-receptionist (FAQ + afspraakinformatie)</td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td>24/7 telefonische bereikbaarheid</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Professionele Nederlandse stem</td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td>Professionele Nederlandse telefoonassistent</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Notitie + melding naar assistent na elk gesprek</td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td>Gesprekssamenvatting na iedere oproep</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Samenvatting per e-mail</td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td>E-mailnotificaties</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>E-mail support</td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td>Gespreksopnames</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Maandelijks opzegbaar</td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td>Maandelijkse prestatie-rapportage</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <!-- Feature removed as requested -->
+            <td>E-mailsupport</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Opnames en transcripten inzien</td>
-            <td><span class="dash">—</span></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td>Agenda-integratie</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>WhatsApp- en sms-bevestiging na elk gesprek<br><span style="font-size:12px; color:var(--opsio-slate);">Direct na het gesprek — niet te verwarren met de afspraakherinnering add-on</span></td>
-            <td><span class="dash">—</span></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td>Afspraken automatisch inplannen</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>WhatsApp-bevestigingen voor klanten</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>SMS-bevestigingen voor klanten</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Leadkwalificatie</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Doorsturen naar de juiste medewerker</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
             <td>Telefonische support</td>
-            <td><span class="dash">—</span></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
-            <td><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Maatwerk automatiseringen</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Integraties met bestaande software</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Geavanceerde workflows</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Automatische klantopvolging</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Herinneringen en notificaties</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Meerdere agenda's en medewerkers</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Prioriteitssupport</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Persoonlijke onboarding</td>
+            <td class="dash">—</td>
+            <td class="highlight-col"><span class="dash">—</span></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
             <td>Maandelijks tarief</td>
-            <td style="color: var(--opsio-slate);">€399</td>
+            <td>€399</td>
             <td class="highlight-col">€599</td>
             <td>Vanaf €999/maand</td>
           </tr>
           <tr>
             <td style="font-weight: 500;">Eenmalige setup</td>
-            <td style="color: var(--opsio-slate);">€449</td>
+            <td>€449</td>
             <td class="highlight-col" style="font-weight: 500; color: #fff;">€799</td>
-            <td style="color: var(--opsio-slate);">Vanaf €1.499</td>
+            <td>Vanaf €1.499</td>
           </tr>
         </tbody>
       </table>

@@ -21,48 +21,50 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #fff;
-  border: 1px solid #E5E7EB;
+  background: #071829;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.price-card.featured {
-  background: #0284C7;
-  border-color: #0284C7;
-}
-
-.price-card.featured .price-name,
-.price-card.featured .price-sub,
-.price-card.featured .price-num,
-.price-card.featured .price-num small,
-.price-card.featured .price-feat {
+.price-card .price-name,
+.price-card .price-sub,
+.price-card .price-num,
+.price-card .price-num small,
+.price-card .price-feat {
   color: #fff;
 }
 
-.price-card.featured .price-sub {
-  color: rgba(255, 255, 255, 0.92);
+.price-card .price-sub {
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.price-card.featured .price-num small {
-  color: rgba(255, 255, 255, 0.85);
+.price-card .price-num small {
+  color: rgba(255, 255, 255, 0.55);
 }
 
-.price-card.featured .price-feat li svg {
-  stroke: #fff;
+.price-card .price-feat li svg {
+  stroke: #0284C7;
 }
 
+.price-card .btn-light,
 .price-card.featured .btn-primary {
   background: #fff;
-  color: #0284C7;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #071829;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.price-card .btn-light:hover,
 .price-card.featured .btn-primary:hover {
   background: #f8fafc;
 }
 
+.price-card.featured {
+  background: inherit;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 .price-card.premium {
   background: #071829;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.08);
   position: relative;
 }
 
@@ -77,26 +79,6 @@
 .price-card.premium > * {
   position: relative;
   z-index: 1;
-}
-
-.price-card.premium .price-name,
-.price-card.premium .price-sub,
-.price-card.premium .price-num,
-.price-card.premium .price-num small,
-.price-card.premium .price-feat {
-  color: #fff;
-}
-
-.price-card.premium .price-sub {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.price-card.premium .price-num small {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.price-card.premium .price-feat li svg {
-  stroke: #fff;
 }
 
 .price-card.premium .btn-primary {

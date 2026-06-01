@@ -8,6 +8,80 @@
 <meta name="description" content="Digitale receptionist voor uw bedrijf: heldere pakketten voor ondernemers die nooit meer een oproep willen missen. Maandelijks opzegbaar." />
 <link rel="stylesheet" href="assets/site.css" />
 <link rel="icon" href="assets/opsio_mark.svg" />
+
+<style>
+.pricing-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.price-card.premium {
+  background: linear-gradient(160deg, #0f1f35 0%, #1a3554 100%);
+  border: 1px solid rgba(111, 168, 245, 0.15);
+  position: relative;
+}
+
+.price-card.premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 50% at 80% 20%, rgba(111, 168, 245, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.price-card.premium > * {
+  position: relative;
+  z-index: 1;
+}
+
+.price-card.premium .price-name {
+  color: #fff;
+}
+
+.price-card.premium .price-sub {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.price-card.premium .price-num {
+  color: #fff;
+}
+
+.price-card.premium .price-num small {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.price-card.premium .price-feat {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.price-card.premium .price-feat li svg {
+  stroke: #6fa8f5;
+}
+
+.price-card.premium .btn-primary {
+  background: #0284C7;
+  color: #fff;
+  border: none;
+}
+
+.price-card.premium .btn-primary:hover {
+  background: #0369A1;
+}
+
+@media (max-width: 1200px) {
+  .pricing-three {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-three {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -21,6 +95,7 @@
         <div class="nav-dropdown-menu">
           <a href="essential.html" class="nav-dropdown-item">Voice Essential</a>
           <a href="pro.html" class="nav-dropdown-item">Voice Pro</a>
+          <a href="premium.html" class="nav-dropdown-item">Voice Premium</a>
         </div>
       </div>
       <div class="nav-dropdown">
@@ -55,18 +130,18 @@
 <section class="section" style="padding-top: 56px;">
   <div class="container">
 
-    <div class="pricing pricing-two">
+    <div class="pricing pricing-three">
 
       <article class="price-card">
         <div>
           <div class="price-name">Opsio Voice Essential</div>
-          <p class="price-sub" style="margin-top: 8px;">Voor ondernemers die professioneel bereikbaar willen zijn zonder extra personeel.</p>
+          <p class="price-sub" style="margin-top: 8px;">Mis nooit meer een belangrijke oproep.</p>
         </div>
 
         <div style="display:grid; gap:10px;">
           <div>
-            <div style="font-size:13px; color:var(--opsio-slate); margin-bottom:6px;">Implementatie</div>
-            <span class="price-num" style="font-size:40px;">€450</span>
+            <div style="font-size:13px; color:var(--opsio-slate); margin-bottom:6px;">Setup</div>
+            <span class="price-num" style="font-size:40px;">€449</span>
           </div>
 
           <div>
@@ -76,11 +151,13 @@
         </div>
 
         <ul class="price-feat">
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Onbeperkt aantal oproepen</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Eigen begroeting en stem</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Notitie + melding naar uw assistent</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Samenvatting per mail</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>E-mail support</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>24/7 telefonische bereikbaarheid</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Professionele Nederlandse telefoonassistent</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gesprekssamenvatting na iedere oproep</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>E-mailnotificaties</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Gespreksopnames</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Maandelijkse prestatie-rapportage</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>E-mailsupport</li>
         </ul>
 
         <a href="contact.html?pakket=essential" class="btn btn-light">Begin met Essential</a>
@@ -90,30 +167,67 @@
         
         <div>
           <div class="price-name">Opsio Voice Pro</div>
-          <p class="price-sub" style="margin-top: 8px;">Voor bedrijven die afspraken, opvolging en bereikbaarheid volledig willen uitbesteden.</p>
+          <p class="price-sub" style="margin-top: 8px;">Van telefoon opnemen naar volledige afspraakverwerking.</p>
         </div>
 
         <div style="display:grid; gap:10px;">
           <div>
-            <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:6px;">Implementatie</div>
-            <span class="price-num" style="font-size:40px;">€650</span>
+            <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:6px;">Setup</div>
+            <span class="price-num" style="font-size:40px;">€799</span>
           </div>
 
           <div>
             <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:6px;">Per maand</div>
-            <span class="price-num">€549<small>/maand</small></span>
+            <span class="price-num">€599<small>/maand</small></span>
           </div>
         </div>
 
         <ul class="price-feat">
           <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Alles uit Essential, plus:</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Eigen dashboard met call-overzicht</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Opnames en transcripten inzien</li>
-          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>WhatsApp- en sms-bevestiging na elk gesprek <span style="font-size:12px; color:rgba(255,255,255,0.55); display:block; margin-top:2px;">Direct na het gesprek, zodat de beller weet dat zijn oproep is ontvangen.</span></li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Agenda-integratie</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Afspraken automatisch inplannen</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>WhatsApp-bevestigingen voor klanten</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>SMS-bevestigingen voor klanten</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Leadkwalificatie</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Doorsturen naar de juiste medewerker</li>
           <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Telefonische support</li>
         </ul>
 
         <a href="contact.html?pakket=pro" class="btn btn-primary">Begin met Pro</a>
+      </article>
+
+      <article class="price-card premium">
+        
+        <div>
+          <div class="price-name">Opsio Voice Premium</div>
+          <p class="price-sub" style="margin-top: 8px;">Een volledig geautomatiseerde frontoffice.</p>
+        </div>
+
+        <div style="display:grid; gap:10px;">
+          <div>
+            <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:6px;">Setup</div>
+            <span class="price-num" style="font-size:40px;">Vanaf €1.499</span>
+          </div>
+
+          <div>
+            <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:6px;">Per maand</div>
+            <span class="price-num">Vanaf €999<small>/maand</small></span>
+          </div>
+        </div>
+
+        <ul class="price-feat">
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Alles uit Pro, plus:</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Maatwerk automatiseringen</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Integraties met bestaande software</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Geavanceerde workflows</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Automatische klantopvolging</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Herinneringen en notificaties</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Meerdere agenda's en medewerkers</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Prioriteitssupport</li>
+          <li><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Persoonlijke onboarding</li>
+        </ul>
+
+        <a href="contact.html?pakket=premium" class="btn btn-primary">Begin met Premium</a>
       </article>
 
     </div>
@@ -183,48 +297,141 @@
             <th>Wat zit erin</th>
             <th>Essential</th>
             <th>Pro</th>
+            <th>Premium</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Onbeperkt aantal oproepen</td>
+            <td>24/7 telefonische bereikbaarheid</td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Eigen begroeting en stem</td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Notitie + melding naar assistent</td>
+            <td>Professionele Nederlandse telefoonassistent</td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Samenvatting per mail</td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Eigen dashboard met call-overzicht</td>
+            <td>Gesprekssamenvatting na iedere oproep</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>E-mailnotificaties</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Gespreksopnames</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Maandelijkse prestatie-rapportage</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>E-mailsupport</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Agenda-integratie</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Afspraken automatisch inplannen</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>WhatsApp-bevestigingen voor klanten</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>SMS-bevestigingen voor klanten</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Leadkwalificatie</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Doorsturen naar de juiste medewerker</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Telefonische support</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Maatwerk automatiseringen</td>
+            <td class="dash">—</td>
             <td class="dash">—</td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Opnames en transcripten inzien</td>
+            <td>Integraties met bestaande software</td>
+            <td class="dash">—</td>
             <td class="dash">—</td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>WhatsApp- en sms-bevestiging na elk gesprek<br><span style="font-size:12px; color:var(--opsio-slate);">Direct na het gesprek — niet te verwarren met de afspraakherinnering add-on</span></td>
+            <td>Geavanceerde workflows</td>
+            <td class="dash">—</td>
             <td class="dash">—</td>
             <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
           <tr>
-            <td>Support</td>
-            <td>E-mail</td>
-            <td>Telefonisch + e-mail</td>
+            <td>Automatische klantopvolging</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Herinneringen en notificaties</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Meerdere agenda's en medewerkers</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Prioriteitssupport</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
+          </tr>
+          <tr>
+            <td>Persoonlijke onboarding</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
           </tr>
         </tbody>
       </table>
@@ -252,7 +459,7 @@
         </details>
         <details class="faq-item">
           <summary class="faq-q">Zijn er implementatiekosten?</summary>
-          <p class="faq-a">Ja. Voor Opsio Voice Essential geldt een eenmalige implementatie van €450. Voor Opsio Voice Pro geldt een eenmalige implementatie van €650. Deze kosten zijn voor het inrichten, testen en afstemmen van de digitale assistent op uw bedrijf.</p>
+          <p class="faq-a">Ja. Voor Opsio Voice Essential geldt een eenmalige setup van €449. Voor Opsio Voice Pro geldt een eenmalige setup van €799. Voor Opsio Voice Premium varieert dit op basis van jouw maatwerk. Deze kosten zijn voor het inrichten, testen en afstemmen van de digitale assistent op uw bedrijf.</p>
         </details>
         <details class="faq-item">
           <summary class="faq-q">Kan ik wisselen van pakket?</summary>
@@ -305,6 +512,7 @@
         <ul>
           <li><a href="essential.html">Voice Essential</a></li>
           <li><a href="pro.html">Voice Pro</a></li>
+          <li><a href="premium.html">Voice Premium</a></li>
           <li><a href="prijzen.html">Prijzen</a></li>
           <li><a href="contact.html">Gesprek aanvragen</a></li>
         </ul>

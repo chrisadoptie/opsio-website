@@ -497,6 +497,189 @@
   </div>
 </section>
 
+<!-- ROI CALCULATOR -->
+<style>
+.roi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.roi-card {
+  background: #071829;
+  border-radius: 24px;
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.roi-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 50% at 80% 20%, rgba(2,132,199,0.15), transparent 70%);
+  pointer-events: none;
+}
+.roi-card > * { position: relative; z-index: 1; }
+.roi-slider-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.roi-slider-lbl { font-size: 14px; color: rgba(255,255,255,0.7); }
+.roi-slider-val {
+  color: #0284C7;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: var(--font-display);
+}
+.roi-range {
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  margin-bottom: 28px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.12);
+}
+.roi-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0284C7;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 2px 8px rgba(2,132,199,0.5);
+}
+.roi-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0284C7;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 2px 8px rgba(2,132,199,0.5);
+}
+.roi-output {
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 24px;
+}
+.roi-out-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.roi-out-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.roi-out-row:first-child { padding-top: 0; }
+.roi-out-lbl { font-size: 13px; color: rgba(255,255,255,0.55); }
+.roi-out-val { font-size: 15px; font-weight: 600; color: #fff; font-family: var(--font-display); }
+.roi-out-row.roi-big .roi-out-lbl { color: rgba(255,255,255,0.75); }
+.roi-out-row.roi-big .roi-out-val { font-size: 24px; letter-spacing: -0.02em; }
+.roi-out-row.roi-accent .roi-out-val { color: #0284C7; }
+.roi-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.5; }
+@media (max-width: 960px) {
+  .roi-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+</style>
+<section class="section" style="background: #fff;">
+  <div class="container">
+    <div class="roi-grid">
+      <div>
+        <div class="section-eyebrow">Bereken uw verlies</div>
+        <h2 class="section-title">Hoeveel loopt u mis per jaar?</h2>
+        <p class="section-lead">Vul het aantal gemiste oproepen per week in en de gemiddelde waarde van een opdracht. U ziet direct wat het u kost — en hoe snel Opsio zichzelf terugverdient.</p>
+        <a href="contact.html" class="btn btn-lg" style="background: #fff; color: #071829; border: 1px solid rgba(7,24,41,0.12); margin-top: 8px;">Stop met geld verliezen →</a>
+      </div>
+      <div class="roi-card">
+        <div class="roi-slider-row">
+          <span class="roi-slider-lbl">Gemiste oproepen per week</span>
+          <span class="roi-slider-val" id="roi-calls-val">5</span>
+        </div>
+        <input type="range" class="roi-range" id="roi-calls" min="1" max="20" value="5" />
+        <div class="roi-slider-row">
+          <span class="roi-slider-lbl">Gemiddelde orderwaarde</span>
+          <span class="roi-slider-val" id="roi-order-val">€800</span>
+        </div>
+        <input type="range" class="roi-range" id="roi-order" min="100" max="5000" step="50" value="800" />
+        <div class="roi-output">
+          <div class="roi-out-row">
+            <span class="roi-out-lbl">Misgelopen per week</span>
+            <span class="roi-out-val" id="roi-week">€4.000</span>
+          </div>
+          <div class="roi-out-row">
+            <span class="roi-out-lbl">Misgelopen per maand</span>
+            <span class="roi-out-val" id="roi-month">€17.200</span>
+          </div>
+          <div class="roi-out-row roi-big">
+            <span class="roi-out-lbl">Misgelopen per jaar</span>
+            <span class="roi-out-val" id="roi-year">€206.400</span>
+          </div>
+          <div class="roi-out-row roi-accent">
+            <span class="roi-out-lbl">Opsio terugverdiend in</span>
+            <span class="roi-out-val" id="roi-payback">&lt; 1 maand</span>
+          </div>
+        </div>
+        <p class="roi-note">Op basis van conservatieve schatting. Personeelskosten, stress en reputatieschade niet meegerekend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  var callsInput = document.getElementById('roi-calls');
+  var orderInput = document.getElementById('roi-order');
+
+  function fmt(n) {
+    return '€' + Math.round(n).toLocaleString('nl-NL');
+  }
+
+  function trackFill(el) {
+    var pct = (el.value - el.min) / (el.max - el.min) * 100;
+    el.style.background = 'linear-gradient(to right, #0284C7 0%, #0284C7 ' + pct + '%, rgba(255,255,255,0.12) ' + pct + '%, rgba(255,255,255,0.12) 100%)';
+  }
+
+  function calc() {
+    var calls = +callsInput.value;
+    var order = +orderInput.value;
+    var perWeek = calls * order;
+    var perMonth = perWeek * 4.3;
+    var perYear = perMonth * 12;
+
+    document.getElementById('roi-calls-val').textContent = calls;
+    document.getElementById('roi-order-val').textContent = fmt(order);
+    document.getElementById('roi-week').textContent = fmt(perWeek);
+    document.getElementById('roi-month').textContent = fmt(perMonth);
+    document.getElementById('roi-year').textContent = fmt(perYear);
+
+    var paybackEl = document.getElementById('roi-payback');
+    if (perMonth <= 399) {
+      paybackEl.textContent = '> 24 maanden';
+    } else {
+      var months = 449 / (perMonth - 399);
+      if (months < 1) {
+        paybackEl.textContent = '< 1 maand';
+      } else {
+        var n = Math.ceil(months);
+        paybackEl.textContent = n + ' ' + (n === 1 ? 'maand' : 'maanden');
+      }
+    }
+
+    trackFill(callsInput);
+    trackFill(orderInput);
+  }
+
+  callsInput.addEventListener('input', calc);
+  orderInput.addEventListener('input', calc);
+  calc();
+}());
+</script>
+
 <!-- FEATURES -->
 <section class="section">
   <div class="container">

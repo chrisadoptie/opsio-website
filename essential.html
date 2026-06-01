@@ -52,9 +52,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #F0F9FF;
-  border: 1px solid #BAE6FD;
-  color: #0284C7;
+  background: #071829;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.5px;
@@ -66,12 +66,12 @@
 .pkg-badge .dot {
   width: 7px; height: 7px;
   border-radius: 50%;
-  background: #0284C7;
+  background: #7DD3FC;
   animation: pulse 1.6s ease-out infinite;
 }
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(2,132,199,0.5); }
-  100% { box-shadow: 0 0 0 8px rgba(2,132,199,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(125,211,252,0.5); }
+  100% { box-shadow: 0 0 0 8px rgba(125,211,252,0); }
 }
 .pkg-hero h1 {
   font-family: var(--font-display);
@@ -94,6 +94,19 @@
   gap: 12px;
   flex-wrap: wrap;
   align-items: center;
+}
+.pkg-hero-actions .btn-primary {
+  background: #071829;
+  color: #fff;
+  border: none;
+}
+.pkg-hero-actions .btn-ghost {
+  color: #071829;
+}
+.nav-cta .btn-primary {
+  background: #071829;
+  color: #fff;
+  border: none;
 }
 .pkg-hero-note {
   font-size: 13px;
@@ -435,7 +448,7 @@
       <a href="contact.html">Contact</a>
     </div>
     <div class="nav-cta">
-      <a href="contact.html?pakket=essential" class="btn btn-primary plan-cta">Plan een gesprek</a>
+      <a href="contact.html?pakket=essential" class="btn btn-primary">Plan een gesprek</a>
       <button class="nav-toggle" data-nav-toggle aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>

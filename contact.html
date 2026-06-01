@@ -21,6 +21,7 @@
         <div class="nav-dropdown-menu">
           <a href="essential.html" class="nav-dropdown-item">Voice Essential</a>
           <a href="pro.html" class="nav-dropdown-item">Voice Pro</a>
+          <a href="premium.html" class="nav-dropdown-item">Voice Premium</a>
         </div>
       </div>
       <div class="nav-dropdown">
@@ -109,24 +110,10 @@
           <select id="pakket" name="pakket">
             <option value="">Kies een pakket</option>
             <option value="essential">Opsio Voice Essential — €399/maand</option>
-            <option value="pro">Opsio Voice Pro — €549/maand</option>
+            <option value="pro">Opsio Voice Pro — €599/maand</option>
             <option value="premium">Opsio Voice Premium — Vanaf €999/maand</option>
             <option value="weet_niet">Nog niet zeker</option>
           </select>
-        </div>
-
-        <div class="field">
-          <label>Add-ons (optioneel)</label>
-          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px;">
-            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 400; color: var(--opsio-ink);">
-              <input type="checkbox" name="addon_agenda" value="agenda" style="margin-top: 2px; accent-color: var(--opsio-action-blue); width: 16px; height: 16px; flex-shrink: 0;" />
-              <span><strong>Agenda-boeking</strong> — €75/mnd + €150 eenmalige setup<br><span style="color: var(--opsio-slate); font-size: 13px;">Afspraken direct in uw agenda via Google Calendar of Cal.com</span></span>
-            </label>
-            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 400; color: var(--opsio-ink);">
-              <input type="checkbox" name="addon_sms" value="sms" style="margin-top: 2px; accent-color: var(--opsio-action-blue); width: 16px; height: 16px; flex-shrink: 0;" />
-              <span><strong>SMS herinnering</strong> — €25/mnd + €50 eenmalige setup<br><span style="color: var(--opsio-slate); font-size: 13px;">Automatische sms 24 uur voor een afspraak</span></span>
-            </label>
-          </div>
         </div>
 
         <div id="price-summary" style="display:none; background: var(--opsio-stone); border-radius: 12px; padding: 18px 20px; border: 1px solid var(--opsio-hairline);">
@@ -267,42 +254,27 @@
   }
 
   const prijzen = {
-    pakket: {
-      essential: { monthly: 399, setup: 450 },
-      pro:       { monthly: 549, setup: 650 },
-      premium:   { monthly: 999, setup: 1499 },
-      weet_niet: { monthly: 0,   setup: 0   }
-    },
-    addons: {
-      agenda: { monthly: 75, setup: 150 },
-      sms:    { monthly: 25, setup: 50  }
-    }
+    essential: { monthly: 399, setup: 449 },
+    pro:       { monthly: 599, setup: 799 },
+    premium:   { monthly: 999, setup: 1499 },
+    weet_niet: { monthly: 0,   setup: 0   }
   };
 
   function updatePrice() {
     const pakketVal = document.getElementById('pakket').value;
-    const pakketPrijs = prijzen.pakket[pakketVal] || { monthly: 0, setup: 0 };
-
-    let monthly = pakketPrijs.monthly;
-    let setup = pakketPrijs.setup;
-
-    document.querySelectorAll('input[name="addon_agenda"]:checked, input[name="addon_sms"]:checked').forEach(cb => {
-      const addon = prijzen.addons[cb.value];
-      if (addon) { monthly += addon.monthly; setup += addon.setup; }
-    });
+    const prijs = prijzen[pakketVal] || { monthly: 0, setup: 0 };
 
     const summary = document.getElementById('price-summary');
     if (pakketVal && pakketVal !== 'weet_niet') {
       summary.style.display = 'block';
-      document.getElementById('price-monthly').textContent = '€' + monthly + '/mnd';
-      document.getElementById('price-setup').textContent = '€' + setup;
+      document.getElementById('price-monthly').textContent = '€' + prijs.monthly + '/mnd';
+      document.getElementById('price-setup').textContent = '€' + prijs.setup;
     } else {
       summary.style.display = 'none';
     }
   }
 
   document.getElementById('pakket').addEventListener('change', updatePrice);
-  document.querySelectorAll('input[name="addon_agenda"], input[name="addon_sms"]').forEach(cb => cb.addEventListener('change', updatePrice));
 
   if (pakket) updatePrice();
 </script>

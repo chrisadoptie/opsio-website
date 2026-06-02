@@ -386,7 +386,7 @@ a { color: inherit; }
 }
 
 .prefooter-cta {
-  background: #B8B4AC !important;
+  background: var(--opsio-canvas) !important;
   padding: 48px 0 32px;
   margin-top: 0;
   display: block;

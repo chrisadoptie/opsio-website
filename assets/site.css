@@ -386,13 +386,16 @@ a { color: inherit; }
 }
 
 .prefooter-cta {
-  background: var(--opsio-canvas) !important;
+  background: linear-gradient(180deg, #071829 0%, #1a3354 100%) !important;
   padding: 48px 0 32px;
   margin-top: 0;
   display: block;
 }
-.prefooter-cta .footer-eyebrow { color: var(--opsio-coral) !important; }
-.prefooter-cta .footer-headline { color: var(--opsio-near-black) !important; margin-bottom: 28px; }
+.prefooter-cta .footer-eyebrow { color: #ff7759 !important; }
+.prefooter-cta .footer-headline { color: #ffffff !important; margin-bottom: 28px; }
+.prefooter-cta .footer-cta .btn-primary { background: #fff; color: #071829; }
+.prefooter-cta .footer-cta .btn-ghost { color: rgba(255,255,255,0.8); }
+.prefooter-cta .footer-cta .btn-ghost:hover { color: #fff; }
 .footer {
   background: var(--opsio-near-black);
   color: #fff;

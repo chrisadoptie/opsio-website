@@ -393,6 +393,7 @@ a { color: inherit; }
 }
 .prefooter-cta .footer-eyebrow { color: #ff7759 !important; }
 .prefooter-cta .footer-headline { color: #ffffff !important; margin-bottom: 28px; }
+.prefooter-cta .footer-cta { margin-bottom: 32px; }
 .prefooter-cta .footer-cta .btn-primary { background: #fff; color: #071829; }
 .prefooter-cta .footer-cta .btn-ghost { color: rgba(255,255,255,0.8); }
 .prefooter-cta .footer-cta .btn-ghost:hover { color: #fff; }

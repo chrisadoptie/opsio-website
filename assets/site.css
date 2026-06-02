@@ -655,6 +655,7 @@ a { color: inherit; }
 .compare {
   margin-top: 64px;
   border: 1px solid var(--opsio-hairline);
+  border-bottom: 3px solid #071829;
   border-radius: 22px;
   overflow: hidden;
 }

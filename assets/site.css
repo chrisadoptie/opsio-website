@@ -599,6 +599,12 @@ a { color: inherit; }
 }
 
 /* ============================ FOOTER ============================ */
+.prefooter-cta {
+  background: #B8B4AC;
+  padding: 64px 0;
+}
+.prefooter-cta .footer-eyebrow { color: rgba(0,0,0,0.5); }
+.prefooter-cta .footer-headline { color: var(--opsio-near-black); }
 .footer {
   background: var(--opsio-near-black);
   color: #fff;

@@ -666,7 +666,8 @@ a { color: inherit; }
   border-bottom: 1px solid var(--opsio-hairline);
 }
 .compare th {
-  background: #F0F9FF;
+  background: #071829;
+  color: #fff;
   font-weight: 500;
   font-size: 13px;
   letter-spacing: -0.01em;

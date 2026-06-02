@@ -423,11 +423,11 @@
 
 <section class="hero-demo-section" aria-label="Digitale assistent demo">
   <div class="hero-demo-section-inner">
-    <button class="hero-demo-pill" onclick="window.open('https://agent.retellai.com/orb/agent_2fe15da7467f0b28b6d912d019?token=fb1fb3e809876e40d5ca1e749f4017cb', 'opsioDemo', 'width=420,height=640,menubar=no,toolbar=no,location=no,status=no')" aria-label="Start een gesprek">
+    <button class="hero-demo-pill" onclick="openDemo()" aria-label="Start een gesprek">
       <span class="hero-demo-dot"></span>
       Spreek direct met onze digitale assistent
     </button>
-    <button class="hero-demo-orb" onclick="window.open('https://agent.retellai.com/orb/agent_2fe15da7467f0b28b6d912d019?token=fb1fb3e809876e40d5ca1e749f4017cb', 'opsioDemo', 'width=420,height=640,menubar=no,toolbar=no,location=no,status=no')" aria-label="Start een gesprek">
+    <button class="hero-demo-orb" onclick="openDemo()" aria-label="Start een gesprek">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
       </svg>
@@ -896,6 +896,29 @@ if (row && msg) {
   }, 5000);
 }
 
+</script>
+
+<script>
+function openDemo() {
+  var key = 'opsio_demo_count';
+  var dateKey = 'opsio_demo_date';
+  var today = new Date().toDateString();
+  var lastDate = localStorage.getItem(dateKey);
+  var count = parseInt(localStorage.getItem(key)) || 0;
+
+  if (lastDate !== today) {
+    count = 0;
+    localStorage.setItem(dateKey, today);
+  }
+
+  if (count >= 3) {
+    alert('U heeft de demo vandaag al 3 keer gestart. Probeer het morgen opnieuw of plan een gesprek via het contactformulier.');
+    return;
+  }
+
+  localStorage.setItem(key, count + 1);
+  window.open('https://agent.retellai.com/orb/agent_2fe15da7467f0b28b6d912d019?token=fb1fb3e809876e40d5ca1e749f4017cb', 'opsioDemo', 'width=420,height=640,menubar=no,toolbar=no,location=no,status=no');
+}
 </script>
 
 

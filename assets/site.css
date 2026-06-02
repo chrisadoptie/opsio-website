@@ -147,7 +147,7 @@ a { color: inherit; }
   background:
     radial-gradient(120% 80% at 50% 20%, #1a3a5c 0%, #0d2540 35%, #0a1e33 70%, #071829 100%);
   overflow: hidden;
-  padding: 80px 32px 56px;
+  padding: 120px 32px 88px;
   text-align: center;
   isolation: isolate;
 }

@@ -600,17 +600,19 @@ a { color: inherit; }
 
 /* ============================ FOOTER ============================ */
 .prefooter-cta {
-  background: #B8B4AC;
+  background: #B8B4AC !important;
   padding: 48px 0 40px;
   margin-top: 0;
+  display: block;
 }
-.prefooter-cta .footer-eyebrow { color: rgba(0,0,0,0.5); }
-.prefooter-cta .footer-headline { color: var(--opsio-near-black); }
+.prefooter-cta .footer-eyebrow { color: rgba(0,0,0,0.5) !important; }
+.prefooter-cta .footer-headline { color: var(--opsio-near-black) !important; margin-bottom: 28px; }
 .footer {
   background: var(--opsio-near-black);
   color: #fff;
   padding: 48px 0 40px;
   margin-top: 0;
+  display: block;
 }
 .footer-eyebrow {
   font-family: var(--font-mono);

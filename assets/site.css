@@ -653,7 +653,7 @@ a { color: inherit; }
 .price-card.featured .btn-primary:hover { background: #eee; }
 
 .compare {
-  margin-top: 64px;
+  margin-top: 24px;
   border: 1px solid var(--opsio-hairline);
   border-bottom: 3px solid #071829;
   border-radius: 22px;

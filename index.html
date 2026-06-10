@@ -479,10 +479,7 @@
   .hero-demo-bar-badge { display: none; }
 }
 
-elevenlabs-convai::part(branding),
-elevenlabs-convai p.whitespace-nowrap {
-    display: none !important;
-}
+
 </style>
 
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
@@ -1449,6 +1446,27 @@ function openDemo() {
 </script>
 
 <elevenlabs-convai agent-id="agent_4601ktd70wraethsc23tay99w8k3"></elevenlabs-convai>
+
+<script>
+(function() {
+  function hideBranding() {
+    var widget = document.querySelector('elevenlabs-convai');
+    if (!widget || !widget.shadowRoot) return;
+    var style = document.createElement('style');
+    style.textContent = 'p.whitespace-nowrap { display: none !important; } a[href*="elevenlabs"] { display: none !important; }';
+    widget.shadowRoot.appendChild(style);
+  }
+
+  var observer = new MutationObserver(function() {
+    hideBranding();
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  setTimeout(hideBranding, 1000);
+  setTimeout(hideBranding, 3000);
+})();
+</script>
 
 </body>
 </html>

@@ -1095,10 +1095,24 @@ function openDemo() {
   }
 
   var blobs = [
-    { x: 0.3, y: 0.4, vx: 0.7, vy: 0.5, r: 0.55, c: 'rgba(2,132,199,' },
-    { x: 0.7, y: 0.5, vx: 0.6, vy: 0.8, r: 0.50, c: 'rgba(4,82,127,' },
-    { x: 0.5, y: 0.3, vx: 0.9, vy: 0.4, r: 0.45, c: 'rgba(14,165,233,' }
+    { vx: 0.7, vy: 0.5, r: 0.65, c: [2, 132, 199] },
+    { vx: 0.5, vy: 0.8, r: 0.55, c: [4, 82, 127] },
+    { vx: 0.9, vy: 0.4, r: 0.50, c: [14, 165, 233] }
   ];
+
+  var particles = [];
+  function initParticles(w, h) {
+    particles = [];
+    for (var i = 0; i < 55; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: 0.8 + Math.random() * 1.2
+      });
+    }
+  }
 
   function draw(ts) {
     var t = ts / 1000;
@@ -1108,34 +1122,63 @@ function openDemo() {
     ctx.clearRect(0, 0, w, h);
 
     blobs.forEach(function(b) {
-      var gx = (0.5 + Math.sin(t * b.vx) * 0.22) * w;
-      var gy = (0.5 + Math.cos(t * b.vy) * 0.20) * h;
+      var gx = (0.5 + Math.sin(t * b.vx) * 0.28) * w;
+      var gy = (0.5 + Math.cos(t * b.vy) * 0.24) * h;
       var gr = b.r * Math.max(w, h);
       var g = ctx.createRadialGradient(gx, gy, 0, gx, gy, gr);
-      g.addColorStop(0, b.c + '0.55)');
-      g.addColorStop(1, b.c + '0)');
+      g.addColorStop(0, 'rgba(' + b.c.join(',') + ',0.28)');
+      g.addColorStop(0.5, 'rgba(' + b.c.join(',') + ',0.10)');
+      g.addColorStop(1, 'rgba(' + b.c.join(',') + ',0)');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
     });
 
-    var gridAlpha = 0.10;
-    ctx.strokeStyle = 'rgba(2,132,199,' + gridAlpha + ')';
-    ctx.lineWidth = 0.5;
-    for (var x = 0; x < w; x += 40) {
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+    var maxDist = 100;
+    particles.forEach(function(p) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+    });
+
+    for (var i = 0; i < particles.length; i++) {
+      for (var j = i + 1; j < particles.length; j++) {
+        var dx = particles[i].x - particles[j].x;
+        var dy = particles[i].y - particles[j].y;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < maxDist) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(2,132,199,' + (1 - dist/maxDist) * 0.18 + ')';
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
     }
-    for (var y = 0; y < h; y += 40) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-    }
+
+    particles.forEach(function(p) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(2,132,199,0.35)';
+      ctx.fill();
+    });
 
     requestAnimationFrame(draw);
   }
 
   window.addEventListener('load', function() {
     resize();
+    var w = canvas.width / window.devicePixelRatio;
+    var h = canvas.height / window.devicePixelRatio;
+    initParticles(w, h);
     requestAnimationFrame(draw);
   });
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', function() {
+    resize();
+    var w = canvas.width / window.devicePixelRatio;
+    var h = canvas.height / window.devicePixelRatio;
+    initParticles(w, h);
+  });
 })();
 </script>
 

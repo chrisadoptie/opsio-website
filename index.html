@@ -207,20 +207,23 @@
 .moving-band-track {
   display: inline-flex;
   align-items: center;
-  gap: 42px;
-  animation: opsioMarquee 42s linear infinite;
-  color: rgba(12, 18, 35, 0.48);
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  gap: 48px;
+  animation: opsioMarquee 36s linear infinite;
   will-change: transform;
+  padding: 0 24px;
 }
 
-.moving-band-track span::after {
-  content: "•";
-  margin-left: 42px;
-  color: rgba(2, 132, 199, 0.42);
+.moving-band-track img {
+  height: 24px;
+  width: auto;
+  display: block;
+  filter: grayscale(1) brightness(0) opacity(0.45);
+  transition: filter 200ms;
+  flex-shrink: 0;
+}
+
+.moving-band-track img:hover {
+  filter: grayscale(1) brightness(0) opacity(0.85);
 }
 
 @keyframes opsioMarquee {
@@ -446,22 +449,9 @@
 </section>
 
 
-<section class="moving-band-wrap" aria-label="Opsio mogelijkheden">
+<section class="moving-band-wrap" aria-label="Integraties">
   <div class="moving-band">
-    <div class="moving-band-track">
-      <span>Slimme digitale assistent</span>
-      <span>24/7 bereikbaar</span>
-      <span>Nederlands & Engels</span>
-      <span>Afspraken verwerken</span>
-      <span>Minder telefoonstress</span>
-      <span>Digitale assistent via Opsio</span>
-      <span>Slimme digitale assistent</span>
-      <span>24/7 bereikbaar</span>
-      <span>Nederlands & Engels</span>
-      <span>Afspraken verwerken</span>
-      <span>Minder telefoonstress</span>
-      <span>Digitale assistent via Opsio</span>
-    </div>
+    <div class="moving-band-track" id="logo-track"></div>
   </div>
 </section>
 
@@ -1178,6 +1168,34 @@ function openDemo() {
     var w = canvas.width / window.devicePixelRatio;
     var h = canvas.height / window.devicePixelRatio;
     initParticles(w, h);
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var logos = [
+    { name: 'Google Calendar', slug: 'googlecalendar' },
+    { name: 'Outlook', slug: 'microsoftoutlook' },
+    { name: 'WhatsApp', slug: 'whatsapp' },
+    { name: 'Gmail', slug: 'gmail' },
+    { name: 'Mollie', slug: 'mollie' },
+    { name: 'Calendly', slug: 'calendly' },
+    { name: 'Cal.com', slug: 'caldotcom' },
+    { name: 'Google Business', slug: 'googlemybusiness' }
+  ];
+
+  var track = document.getElementById('logo-track');
+  if (!track) return;
+
+  var doubled = logos.concat(logos);
+  doubled.forEach(function(logo) {
+    var img = document.createElement('img');
+    img.src = 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/' + logo.slug + '.svg';
+    img.alt = logo.name;
+    img.title = logo.name;
+    img.height = 24;
+    track.appendChild(img);
   });
 })();
 </script>

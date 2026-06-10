@@ -241,6 +241,23 @@
   .phone-icon { display: none; }
 }
 
+@media (min-width: 769px) {
+  .moving-band-track {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    justify-content: space-evenly;
+    gap: clamp(24px, 4vw, 72px);
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .moving-band-track .integration-logo-duplicate {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   html,
   body {

@@ -325,7 +325,7 @@ a { color: inherit; }
   z-index: -1;
 }
 .industry.restaurant::before { background: linear-gradient(180deg, #0284C7 0%, #0369A1 100%); }
-.industry.salon::before { background: linear-gradient(180deg, #0369a1 0%, #024f7a 100%); }
+.industry.salon::before { background: linear-gradient(180deg, #04527f 0%, #023d5e 100%); }
 .industry.garage::before { background: linear-gradient(180deg, #071829 0%, #1a3354 100%); }
 .industry-tag {
   font-family: var(--font-mono);

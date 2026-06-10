@@ -1107,3 +1107,9 @@ a { color: inherit; }
     color: var(--opsio-action-blue);
   }
 }
+
+/* Hide Iubenda's floating privacy controls without disabling consent services. */
+.iubenda-tp-btn,
+.iubenda-cs-preferences-link {
+  display: none !important;
+}

@@ -946,20 +946,19 @@ function openDemo() {
   var ctx = canvas.getContext('2d');
 
   var waves = [
-    { color: 'rgba(255,255,255,0.06)', amp: 44, freq: 0.0024, period: 18, yBase: 0.62 },
-    { color: 'rgba(2,132,199,0.08)',   amp: 58, freq: 0.0019, period: 24, yBase: 0.70 },
-    { color: 'rgba(255,255,255,0.04)', amp: 32, freq: 0.0031, period: 30, yBase: 0.54 }
+    { color: 'rgba(255,255,255,0.3)', amp: 60, freq: 0.0024, period: 18, yBase: 0.62 },
+    { color: 'rgba(2,132,199,0.4)',   amp: 75, freq: 0.0019, period: 24, yBase: 0.70 },
+    { color: 'rgba(255,255,255,0.2)', amp: 45, freq: 0.0031, period: 30, yBase: 0.54 }
   ];
 
   function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    if (canvas.width === 0) canvas.width = canvas.parentElement.offsetWidth;
-    if (canvas.height === 0) canvas.height = canvas.parentElement.offsetHeight;
+    var rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width || window.innerWidth;
+    canvas.height = rect.height || 600;
   }
 
   function draw(ts) {
-    var t = ts / 1000;
+    var t = (ts || 0) / 1000;
     var w = canvas.width;
     var h = canvas.height;
     ctx.clearRect(0, 0, w, h);

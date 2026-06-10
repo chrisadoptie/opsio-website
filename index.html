@@ -755,6 +755,13 @@
 </section>
 
 <style>
+.roi-section {
+  background: #F0EDE8;
+  border-radius: 0;
+  padding: 48px 0 32px;
+  margin-top: 0;
+  display: block;
+}
 .roi-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -769,16 +776,7 @@
   overflow: hidden;
   transform: scale(1.06);
   transform-origin: center;
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.25),
-    0 0 40px rgba(35, 160, 255, 0.15);
-}
-.roi-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(60% 50% at 80% 20%, rgba(2,132,199,0.15), transparent 70%);
-  pointer-events: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 .roi-card > * { position: relative; z-index: 1; }
 .roi-slider-row {
@@ -862,7 +860,7 @@
   }
 }
 </style>
-<section class="section" style="background: #fff;">
+<section class="section roi-section">
   <div class="container">
     <div class="roi-grid">
       <div>

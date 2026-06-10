@@ -745,6 +745,11 @@
   padding: 40px 36px;
   position: relative;
   overflow: hidden;
+  transform: scale(1.06);
+  transform-origin: center;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    0 0 40px rgba(35, 160, 255, 0.15);
 }
 .roi-card::before {
   content: '';
@@ -813,12 +818,26 @@
 .roi-out-row:first-child { padding-top: 0; }
 .roi-out-lbl { font-size: 13px; color: rgba(255,255,255,0.55); }
 .roi-out-val { font-size: 15px; font-weight: 600; color: #fff; font-family: var(--font-display); }
+.roi-out-row.roi-big { gap: 16px; }
 .roi-out-row.roi-big .roi-out-lbl { color: rgba(255,255,255,0.75); }
-.roi-out-row.roi-big .roi-out-val { font-size: 24px; letter-spacing: -0.02em; }
+.roi-out-row.roi-big .roi-out-val {
+  color: var(--opsio-action-blue);
+  font-size: 32.4px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
 .roi-out-row.roi-accent .roi-out-val { color: #0284C7; }
 .roi-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.5; }
 @media (max-width: 960px) {
   .roi-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (min-width: 700px) and (max-width: 768px) {
+  .roi-card {
+    width: calc(100% - 4px);
+    justify-self: center;
+  }
 }
 </style>
 <section class="section" style="background: #fff;">
@@ -851,7 +870,7 @@
             <span class="roi-out-val" id="roi-month">€17.200</span>
           </div>
           <div class="roi-out-row roi-big">
-            <span class="roi-out-lbl">Misgelopen per jaar</span>
+            <span class="roi-out-lbl">Potentiële omzet die verloren gaat</span>
             <span class="roi-out-val" id="roi-year">€206.400</span>
           </div>
           <div class="roi-out-row roi-accent">

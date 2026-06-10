@@ -768,6 +768,23 @@
   gap: 80px;
   align-items: center;
 }
+.roi-calculator-column {
+  min-width: 0;
+}
+.roi-interactive-intro {
+  width: 106%;
+  margin-left: -3%;
+  margin-bottom: 20px;
+}
+.roi-interactive-intro .section-eyebrow {
+  margin-bottom: 8px;
+}
+.roi-interactive-copy {
+  margin: 0;
+  color: var(--opsio-slate);
+  font-size: 16px;
+  line-height: 1.5;
+}
 .roi-card {
   background: #071829;
   border-radius: 24px;
@@ -854,6 +871,10 @@
   .roi-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 @media (min-width: 700px) and (max-width: 768px) {
+  .roi-interactive-intro {
+    width: calc(106% - 4px);
+    margin-left: calc(-3% + 2px);
+  }
   .roi-card {
     width: calc(100% - 4px);
     justify-self: center;
@@ -869,36 +890,42 @@
         <p class="section-lead">Vul het aantal gemiste oproepen per week in en de gemiddelde waarde van een opdracht. U ziet direct wat het u kost — en hoe snel Opsio zichzelf terugverdient.</p>
         <a href="contact.html" class="btn btn-primary btn-lg" style="margin-top: 8px;">Plan een vrijblijvend gesprek →</a>
       </div>
-      <div class="roi-card">
-        <div class="roi-slider-row">
-          <span class="roi-slider-lbl">Gemiste oproepen per week</span>
-          <span class="roi-slider-val" id="roi-calls-val">5</span>
+      <div class="roi-calculator-column">
+        <div class="roi-interactive-intro">
+          <div class="section-eyebrow">Interactieve calculator</div>
+          <p class="roi-interactive-copy">Bereken uw potentiële omzetverlies in 10 seconden.</p>
         </div>
-        <input type="range" class="roi-range" id="roi-calls" min="1" max="20" value="5" />
-        <div class="roi-slider-row">
-          <span class="roi-slider-lbl">Gemiddelde orderwaarde</span>
-          <span class="roi-slider-val" id="roi-order-val">€500</span>
+        <div class="roi-card">
+          <div class="roi-slider-row">
+            <span class="roi-slider-lbl">Gemiste oproepen per week</span>
+            <span class="roi-slider-val" id="roi-calls-val">5</span>
+          </div>
+          <input type="range" class="roi-range" id="roi-calls" min="1" max="20" value="5" />
+          <div class="roi-slider-row">
+            <span class="roi-slider-lbl">Gemiddelde orderwaarde</span>
+            <span class="roi-slider-val" id="roi-order-val">€500</span>
+          </div>
+          <input type="range" class="roi-range" id="roi-order" min="100" max="5000" step="50" value="500" />
+          <div class="roi-output">
+            <div class="roi-out-row">
+              <span class="roi-out-lbl">Misgelopen per week</span>
+              <span class="roi-out-val" id="roi-week">€4.000</span>
+            </div>
+            <div class="roi-out-row">
+              <span class="roi-out-lbl">Misgelopen per maand</span>
+              <span class="roi-out-val" id="roi-month">€17.200</span>
+            </div>
+            <div class="roi-out-row roi-big">
+              <span class="roi-out-lbl">Potentiële omzet die verloren gaat</span>
+              <span class="roi-out-val" id="roi-year">€206.400</span>
+            </div>
+            <div class="roi-out-row roi-accent">
+              <span class="roi-out-lbl">Opsio terugverdiend in</span>
+              <span class="roi-out-val" id="roi-payback">&lt; 1 maand</span>
+            </div>
+          </div>
+          <p class="roi-note">Op basis van conservatieve schatting. Personeelskosten, stress en reputatieschade niet meegerekend.</p>
         </div>
-        <input type="range" class="roi-range" id="roi-order" min="100" max="5000" step="50" value="500" />
-        <div class="roi-output">
-          <div class="roi-out-row">
-            <span class="roi-out-lbl">Misgelopen per week</span>
-            <span class="roi-out-val" id="roi-week">€4.000</span>
-          </div>
-          <div class="roi-out-row">
-            <span class="roi-out-lbl">Misgelopen per maand</span>
-            <span class="roi-out-val" id="roi-month">€17.200</span>
-          </div>
-          <div class="roi-out-row roi-big">
-            <span class="roi-out-lbl">Potentiële omzet die verloren gaat</span>
-            <span class="roi-out-val" id="roi-year">€206.400</span>
-          </div>
-          <div class="roi-out-row roi-accent">
-            <span class="roi-out-lbl">Opsio terugverdiend in</span>
-            <span class="roi-out-val" id="roi-payback">&lt; 1 maand</span>
-          </div>
-        </div>
-        <p class="roi-note">Op basis van conservatieve schatting. Personeelskosten, stress en reputatieschade niet meegerekend.</p>
       </div>
     </div>
   </div>
@@ -950,6 +977,81 @@
   callsInput.addEventListener('input', calc);
   orderInput.addEventListener('input', calc);
   calc();
+
+  var section = callsInput.closest('.roi-section');
+  var onboardingStarted = false;
+  var onboardingCancelled = false;
+  var onboardingFrame = 0;
+  var originalValue = +callsInput.value;
+
+  function cancelOnboarding(event) {
+    onboardingCancelled = true;
+    if (onboardingFrame) {
+      cancelAnimationFrame(onboardingFrame);
+      onboardingFrame = 0;
+    }
+
+    if (event.target !== callsInput || event.type !== 'input') {
+      callsInput.value = originalValue;
+      trackFill(callsInput);
+    }
+  }
+
+  [callsInput, orderInput].forEach(function (input) {
+    ['pointerdown', 'touchstart', 'keydown', 'input'].forEach(function (eventName) {
+      input.addEventListener(eventName, cancelOnboarding, { passive: eventName !== 'keydown' });
+    });
+  });
+
+  function runOnboarding() {
+    if (onboardingStarted || onboardingCancelled) return;
+    onboardingStarted = true;
+
+    var startValue = +callsInput.value;
+    var maxValue = +callsInput.max;
+    var hintDistance = Math.min(3, maxValue - startValue);
+    var startTime = 0;
+    var duration = 1200;
+
+    function animate(now) {
+      if (onboardingCancelled) return;
+      if (!startTime) startTime = now;
+
+      var progress = Math.min((now - startTime) / duration, 1);
+      var halfProgress = progress < 0.5 ? progress * 2 : (1 - progress) * 2;
+      var eased = halfProgress * halfProgress * (3 - 2 * halfProgress);
+
+      callsInput.value = startValue + (hintDistance * eased);
+      trackFill(callsInput);
+
+      if (progress < 1) {
+        onboardingFrame = requestAnimationFrame(animate);
+        return;
+      }
+
+      callsInput.value = originalValue;
+      trackFill(callsInput);
+      onboardingFrame = 0;
+    }
+
+    onboardingFrame = requestAnimationFrame(animate);
+  }
+
+  if (
+    section &&
+    'IntersectionObserver' in window &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    var onboardingObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        onboardingObserver.disconnect();
+        runOnboarding();
+      });
+    }, { threshold: 0.35 });
+
+    onboardingObserver.observe(section);
+  }
 }());
 </script>
 

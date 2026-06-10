@@ -28,6 +28,14 @@
   position: relative;
   z-index: 2;
 }
+#hero-wave-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
 .hero-h1 span { color: #6fa8f5; }
 
 /* Tekst aanpassen voor donkere achtergrond */
@@ -399,6 +407,7 @@
 <section class="hero">
   <div class="container">
     <div class="hero-card">
+      <canvas id="hero-wave-canvas"></canvas>
 
       <a href="#waarom" class="hero-pill">
         <span class="dot"></span>
@@ -919,7 +928,48 @@ function openDemo() {
 }
 </script>
 
+<script>
+(function() {
+  var canvas = document.getElementById('hero-wave-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
 
+  var waves = [
+    { color: 'rgba(255,255,255,0.06)', amp: 44, freq: 0.0024, period: 18, yBase: 0.62 },
+    { color: 'rgba(2,132,199,0.08)',   amp: 58, freq: 0.0019, period: 24, yBase: 0.70 },
+    { color: 'rgba(255,255,255,0.04)', amp: 32, freq: 0.0031, period: 30, yBase: 0.54 }
+  ];
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function draw(ts) {
+    var t = ts / 1000;
+    var w = canvas.width;
+    var h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    waves.forEach(function(wave) {
+      var phase = (t / wave.period) * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(0, h);
+      for (var x = 0; x <= w; x += 3) {
+        ctx.lineTo(x, h * wave.yBase + Math.sin(x * wave.freq + phase) * wave.amp);
+      }
+      ctx.lineTo(w, h);
+      ctx.closePath();
+      ctx.fillStyle = wave.color;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(draw);
+})();
+</script>
 
 </body>
 </html>

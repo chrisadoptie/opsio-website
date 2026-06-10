@@ -962,13 +962,13 @@ function openDemo() {
       var gy = (0.5 + Math.cos(t * b.vy) * 0.20) * h;
       var gr = b.r * Math.max(w, h);
       var g = ctx.createRadialGradient(gx, gy, 0, gx, gy, gr);
-      g.addColorStop(0, b.c + '0.35)');
+      g.addColorStop(0, b.c + '0.55)');
       g.addColorStop(1, b.c + '0)');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
     });
 
-    var gridAlpha = 0.05;
+    var gridAlpha = 0.10;
     ctx.strokeStyle = 'rgba(2,132,199,' + gridAlpha + ')';
     ctx.lineWidth = 0.5;
     for (var x = 0; x < w; x += 40) {

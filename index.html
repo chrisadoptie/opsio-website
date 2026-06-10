@@ -194,14 +194,16 @@
 .moving-band-wrap {
   padding: 16px 0 0;
   overflow: hidden;
+  background: #ffffff;
 }
 
 .moving-band {
   border-top: 1px solid var(--opsio-hairline);
   border-bottom: 1px solid var(--opsio-hairline);
-  padding: 20px 0;
+  padding: 16.40625px 0;
   overflow: hidden;
   white-space: nowrap;
+  background: #ffffff;
 }
 
 .moving-band-track {
@@ -214,16 +216,16 @@
 }
 
 .moving-band-track img {
-  height: 36px;
+  height: 43.2px;
   width: auto;
   display: block;
-  filter: grayscale(1) brightness(0) opacity(0.45);
+  filter: brightness(0) invert(50%);
   transition: filter 200ms;
   flex-shrink: 0;
 }
 
 .moving-band-track img:hover {
-  filter: grayscale(1) brightness(0) opacity(0.85);
+  filter: brightness(0) invert(50%);
 }
 
 @keyframes opsioMarquee {
@@ -237,6 +239,79 @@
 
 @media (max-width: 960px) {
   .phone-icon { display: none; }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  .moving-band-wrap {
+    --integration-fade-width: 32px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .moving-band-wrap::before,
+  .moving-band-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: var(--integration-fade-width);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .moving-band-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, rgba(255,255,255,0));
+  }
+
+  .moving-band-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, rgba(255,255,255,0));
+  }
+
+  .moving-band {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-inline: contain;
+    touch-action: pan-x;
+  }
+
+  .moving-band::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .moving-band-track {
+    display: flex;
+    width: max-content;
+    min-width: max-content;
+    animation: none;
+    transform: none;
+  }
+
+  .moving-band-track .integration-logo-duplicate {
+    display: none;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .moving-band-wrap {
+    --integration-fade-width: 24px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1177,24 +1252,27 @@ function openDemo() {
   var logos = [
     { name: 'Google Calendar', slug: 'googlecalendar' },
     { name: 'Outlook', slug: 'microsoftoutlook' },
-    { name: 'WhatsApp', slug: 'whatsapp' },
+    { name: 'WhatsApp Business', slug: 'whatsapp' },
     { name: 'Gmail', slug: 'gmail' },
     { name: 'Mollie', slug: 'mollie' },
     { name: 'Calendly', slug: 'calendly' },
-    { name: 'Cal.com', slug: 'caldotcom' },
-    { name: 'Google Business', slug: 'googlemybusiness' }
+    { name: 'Google Business Profile', slug: 'googlemybusiness' }
   ];
 
   var track = document.getElementById('logo-track');
   if (!track) return;
 
   var doubled = logos.concat(logos);
-  doubled.forEach(function(logo) {
+  doubled.forEach(function(logo, index) {
     var img = document.createElement('img');
     img.src = 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/' + logo.slug + '.svg';
     img.alt = logo.name;
     img.title = logo.name;
-    img.height = 24;
+    if (index >= logos.length) {
+      img.className = 'integration-logo-duplicate';
+      img.alt = '';
+      img.setAttribute('aria-hidden', 'true');
+    }
     track.appendChild(img);
   });
 })();

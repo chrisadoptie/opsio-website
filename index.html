@@ -10,11 +10,21 @@
 <link rel="icon" href="assets/opsio_mark.svg" />
 
 <style id="opsio-hero-band-fix">
+.hero {
+  padding: 0;
+}
+
+.hero .container {
+  max-width: 100%;
+  padding: 0;
+}
+
 .hero-card {
   position: relative;
   background-image: url('pexels-artyusufpatel-9330906.jpg');
   background-size: cover;
   background-position: center;
+  border-radius: 0;
 }
 .hero-card::before {
   content: '';
@@ -944,6 +954,8 @@ function openDemo() {
   function resize() {
     canvas.width  = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
+    if (canvas.width === 0) canvas.width = canvas.parentElement.offsetWidth;
+    if (canvas.height === 0) canvas.height = canvas.parentElement.offsetHeight;
   }
 
   function draw(ts) {
@@ -966,9 +978,11 @@ function openDemo() {
     requestAnimationFrame(draw);
   }
 
-  resize();
+  window.addEventListener('load', function() {
+    resize();
+    requestAnimationFrame(draw);
+  });
   window.addEventListener('resize', resize);
-  requestAnimationFrame(draw);
 })();
 </script>
 

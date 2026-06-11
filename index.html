@@ -227,11 +227,6 @@
   filter: brightness(0) invert(50%);
 }
 
-@keyframes opsioMarquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333333%); }
-}
-
 @media (max-width: 1200px) {
   .floating-appointment { display: none; }
 }
@@ -242,16 +237,21 @@
 
 @media (min-width: 769px) {
   .moving-band-viewport {
-    --integration-logo-gap: clamp(24px, 4vw, 72px);
     position: relative;
     width: calc(100% - 64px);
     max-width: 1176px;
     margin: 0 auto;
+  }
+
+  .moving-band-carousel {
+    position: relative;
+    width: min(100%, 808px);
+    margin: 0 auto;
     overflow: hidden;
   }
 
-  .moving-band-viewport::before,
-  .moving-band-viewport::after {
+  .moving-band-carousel::before,
+  .moving-band-carousel::after {
     content: '';
     position: absolute;
     top: 0;
@@ -261,12 +261,12 @@
     pointer-events: none;
   }
 
-  .moving-band-viewport::before {
+  .moving-band-carousel::before {
     left: 0;
     background: linear-gradient(to right, #ffffff, rgba(255,255,255,0));
   }
 
-  .moving-band-viewport::after {
+  .moving-band-carousel::after {
     right: 0;
     background: linear-gradient(to left, #ffffff, rgba(255,255,255,0));
   }
@@ -275,17 +275,9 @@
     display: inline-flex;
     width: max-content;
     min-width: max-content;
-    gap: 0;
+    gap: 96px;
     padding: 0;
-    animation: opsioMarquee 32s linear infinite;
     will-change: transform;
-  }
-
-  .integration-logo-set {
-    display: flex;
-    align-items: center;
-    gap: var(--integration-logo-gap);
-    padding-right: var(--integration-logo-gap);
   }
 
   .moving-band-track img {
@@ -346,6 +338,10 @@
     display: contents;
   }
 
+  .moving-band-carousel {
+    display: contents;
+  }
+
   .moving-band::-webkit-scrollbar {
     display: none;
     width: 0;
@@ -359,14 +355,6 @@
     animation: none;
     transform: none;
   }
-
-  .integration-logo-set {
-    display: contents;
-  }
-
-  .integration-logo-set-duplicate {
-    display: none;
-  }
 }
 
 @media (max-width: 479.98px) {
@@ -376,25 +364,22 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .moving-band-track { animation: none; }
+  .moving-band-track {
+    transition: none !important;
+    transform: none !important;
+  }
 }
 
 @media (min-width: 769px) and (prefers-reduced-motion: reduce) {
+  .moving-band-carousel {
+    text-align: center;
+  }
+
   .moving-band-track {
-    width: 100%;
-    min-width: 0;
-    transform: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) !important;
     will-change: auto;
-  }
-
-  .integration-logo-set {
-    width: 100%;
-    padding-right: 0;
-    justify-content: space-evenly;
-  }
-
-  .integration-logo-set-duplicate {
-    display: none;
   }
 }
 
@@ -611,7 +596,9 @@
 <section class="moving-band-wrap" aria-label="Integraties">
   <div class="moving-band">
     <div class="moving-band-viewport">
-      <div class="moving-band-track" id="logo-track"></div>
+      <div class="moving-band-carousel">
+        <div class="moving-band-track" id="logo-track"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1589,25 +1576,87 @@ function openDemo() {
   var track = document.getElementById('logo-track');
   if (!track) return;
 
-  [false, true, true].forEach(function(isDuplicate) {
-    var set = document.createElement('div');
-    set.className = 'integration-logo-set' + (isDuplicate ? ' integration-logo-set-duplicate' : '');
-    if (isDuplicate) {
-      set.setAttribute('aria-hidden', 'true');
+  logos.forEach(function(logo, index) {
+    var img = document.createElement('img');
+    img.src = logo.src || 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/' + logo.slug + '.svg';
+    img.alt = logo.name;
+    img.title = logo.name;
+    img.dataset.integrationIndex = index;
+    track.appendChild(img);
+  });
+
+  var desktopQuery = window.matchMedia('(min-width: 769px)');
+  var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var stepTimer = null;
+  var resizeTimer = null;
+  var stepDuration = 32000 / logos.length;
+
+  function restoreLogoOrder() {
+    Array.from(track.children)
+      .sort(function(a, b) {
+        return Number(a.dataset.integrationIndex) - Number(b.dataset.integrationIndex);
+      })
+      .forEach(function(logo) {
+        track.appendChild(logo);
+      });
+  }
+
+  function stopCarousel(restoreOrder) {
+    window.clearTimeout(stepTimer);
+    stepTimer = null;
+    track.style.transition = 'none';
+    track.style.transform = 'translateX(0)';
+    if (restoreOrder) restoreLogoOrder();
+  }
+
+  function shouldAnimate() {
+    return desktopQuery.matches && !reducedMotionQuery.matches && !document.hidden;
+  }
+
+  function runCarouselStep() {
+    if (!shouldAnimate()) {
+      stopCarousel(true);
+      return;
     }
 
-    logos.forEach(function(logo) {
-      var img = document.createElement('img');
-      img.src = logo.src || 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/' + logo.slug + '.svg';
-      img.alt = isDuplicate ? '' : logo.name;
-      if (!isDuplicate) {
-        img.title = logo.name;
-      }
-      set.appendChild(img);
+    var firstLogo = track.firstElementChild;
+    if (!firstLogo) return;
+    var stepDistance = firstLogo.offsetWidth + 96;
+
+    track.style.transition = 'none';
+    track.style.transform = 'translateX(0)';
+    void track.offsetWidth;
+
+    window.requestAnimationFrame(function() {
+      window.requestAnimationFrame(function() {
+        track.style.transition = 'transform ' + stepDuration + 'ms linear';
+        track.style.transform = 'translateX(-' + stepDistance + 'px)';
+      });
     });
 
-    track.appendChild(set);
+    stepTimer = window.setTimeout(function() {
+      track.style.transition = 'none';
+      track.appendChild(firstLogo);
+      track.style.transform = 'translateX(0)';
+      void track.offsetWidth;
+      runCarouselStep();
+    }, stepDuration);
+  }
+
+  function restartCarousel() {
+    stopCarousel(true);
+    if (shouldAnimate()) runCarouselStep();
+  }
+
+  desktopQuery.addEventListener('change', restartCarousel);
+  reducedMotionQuery.addEventListener('change', restartCarousel);
+  document.addEventListener('visibilitychange', restartCarousel);
+  window.addEventListener('resize', function() {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(restartCarousel, 150);
   });
+
+  restartCarousel();
 })();
 </script>
 

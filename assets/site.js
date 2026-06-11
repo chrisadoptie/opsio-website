@@ -218,6 +218,41 @@ function bindContactForm() {
 }
 bindContactForm();
 
+// Iubenda cookie preferences
+(function () {
+  function openIubendaPreferences() {
+    const api = window._iub?.cs?.api;
+    if (typeof api?.openPreferences === 'function') {
+      api.openPreferences();
+      return true;
+    }
+
+    const fallback = document.querySelector('.iubenda-cs-preferences-link, .iubenda-tp-btn');
+    if (fallback) {
+      fallback.click();
+      return true;
+    }
+
+    return false;
+  }
+
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest('[data-iubenda-preferences]');
+    if (!trigger) return;
+
+    event.preventDefault();
+    if (openIubendaPreferences()) return;
+
+    let attempts = 0;
+    const waitForIubenda = window.setInterval(() => {
+      attempts += 1;
+      if (openIubendaPreferences() || attempts >= 20) {
+        window.clearInterval(waitForIubenda);
+      }
+    }, 250);
+  });
+})();
+
 // Mock-call audio players
 (function () {
   function initMockPlayers() {

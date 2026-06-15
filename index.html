@@ -737,6 +737,268 @@
 
 </style>
 
+<style id="opsio-mobile-opt">
+/* ============================================================
+   Mobile optimisations — index.html only
+   ============================================================ */
+
+/* === 1. Hero carousel: stable on mobile (hide nav, no auto-advance) === */
+@media (max-width: 768px) {
+  .hero-carousel-nav { display: none; }
+  .hero-slides {
+    height: auto;
+    min-height: calc(100svh - 64px);
+    min-height: calc(100vh - 64px);
+  }
+  .hero-slide .hero-card {
+    height: auto;
+    min-height: calc(100svh - 64px);
+    min-height: calc(100vh - 64px);
+  }
+}
+
+/* === 2. Social proof row (mobile-only) === */
+.hero-trust { display: none; }
+@media (max-width: 768px) {
+  .hero-trust {
+    display: block;
+    margin-top: 24px;
+    text-align: center;
+  }
+  .hero-trust-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin: 0 auto 10px;
+    line-height: 1.5;
+    max-width: 30ch;
+  }
+  .hero-trust-pts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px 14px;
+  }
+  .hero-trust-pt {
+    font-size: 11px;
+    color: rgba(255,255,255,0.72);
+    font-family: var(--font-mono);
+    letter-spacing: 0.3px;
+  }
+  .hero-trust-pt::before { content: '✓ '; color: #38BDF8; }
+}
+
+/* === 3. Hide canvas process section on mobile (horizontal scroll + heavy animation) === */
+@media (max-width: 768px) {
+  .process-section { display: none; }
+}
+
+/* === 4. Steps section: vertical timeline on mobile === */
+@media (max-width: 768px) {
+  .steps { gap: 0; margin-top: 36px !important; }
+  .step {
+    border-top: none;
+    padding: 0 0 28px 20px;
+    border-left: 2px solid #E2E8F0;
+    position: relative;
+    gap: 8px;
+  }
+  .step:last-child { padding-bottom: 0; border-left-color: transparent; }
+  .step::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0284C7;
+    box-shadow: 0 0 0 3px rgba(2,132,199,0.18);
+  }
+  .step-title { font-size: 20px; }
+  .step-body { font-size: 14px; }
+}
+
+/* === 5. ROI calculator: remove scale, fix overflow, larger touch targets === */
+@media (max-width: 768px) {
+  .roi-card {
+    transform: none !important;
+    width: 100% !important;
+    padding: 28px 20px !important;
+  }
+  .roi-out-row.roi-big .roi-out-val {
+    white-space: normal !important;
+    word-break: break-word;
+    font-size: clamp(20px, 6.5vw, 32px) !important;
+    line-height: 1.1;
+  }
+  .roi-out-lbl { font-size: 12px; }
+  /* 44px touch area on slider via padding */
+  .roi-range {
+    height: 6px;
+    padding: 19px 0;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    margin-bottom: 4px;
+    background-clip: content-box;
+    -webkit-background-clip: content-box;
+  }
+  .roi-range::-webkit-slider-thumb {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .roi-range::-moz-range-thumb {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .roi-interactive-intro { width: 100% !important; margin-left: 0 !important; }
+}
+
+/* === 6. Feature cards: collapse last 3 on mobile === */
+@media (max-width: 768px) {
+  .feature--extra { display: none; }
+  .feature--extra.visible { display: flex; }
+  .features-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    margin-top: 16px;
+    min-height: 48px;
+    padding: 14px 20px;
+    background: transparent;
+    border: 1px solid var(--opsio-hairline);
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--opsio-ink);
+    cursor: pointer;
+    transition: background 180ms, border-color 180ms, color 180ms;
+  }
+  .features-toggle-btn:hover { background: #F0F9FF; border-color: #0284C7; color: #0284C7; }
+  .features-toggle-icon { transition: transform 240ms; }
+  .features-toggle-btn.open .features-toggle-icon { transform: rotate(180deg); }
+}
+@media (min-width: 769px) {
+  .feature--extra { display: flex !important; }
+  .features-toggle-btn { display: none !important; }
+}
+
+/* === 7. Industry cards: compact on mobile === */
+@media (max-width: 768px) {
+  .industry { aspect-ratio: auto; min-height: 0; padding: 24px; }
+  .industry-h { font-size: 22px; margin-bottom: 6px; }
+  .industry-b { font-size: 14px; }
+}
+
+/* === 8. Pricing preview section === */
+.pricing-preview { padding: 64px 0; }
+.pricing-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 28px 0 24px;
+}
+.pricing-preview-card {
+  border: 1px solid var(--opsio-hairline);
+  border-radius: 18px;
+  padding: 24px 20px;
+}
+.pricing-preview-card.featured {
+  background: var(--opsio-near-black);
+  border-color: var(--opsio-near-black);
+  color: #fff;
+}
+.pricing-preview-tier {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--opsio-slate);
+  margin: 0 0 10px;
+}
+.pricing-preview-card.featured .pricing-preview-tier { color: rgba(255,255,255,0.55); }
+.pricing-preview-amount {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--opsio-near-black);
+  line-height: 1;
+  margin: 0 0 4px;
+}
+.pricing-preview-card.featured .pricing-preview-amount { color: #fff; }
+.pricing-preview-period { font-size: 13px; color: var(--opsio-slate); }
+.pricing-preview-card.featured .pricing-preview-period { color: rgba(255,255,255,0.55); }
+@media (max-width: 480px) {
+  .pricing-preview-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .pricing-preview { padding: 48px 0; }
+}
+
+/* === 9. Integrations label (mobile-only) === */
+.integrations-label { display: none; }
+@media (max-width: 768px) {
+  .integrations-label {
+    display: block;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--opsio-slate);
+    padding: 14px 20px 0;
+    background: #fff;
+  }
+}
+
+/* === 10. Mobile CTA after ROI === */
+.roi-mobile-cta { display: none; }
+@media (max-width: 768px) {
+  .roi-mobile-cta {
+    display: block;
+    text-align: center;
+    margin-top: 28px;
+  }
+  .roi-mobile-cta .btn { width: 100%; justify-content: center; }
+}
+
+/* === 11. Navigation at 360–390px === */
+@media (max-width: 390px) {
+  .nav { padding: 12px 16px; gap: 10px; }
+  .brand-mark { width: 88px; }
+  .nav-cta .btn-primary { padding: 10px 14px; font-size: 13px; }
+  .nav-toggle { padding: 6px 8px; }
+}
+
+/* === 12. General mobile section spacing === */
+@media (max-width: 768px) {
+  .section { padding: 48px 0; }
+  .section.tight { padding: 40px 0; }
+  .section-title { font-size: clamp(26px, 7vw, 40px); }
+  .section-lead { font-size: 16px; margin-bottom: 28px; }
+  .container { padding: 0 18px; }
+}
+
+/* === 13. Accessible focus styles === */
+:focus-visible {
+  outline: 2px solid #0284C7;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* === 14. Reduce decorative animation on mobile === */
+@media (max-width: 768px) {
+  .will-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+</style>
+
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 
 </head>
@@ -802,6 +1064,14 @@
             <a href="contact.html" class="btn btn-primary btn-lg">Plan een gesprek</a>
             <a href="#waarom" class="btn btn-ghost" style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2);">Hoe het werkt &rarr;</a>
           </div>
+          <div class="hero-trust" aria-label="Vertrouwensindicatoren">
+            <p class="hero-trust-tagline">Gebouwd voor ondernemers die geen oproep willen missen.</p>
+            <div class="hero-trust-pts">
+              <span class="hero-trust-pt">24/7 bereikbaar</span>
+              <span class="hero-trust-pt">Live binnen 7 dagen</span>
+              <span class="hero-trust-pt">NL &amp; BE</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -831,6 +1101,7 @@
 </section>
 
 
+<p class="integrations-label">Werkt met uw bestaande tools</p>
 <section class="moving-band-wrap" aria-label="Integraties">
   <div class="moving-band">
     <div class="moving-band-viewport">
@@ -881,6 +1152,9 @@
 
 <script>
 (function() {
+  // Skip heavy process canvas on mobile and reduced motion
+  if (window.matchMedia('(max-width: 768px)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var dpr = window.devicePixelRatio || 1;
   function setupHD(id) {
     var c = document.getElementById(id);
@@ -1354,6 +1628,9 @@
           </div>
           <p class="roi-note">Op basis van conservatieve schatting. Personeelskosten, stress en reputatieschade niet meegerekend.</p>
         </div>
+        <div class="roi-mobile-cta">
+          <a href="contact.html" class="btn btn-primary btn-lg">Plan een gesprek</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1534,21 +1811,21 @@
         <h3 class="feature-title">Spreekt zoals u spreekt</h3>
         <p class="feature-body">Vloeiend Nederlands, afgestemd op de toon en stijl van uw zaak.</p>
       </article>
-      <article class="feature">
+      <article class="feature feature--extra">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h3 class="feature-title">Kent uw zaak van binnen en buiten</h3>
         <p class="feature-body">Openingstijden, veelgestelde vragen en behandelingen: Opsio weet het en geeft het correct door.</p>
       </article>
-      <article class="feature dark">
+      <article class="feature dark feature--extra">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
         <h3 class="feature-title">Live in 7 dagen</h3>
         <p class="feature-body">Wij streven ernaar om alles binnen 7 dagen live te hebben. Geen IT-afdeling nodig — wij stellen alles in, u luistert mee en geeft akkoord.</p>
       </article>
-      <article class="feature">
+      <article class="feature feature--extra">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M9 12l2 2 4-4"/></svg>
         </div>
@@ -1556,10 +1833,35 @@
         <p class="feature-body">Volledige transcripten, opnames en samenvattingen. Aanpassen kan op elk moment, zonder gedoe.</p>
       </article>
     </div>
+    <button class="features-toggle-btn" id="features-toggle" aria-expanded="false">
+      Bekijk alle voordelen
+      <svg class="features-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
   </div>
 </section>
 
 
+
+<section class="pricing-preview">
+  <div class="container">
+    <div class="section-eyebrow">Pakketten</div>
+    <h2 class="section-title">Pakketten vanaf €399 per maand.</h2>
+    <p class="section-lead">Kies een pakket dat past bij uw bereikbaarheid, agenda en opvolging.</p>
+    <div class="pricing-preview-grid">
+      <div class="pricing-preview-card">
+        <p class="pricing-preview-tier">Essential</p>
+        <p class="pricing-preview-amount">€399</p>
+        <p class="pricing-preview-period">per maand</p>
+      </div>
+      <div class="pricing-preview-card featured">
+        <p class="pricing-preview-tier">Pro</p>
+        <p class="pricing-preview-amount">€549</p>
+        <p class="pricing-preview-period">per maand</p>
+      </div>
+    </div>
+    <a href="prijzen.html" class="btn btn-primary">Bekijk prijzen</a>
+  </div>
+</section>
 
 <section class="section">
   <div class="container">
@@ -1717,6 +2019,9 @@ function openDemo() {
 
 <script>
 (function() {
+  // Skip decorative canvas on mobile and when reduced motion is preferred
+  if (window.matchMedia('(max-width: 768px)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var canvas = document.getElementById('hero-wave-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
@@ -1748,7 +2053,15 @@ function openDemo() {
     }
   }
 
+  var heroVisible = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries) {
+      heroVisible = entries[0].isIntersecting;
+    }, { threshold: 0 }).observe(canvas);
+  }
+
   function draw(ts) {
+    if (!heroVisible) { requestAnimationFrame(draw); return; }
     var t = ts / 1000;
     var w = canvas.width / window.devicePixelRatio;
     var h = canvas.height / window.devicePixelRatio;
@@ -1969,8 +2282,27 @@ function openDemo() {
     muteBtn.innerHTML = vid.muted ? ICON_MUTED : ICON_SOUND;
   });
 
-  // Eenmalige auto-advance: slide 1 wacht 6 sec, dan naar slide 2
-  slideTimer = setTimeout(function() { goTo(1); }, 6000);
+  // Eenmalige auto-advance op desktop: slide 1 wacht 6 sec, dan naar slide 2
+  // Op mobiel blijft slide 1 stabiel — bezoeker navigeert handmatig
+  if (!window.matchMedia('(max-width: 768px)').matches) {
+    slideTimer = setTimeout(function() { goTo(1); }, 6000);
+  }
+})();
+</script>
+
+<script>
+(function() {
+  var btn = document.getElementById('features-toggle');
+  if (!btn) return;
+  var extras = document.querySelectorAll('.feature--extra');
+  btn.addEventListener('click', function() {
+    var open = btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.innerHTML = open
+      ? 'Minder voordelen <svg class="features-toggle-icon" style="transform:rotate(180deg)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 9l6 6 6-6"/></svg>'
+      : 'Bekijk alle voordelen <svg class="features-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 9l6 6 6-6"/></svg>';
+    extras.forEach(function(el) { el.classList.toggle('visible', open); });
+  });
 })();
 </script>
 

@@ -742,9 +742,8 @@
    Mobile optimisations — index.html only
    ============================================================ */
 
-/* === 1. Hero carousel: stable on mobile (hide nav, no auto-advance) === */
+/* === 1. Hero carousel: stable on mobile (no auto-advance; nav visible for manual access) === */
 @media (max-width: 768px) {
-  .hero-carousel-nav { display: none; }
   .hero-slides {
     height: auto;
     min-height: calc(100svh - 64px);
@@ -757,42 +756,7 @@
   }
 }
 
-/* === 2. Social proof row (mobile-only) === */
-.hero-trust { display: none; }
-@media (max-width: 768px) {
-  .hero-trust {
-    display: block;
-    margin-top: 24px;
-    text-align: center;
-  }
-  .hero-trust-tagline {
-    font-size: 12px;
-    color: rgba(255,255,255,0.55);
-    margin: 0 auto 10px;
-    line-height: 1.5;
-    max-width: 30ch;
-  }
-  .hero-trust-pts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px 14px;
-  }
-  .hero-trust-pt {
-    font-size: 11px;
-    color: rgba(255,255,255,0.72);
-    font-family: var(--font-mono);
-    letter-spacing: 0.3px;
-  }
-  .hero-trust-pt::before { content: '✓ '; color: #38BDF8; }
-}
-
-/* === 3. Hide canvas process section on mobile (horizontal scroll + heavy animation) === */
-@media (max-width: 768px) {
-  .process-section { display: none; }
-}
-
-/* === 4. Steps section: vertical timeline on mobile === */
+/* === 2. Steps section: vertical timeline on mobile === */
 @media (max-width: 768px) {
   .steps { gap: 0; margin-top: 36px !important; }
   .step {
@@ -818,18 +782,36 @@
   .step-body { font-size: 14px; }
 }
 
-/* === 5. ROI calculator: remove scale, fix overflow, larger touch targets === */
+/* === 5. ROI calculator: remove scale, fix overflow, larger touch targets, prominent result === */
 @media (max-width: 768px) {
   .roi-card {
     transform: none !important;
     width: 100% !important;
     padding: 28px 20px !important;
   }
+  /* Result container: extra padding so result row breathes */
+  .roi-output { padding: 20px 18px; }
+  /* Big result row: stack label above value, full-width, visually prominent */
+  .roi-out-row.roi-big {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 14px 0 12px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+  }
+  .roi-out-row.roi-big .roi-out-lbl {
+    font-size: 11px !important;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45) !important;
+  }
   .roi-out-row.roi-big .roi-out-val {
     white-space: normal !important;
     word-break: break-word;
-    font-size: clamp(20px, 6.5vw, 32px) !important;
-    line-height: 1.1;
+    font-size: clamp(30px, 9vw, 40px) !important;
+    line-height: 1.0;
+    color: #38BDF8 !important;
   }
   .roi-out-lbl { font-size: 12px; }
   /* 44px touch area on slider via padding */
@@ -1064,14 +1046,6 @@
             <a href="contact.html" class="btn btn-primary btn-lg">Plan een gesprek</a>
             <a href="#waarom" class="btn btn-ghost" style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2);">Hoe het werkt &rarr;</a>
           </div>
-          <div class="hero-trust" aria-label="Vertrouwensindicatoren">
-            <p class="hero-trust-tagline">Gebouwd voor ondernemers die geen oproep willen missen.</p>
-            <div class="hero-trust-pts">
-              <span class="hero-trust-pt">24/7 bereikbaar</span>
-              <span class="hero-trust-pt">Live binnen 7 dagen</span>
-              <span class="hero-trust-pt">NL &amp; BE</span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -1152,9 +1126,7 @@
 
 <script>
 (function() {
-  // Skip heavy process canvas on mobile and reduced motion
-  if (window.matchMedia('(max-width: 768px)').matches ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var dpr = window.devicePixelRatio || 1;
   function setupHD(id) {
     var c = document.getElementById(id);
@@ -1323,10 +1295,17 @@
     window.addEventListener('resize', setupConn);
 
     var startTime = null;
+    var processVisible = true;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries) {
+        processVisible = entries[0].isIntersecting;
+      }, { threshold: 0 }).observe(connCanvas);
+    }
     var canvases = [c1,c2,c3,c4];
     var drawFns = [drawIphone,drawHeadset,drawBubble,drawCalendar];
 
     function draw(ts) {
+      if (!processVisible) { requestAnimationFrame(draw); return; }
       if (!startTime) startTime=ts;
       var elapsed=(ts-startTime)%CYCLE, t=ts/1000;
       var W=connCanvas.width/dpr, H=connCanvas.height/dpr;

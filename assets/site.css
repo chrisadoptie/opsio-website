@@ -996,7 +996,7 @@ a { color: inherit; }
 }
 
 .dentist-hero-image img {
-  object-position: 64% center;
+  object-position: 52% center;
 }
 
 /* Reusable image-to-page transition for industry heroes */
@@ -1005,28 +1005,48 @@ a { color: inherit; }
 }
 
 .industry-hero-image-fade img {
-  -webkit-mask-image: linear-gradient(
-    78deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.04) 6%,
-    rgba(0, 0, 0, 0.14) 11%,
-    rgba(0, 0, 0, 0.32) 17%,
-    rgba(0, 0, 0, 0.58) 23%,
-    rgba(0, 0, 0, 0.82) 29%,
-    rgba(0, 0, 0, 0.96) 35%,
-    #000 41%
-  );
-  mask-image: linear-gradient(
-    78deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.04) 6%,
-    rgba(0, 0, 0, 0.14) 11%,
-    rgba(0, 0, 0, 0.32) 17%,
-    rgba(0, 0, 0, 0.58) 23%,
-    rgba(0, 0, 0, 0.82) 29%,
-    rgba(0, 0, 0, 0.96) 35%,
-    #000 41%
-  );
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.08) 2%,
+      rgba(0, 0, 0, 0.5) 5%,
+      #000 9%
+    ),
+    linear-gradient(
+      78deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.03) 3%,
+      rgba(0, 0, 0, 0.1) 7%,
+      rgba(0, 0, 0, 0.24) 11%,
+      rgba(0, 0, 0, 0.46) 16%,
+      rgba(0, 0, 0, 0.7) 21%,
+      rgba(0, 0, 0, 0.88) 26%,
+      rgba(0, 0, 0, 0.98) 31%,
+      #000 35%
+    );
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.08) 2%,
+      rgba(0, 0, 0, 0.5) 5%,
+      #000 9%
+    ),
+    linear-gradient(
+      78deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.03) 3%,
+      rgba(0, 0, 0, 0.1) 7%,
+      rgba(0, 0, 0, 0.24) 11%,
+      rgba(0, 0, 0, 0.46) 16%,
+      rgba(0, 0, 0, 0.7) 21%,
+      rgba(0, 0, 0, 0.88) 26%,
+      rgba(0, 0, 0, 0.98) 31%,
+      #000 35%
+    );
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
@@ -1222,6 +1242,8 @@ a { color: inherit; }
       rgba(0, 0, 0, 0.28) 90%,
       transparent 100%
     );
+    -webkit-mask-composite: source-over;
+    mask-composite: add;
   }
 
   .dentist-hero-copy h1 {

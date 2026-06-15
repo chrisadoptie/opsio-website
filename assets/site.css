@@ -1003,6 +1003,10 @@ a { color: inherit; }
   object-position: 60% center;
 }
 
+.real-estate-hero-image img {
+  object-position: 58% center;
+}
+
 /* Reusable image-to-page transition for industry heroes */
 .industry-hero-image-fade {
   background: #fff;
@@ -1085,6 +1089,11 @@ a { color: inherit; }
 .installer-problem-image img {
   object-position: 66% center;
   transform: scale(1.12);
+}
+
+.real-estate-problem-image img {
+  object-position: 58% center;
+  transform: scale(1.08);
 }
 
 .dentist-copy .section-title {
@@ -1177,6 +1186,10 @@ a { color: inherit; }
 
 .installer-practice-image img {
   object-position: 58% 52%;
+}
+
+.real-estate-practice-image img {
+  object-position: 54% center;
 }
 
 .dentist-list {

@@ -874,53 +874,7 @@
   .industry-b { font-size: 14px; }
 }
 
-/* === 8. Pricing preview section === */
-.pricing-preview { padding: 64px 0; }
-.pricing-preview-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 28px 0 24px;
-}
-.pricing-preview-card {
-  border: 1px solid var(--opsio-hairline);
-  border-radius: 18px;
-  padding: 24px 20px;
-}
-.pricing-preview-card.featured {
-  background: var(--opsio-near-black);
-  border-color: var(--opsio-near-black);
-  color: #fff;
-}
-.pricing-preview-tier {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  color: var(--opsio-slate);
-  margin: 0 0 10px;
-}
-.pricing-preview-card.featured .pricing-preview-tier { color: rgba(255,255,255,0.55); }
-.pricing-preview-amount {
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--opsio-near-black);
-  line-height: 1;
-  margin: 0 0 4px;
-}
-.pricing-preview-card.featured .pricing-preview-amount { color: #fff; }
-.pricing-preview-period { font-size: 13px; color: var(--opsio-slate); }
-.pricing-preview-card.featured .pricing-preview-period { color: rgba(255,255,255,0.55); }
-@media (max-width: 480px) {
-  .pricing-preview-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-  .pricing-preview { padding: 48px 0; }
-}
-
-/* === 9. Integrations label (mobile-only) === */
+/* === 8. Integrations label (mobile-only) === */
 .integrations-label { display: none; }
 @media (max-width: 768px) {
   .integrations-label {
@@ -1816,29 +1770,6 @@
       Bekijk alle voordelen
       <svg class="features-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M6 9l6 6 6-6"/></svg>
     </button>
-  </div>
-</section>
-
-
-
-<section class="pricing-preview">
-  <div class="container">
-    <div class="section-eyebrow">Pakketten</div>
-    <h2 class="section-title">Pakketten vanaf €399 per maand.</h2>
-    <p class="section-lead">Kies een pakket dat past bij uw bereikbaarheid, agenda en opvolging.</p>
-    <div class="pricing-preview-grid">
-      <div class="pricing-preview-card">
-        <p class="pricing-preview-tier">Essential</p>
-        <p class="pricing-preview-amount">€399</p>
-        <p class="pricing-preview-period">per maand</p>
-      </div>
-      <div class="pricing-preview-card featured">
-        <p class="pricing-preview-tier">Pro</p>
-        <p class="pricing-preview-amount">€549</p>
-        <p class="pricing-preview-period">per maand</p>
-      </div>
-    </div>
-    <a href="prijzen.html" class="btn btn-primary">Bekijk prijzen</a>
   </div>
 </section>
 

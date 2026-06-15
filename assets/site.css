@@ -1118,3 +1118,190 @@ button.iubenda-cs-preferences-link {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* ── Hero Carousel ──────────────────────────────────────────────────── */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.65s ease;
+  pointer-events: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-slide-original {
+  background-image: url('../pexels-artyusufpatel-9330906.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-carousel-nav {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-carousel-nav > * {
+  pointer-events: auto;
+}
+
+.hero-carousel-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.50);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.18s ease, transform 0.18s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hero-carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.74);
+  transform: scale(1.08);
+}
+
+.hero-carousel-arrow svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.hero-carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.22s ease, width 0.22s ease, transform 0.22s ease;
+  flex-shrink: 0;
+}
+
+.hero-dot.active {
+  width: 26px;
+  background: #ffffff;
+}
+
+.hero-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.72);
+  transform: scale(1.2);
+}
+
+@media (max-width: 640px) {
+  .hero-carousel-nav {
+    bottom: 16px;
+    gap: 10px;
+  }
+  .hero-carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  .hero-carousel-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+  .hero-dot.active {
+    width: 20px;
+  }
+}
+
+/* ── Hero Video Banner ──────────────────────────────────────────────── */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0 !important;
+  display: block;
+}
+
+.hero-video-controls {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  display: flex;
+  gap: 10px;
+  z-index: 10 !important;
+}
+
+.hero-video-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.50);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.18s ease, transform 0.18s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hero-video-btn:hover {
+  background: rgba(0, 0, 0, 0.74);
+  transform: scale(1.08);
+}
+
+.hero-video-btn svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .hero-video-controls {
+    bottom: 16px;
+    right: 16px;
+    gap: 8px;
+  }
+  .hero-video-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .hero-video-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}

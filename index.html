@@ -21,27 +21,31 @@
 
 .hero-card {
   position: relative;
-  background-image: url('pexels-artyusufpatel-9330906.jpg');
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   border-radius: 0;
   min-height: calc(100vh - 120px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
-.hero-card::before {
+.hero-slide::before {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(5, 18, 35, 0.82);
-  border-radius: inherit;
   z-index: 1;
+  pointer-events: none;
 }
-.hero-card > *:not(canvas) {
+.hero-slide-original {
+  background-image: url('pexels-artyusufpatel-9330906.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.hero-slide-content {
   position: relative;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
 }
 #hero-wave-canvas {
   position: absolute;
@@ -683,24 +687,76 @@
 <section class="hero">
   <div class="container">
     <div class="hero-card">
-      <canvas id="hero-wave-canvas"></canvas>
+      <div class="hero-slides" id="hero-slides">
 
-      <a href="#waarom" class="hero-pill">
-        <span class="dot"></span>
-        24/7 bereikbaar
-      </a>
-      <h1 class="hero-h1">
-        Elke beller<br />
-        geholpen. <span>Altijd.</span>
-      </h1>
-      <p class="hero-sub">
-        Wordt er niet opgenomen? Opsio doet het. Dag en nacht, in vloeiend Nederlands.
-      </p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary btn-lg">Plan een gesprek</a>
-        <a href="#waarom" class="btn btn-ghost" style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2);">Hoe het werkt &rarr;</a>
+        <!-- Slide 1: origineel (foto-achtergrond, geen video) -->
+        <div class="hero-slide hero-slide-original active" data-slide="0">
+          <div class="hero-slide-content">
+            <a href="#waarom" class="hero-pill">
+              <span class="dot"></span>
+              24/7 bereikbaar
+            </a>
+            <h1 class="hero-h1">
+              Elke beller<br />
+              geholpen. <span>Altijd.</span>
+            </h1>
+            <p class="hero-sub">
+              Wordt er niet opgenomen? Opsio doet het. Dag en nacht, in vloeiend Nederlands.
+            </p>
+            <div class="hero-actions">
+              <a href="contact.html" class="btn btn-primary btn-lg">Plan een gesprek</a>
+              <a href="#waarom" class="btn btn-ghost" style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2);">Hoe het werkt &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: video -->
+        <div class="hero-slide hero-slide-video" data-slide="1">
+          <video class="hero-video" src="assets/video/Opsio_nl_Ad.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+          <canvas id="hero-wave-canvas"></canvas>
+          <div class="hero-slide-content">
+            <a href="#waarom" class="hero-pill">
+              <span class="dot"></span>
+              24/7 bereikbaar
+            </a>
+            <h1 class="hero-h1">
+              Elke beller<br />
+              geholpen. <span>Altijd.</span>
+            </h1>
+            <p class="hero-sub">
+              Wordt er niet opgenomen? Opsio doet het. Dag en nacht, in vloeiend Nederlands.
+            </p>
+            <div class="hero-actions">
+              <a href="contact.html" class="btn btn-primary btn-lg">Plan een gesprek</a>
+              <a href="#waarom" class="btn btn-ghost" style="color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2);">Hoe het werkt &rarr;</a>
+            </div>
+          </div>
+          <div class="hero-video-controls" style="display:none">
+            <button class="hero-video-btn" id="hero-vid-play" aria-label="Pauzeer video">
+              <svg id="hero-vid-pause-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+              <svg id="hero-vid-play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M8 5.14v14l11-7-11-7z"/></svg>
+            </button>
+            <button class="hero-video-btn" id="hero-vid-mute" aria-label="Geluid aan">
+              <svg id="hero-vid-muted-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.5l2.45 2.45c.05-.3.05-.62.05-.95zM19 12c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06A8.99 8.99 0 0 0 17.73 18.27l1.64 1.64L20.73 18.55l-2.45-2.45L12 10.73 7.27 6 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+              <svg id="hero-vid-unmuted-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            </button>
+          </div>
+        </div>
+
       </div>
 
+      <nav class="hero-carousel-nav" aria-label="Slideshow navigatie">
+        <button class="hero-carousel-arrow" id="hero-prev" aria-label="Vorige slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="hero-carousel-dots" role="tablist" aria-label="Slides">
+          <button class="hero-dot active" data-dot="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+          <button class="hero-dot" data-dot="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+        </div>
+        <button class="hero-carousel-arrow" id="hero-next" aria-label="Volgende slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </nav>
     </div>
   </div>
 </section>
@@ -1787,6 +1843,95 @@ function openDemo() {
   });
 
   restartCarousel();
+})();
+</script>
+
+<script>
+(function () {
+  var slides      = document.querySelectorAll('.hero-slide');
+  var dots        = document.querySelectorAll('.hero-dot');
+  var prevBtn     = document.getElementById('hero-prev');
+  var nextBtn     = document.getElementById('hero-next');
+  var vidControls = document.querySelector('.hero-video-controls');
+  var vid         = document.querySelector('.hero-video');
+  var playBtn     = document.getElementById('hero-vid-play');
+  var muteBtn     = document.getElementById('hero-vid-mute');
+  var pauseIcon   = document.getElementById('hero-vid-pause-icon');
+  var playIcon    = document.getElementById('hero-vid-play-icon');
+  var mutedIcon   = document.getElementById('hero-vid-muted-icon');
+  var unmutedIcon = document.getElementById('hero-vid-unmuted-icon');
+
+  var current   = 0;
+  var total     = slides.length;
+  var AUTO_MS   = 6000;
+  var autoTimer = null;
+
+  function goTo(index, isAuto) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    dots[current].setAttribute('aria-selected', 'false');
+    current = (index + total) % total;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    dots[current].setAttribute('aria-selected', 'true');
+
+    /* Video slide is index 1 */
+    if (vidControls) vidControls.style.display = current === 1 ? 'flex' : 'none';
+    if (current === 1 && vid) {
+      vid.currentTime = 0;
+      vid.play().catch(function () {});
+      if (pauseIcon)  pauseIcon.style.display  = '';
+      if (playIcon)   playIcon.style.display    = 'none';
+      if (playBtn)    playBtn.setAttribute('aria-label', 'Pauzeer video');
+    }
+
+    /* Reset auto-advance timer on manual navigation */
+    if (!isAuto) {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(function () { goTo(current + 1, true); }, AUTO_MS);
+    }
+  }
+
+  /* Auto-advance elke 6 seconden */
+  autoTimer = setInterval(function () { goTo(current + 1, true); }, AUTO_MS);
+
+  if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1, false); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1, false); });
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () { goTo(i, false); });
+  });
+
+  /* ── Video controls ── */
+  if (vid && playBtn) {
+    playBtn.addEventListener('click', function () {
+      if (vid.paused) {
+        vid.play();
+        pauseIcon.style.display = '';
+        playIcon.style.display  = 'none';
+        playBtn.setAttribute('aria-label', 'Pauzeer video');
+      } else {
+        vid.pause();
+        pauseIcon.style.display = 'none';
+        playIcon.style.display  = '';
+        playBtn.setAttribute('aria-label', 'Speel video af');
+      }
+    });
+  }
+
+  if (vid && muteBtn) {
+    muteBtn.addEventListener('click', function () {
+      vid.muted = !vid.muted;
+      if (vid.muted) {
+        mutedIcon.style.display   = '';
+        unmutedIcon.style.display = 'none';
+        muteBtn.setAttribute('aria-label', 'Geluid aan');
+      } else {
+        mutedIcon.style.display   = 'none';
+        unmutedIcon.style.display = '';
+        muteBtn.setAttribute('aria-label', 'Geluid uit');
+      }
+    });
+  }
 })();
 </script>
 

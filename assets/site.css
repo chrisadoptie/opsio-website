@@ -1537,6 +1537,110 @@ a { color: inherit; }
   }
 }
 
+/* ==== HOW IT WORKS — PROCESS SECTION ==== */
+.process-flow {
+  position: relative;
+  margin-top: 48px;
+}
+
+.process-scroll {
+  position: relative;
+}
+
+.process-row {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
+
+.process-step canvas {
+  width: 120px;
+  height: 200px;
+  margin: 10px auto 0;
+}
+
+/* Connection canvas overlays the row */
+.process-scroll > canvas {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.process-step-num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #0284C7;
+  text-align: center;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+.process-step-title {
+  margin-top: 22px;
+  color: #555;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.process-step-subtitle {
+  margin-top: 2px;
+  color: #aaa;
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .process-flow {
+    margin-top: 48px;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+  }
+
+  .process-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-inline: contain;
+    touch-action: pan-x;
+  }
+
+  .process-scroll::-webkit-scrollbar { display: none; width: 0; height: 0; }
+
+  .process-flow::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 32px;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(to left, #f8f7f4, rgba(248,247,244,0));
+  }
+
+  .process-row {
+    width: max-content;
+    min-width: max-content;
+    padding-right: 32px;
+  }
+
+  .process-step {
+    flex: 0 0 calc(100vw / 3.25);
+    min-width: calc(100vw / 3.25);
+  }
+}
+
 /* Hide Iubenda's floating privacy controls without disabling consent services. */
 .iubenda-tp-btn,
 .iubenda-cs-preferences-link,

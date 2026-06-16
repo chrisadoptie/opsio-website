@@ -267,7 +267,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
 .voor-wie-list {
   list-style: none;
@@ -291,38 +291,6 @@
   stroke-width: 2;
   flex-shrink: 0;
   margin-top: 2px;
-}
-.voor-wie-visual {
-  background: linear-gradient(160deg, #0284C7 0%, #0369A1 60%, #0EA5E9 100%);
-  border-radius: 22px;
-  padding: 40px 36px;
-  color: #fff;
-  display: grid;
-  gap: 20px;
-}
-.voor-wie-stat {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 14px;
-  padding: 20px 24px;
-}
-.voor-wie-stat-num {
-  font-family: var(--font-display);
-  font-size: 40px;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.voor-wie-stat-lbl {
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.4;
-}
-.voor-wie-stat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
 }
 
 /* ── Compare table (pakketpagina stijl) ── */
@@ -409,7 +377,6 @@
   .feature-detail-grid { grid-template-columns: 1fr; }
   .voor-wie-grid { grid-template-columns: 1fr; }
   .pkg-steps { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .voor-wie-stat-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {
   .pkg-steps { grid-template-columns: 1fr; }
@@ -492,16 +459,6 @@
   gap: 12px;
   margin-top: 36px;
 }
-/* Prijsband onder de hero */
-.ess-price-band {
-  background: var(--opsio-stone);
-  padding: 64px 0;
-  border-bottom: 1px solid var(--opsio-hairline);
-}
-.ess-price-band .pkg-price-card {
-  max-width: 560px;
-  margin: 0 auto;
-}
 /* Mobile */
 @media (max-width: 860px) {
   .ess-hero { padding: 32px 0 48px; }
@@ -571,47 +528,6 @@
       <img src="assets/essential-hero.png" alt="Bureau met telefoon — Opsio Voice Essential" width="1280" height="853" fetchpriority="high" />
     </figure>
 
-  </div>
-</section>
-
-<section class="ess-price-band">
-  <div class="container">
-    <div class="pkg-price-card">
-      <div class="pkg-price-label">Maandelijks tarief</div>
-      <div class="pkg-price-num">€399<small>/mnd</small></div>
-      <div class="pkg-price-setup">+ €449 eenmalige setup · excl. btw</div>
-      <div class="pkg-price-items">
-        <div class="pkg-price-item">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          24/7 telefonische bereikbaarheid
-        </div>
-        <div class="pkg-price-item">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          Professionele Nederlandse telefoonassistent
-        </div>
-        <div class="pkg-price-item">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          Gesprekssamenvatting na iedere oproep
-        </div>
-        <div class="pkg-price-item">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          E-mailnotificaties
-        </div>
-        <div class="pkg-price-item">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          Gespreksopnames
-        </div>
-        <div class="pkg-price-item">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          Maandelijkse prestatie-rapportage
-        </div>
-        <div class="pkg-price-item">
-          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          E-mailsupport
-        </div>
-      </div>
-      <a href="contact.html?pakket=essential" class="btn btn-primary btn-lg plan-cta">Plan een gesprek</a>
-    </div>
   </div>
 </section>
 
@@ -948,27 +864,41 @@
         </ul>
       </div>
 
-      <div class="voor-wie-visual">
-        <div style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 4px;">Opsio Voice Essential</div>
-        <div style="font-family: var(--font-display); font-size: 26px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 20px;">Resultaat in de praktijk</div>
-        <div class="voor-wie-stat-grid">
-          <div class="voor-wie-stat">
-            <div class="voor-wie-stat-num">100%</div>
-            <div class="voor-wie-stat-lbl">Van uw oproepen beantwoord</div>
+      <div class="pkg-price-card">
+        <div class="pkg-price-label">Maandelijks tarief</div>
+        <div class="pkg-price-num">€399<small>/mnd</small></div>
+        <div class="pkg-price-setup">+ €449 eenmalige setup · excl. btw</div>
+        <div class="pkg-price-items">
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            24/7 telefonische bereikbaarheid
           </div>
-          <div class="voor-wie-stat">
-            <div class="voor-wie-stat-num">7 dgn</div>
-            <div class="voor-wie-stat-lbl">Gemiddelde implementatietijd</div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Professionele Nederlandse telefoonassistent
           </div>
-          <div class="voor-wie-stat">
-            <div class="voor-wie-stat-num">24/7</div>
-            <div class="voor-wie-stat-lbl">Beschikbaar, ook 's avonds</div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Gesprekssamenvatting na iedere oproep
           </div>
-          <div class="voor-wie-stat">
-            <div class="voor-wie-stat-num">NL</div>
-            <div class="voor-wie-stat-lbl">Vloeiend Nederlands</div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            E-mailnotificaties
+          </div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Gespreksopnames
+          </div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            Maandelijkse prestatie-rapportage
+          </div>
+          <div class="pkg-price-item">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            E-mailsupport
           </div>
         </div>
+        <a href="contact.html?pakket=essential" class="btn btn-primary btn-lg plan-cta">Plan een gesprek</a>
       </div>
     </div>
   </div>

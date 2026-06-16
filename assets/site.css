@@ -253,8 +253,8 @@ a { color: inherit; }
 }
 .feature.green { background: #EFF6FF; border-color: #BFDBFE; }
 .feature.blue { background: #E0F2FE; border-color: #BAE6FD; }
-.feature.dark { background: var(--opsio-near-black); color: #fff; border-color: transparent; }
-.feature.dark .feature-body { color: rgba(255,255,255,0.75); }
+.feature.dark { background: #F0EDE8; color: var(--opsio-near-black); border-color: transparent; }
+.feature.dark .feature-body { color: var(--opsio-slate); }
 .feature-icon {
   width: 44px; height: 44px;
   border-radius: 12px;
@@ -262,9 +262,9 @@ a { color: inherit; }
   display: grid; place-items: center;
   border: 1px solid rgba(0,0,0,0.05);
 }
-.feature.dark .feature-icon { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); }
+.feature.dark .feature-icon { background: #fff; border-color: rgba(0,0,0,0.06); }
 .feature-icon svg { width: 22px; height: 22px; stroke: var(--opsio-ink); fill: none; stroke-width: 1.5; }
-.feature.dark .feature-icon svg { stroke: #fff; }
+.feature.dark .feature-icon svg { stroke: var(--opsio-ink); }
 .feature-title {
   font-size: 22px;
   line-height: 1.2;

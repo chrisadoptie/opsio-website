@@ -1201,8 +1201,8 @@
 
 <script>
 (function() {
-  if (window.matchMedia('(max-width: 768px)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var animate = !window.matchMedia('(max-width: 768px)').matches;
   var dpr = window.devicePixelRatio || 1;
   function setupHD(id) {
     var c = document.getElementById(id);
@@ -1348,9 +1348,8 @@
     });
   }
 
-  window.addEventListener('load', function() {
-    var c1=setupHD('proc-c1'), c2=setupHD('proc-c2'), c3=setupHD('proc-c3'), c4=setupHD('proc-c4');
-    if (!c1||!c2||!c3||!c4) return;
+  var c1=setupHD('proc-c1'), c2=setupHD('proc-c2'), c3=setupHD('proc-c3'), c4=setupHD('proc-c4');
+  if (!c1||!c2||!c3||!c4) return;
 
     var connCanvas = document.getElementById('proc-conn');
     if (!connCanvas) return;
@@ -1367,98 +1366,105 @@
       connCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
+  setupConn();
+  window.addEventListener('resize', function() {
     setupConn();
-    window.addEventListener('resize', setupConn);
-
-    var startTime = null;
-    var processVisible = true;
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function(entries) {
-        processVisible = entries[0].isIntersecting;
-      }, { threshold: 0 }).observe(connCanvas);
-    }
-    var canvases = [c1,c2,c3,c4];
-    var drawFns = [drawIphone,drawHeadset,drawBubble,drawCalendar];
-
-    function draw(ts) {
-      if (!processVisible) { requestAnimationFrame(draw); return; }
-      if (!startTime) startTime=ts;
-      var elapsed=(ts-startTime)%CYCLE, t=ts/1000;
-      var W=connCanvas.width/dpr, H=connCanvas.height/dpr;
-
-      canvases.forEach(function(canv,i) {
-        var lt=Math.max(0,elapsed-iconTimes[i]);
-        var p=clamp(lt/400,0,1);
-        var scale=easeOutBack(p);
-        var floatY=Math.sin(t*1.6+i*0.8)*6*scale;
-        var ctx2=canv.ctx, W2=canv.w, H2=canv.h;
-        ctx2.clearRect(0,0,W2,H2);
-        ctx2.save();
-        ctx2.translate(W2/2,H2/2);
-        ctx2.scale(scale,scale);
-        ctx2.translate(-W2/2,-H2/2);
-        drawFns[i](ctx2,W2,H2,t,floatY);
-        ctx2.restore();
-      });
-
-      connCtx.clearRect(0,0,W,H);
-      var centers=getIconCenters(['proc-c1','proc-c2','proc-c3','proc-c4'],connParent);
-      if (!centers || !centers[0]) {
-        requestAnimationFrame(draw);
-        return;
-      }
-
-      for (var i=0;i<3;i++) {
-        if (elapsed<iconTimes[i]+200) continue;
-
-        var x1=centers[i].x+48;
-        var x2=centers[i+1].x-48;
-        var y=centers[i].y-10;
-
-        connCtx.beginPath();
-        connCtx.moveTo(x1,y);
-        connCtx.lineTo(x2,y);
-        connCtx.strokeStyle='rgba(2,132,199,0.15)';
-        connCtx.lineWidth=2;
-        connCtx.stroke();
-
-        connCtx.beginPath();
-        connCtx.moveTo(x2-8,y-6);
-        connCtx.lineTo(x2,y);
-        connCtx.lineTo(x2-8,y+6);
-        connCtx.strokeStyle='rgba(2,132,199,0.25)';
-        connCtx.lineWidth=2;
-        connCtx.lineCap='round';
-        connCtx.lineJoin='round';
-        connCtx.stroke();
-
-        var arrowElapsed=Math.max(0,elapsed-arrowTimes[i]);
-        var arrowProgress=clamp(arrowElapsed/arrowDur,0,1);
-        var easedP=easeInOut(arrowProgress);
-        var alpha=arrowProgress>0&&arrowProgress<1?Math.sin(easedP*Math.PI):0;
-
-        if (alpha>0.05) {
-          var dotX=x1+(x2-x1)*easedP;
-          var dotY=y;
-          var glow=connCtx.createRadialGradient(dotX,dotY,0,dotX,dotY,14);
-          glow.addColorStop(0,'rgba(2,132,199,'+(alpha*0.5)+')');
-          glow.addColorStop(1,'rgba(2,132,199,0)');
-          connCtx.beginPath();
-          connCtx.arc(dotX,dotY,14,0,Math.PI*2);
-          connCtx.fillStyle=glow;
-          connCtx.fill();
-          connCtx.beginPath();
-          connCtx.arc(dotX,dotY,3,0,Math.PI*2);
-          connCtx.fillStyle='rgba(2,132,199,'+alpha+')';
-          connCtx.fill();
-        }
-      }
-
-      requestAnimationFrame(draw);
-    }
-
-    requestAnimationFrame(draw);
+    if (!animate) draw(0);
   });
+
+  var startTime = null;
+  var processVisible = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries) {
+      processVisible = entries[0].isIntersecting;
+    }, { threshold: 0 }).observe(connCanvas);
+  }
+  var canvases = [c1,c2,c3,c4];
+  var drawFns = [drawIphone,drawHeadset,drawBubble,drawCalendar];
+
+  function draw(ts) {
+    if (!processVisible) { if (animate) requestAnimationFrame(draw); return; }
+    if (!startTime) startTime=ts;
+    var elapsed=(ts-startTime)%CYCLE, t=ts/1000;
+    var W=connCanvas.width/dpr, H=connCanvas.height/dpr;
+
+    canvases.forEach(function(canv,i) {
+      var lt=Math.max(0,elapsed-iconTimes[i]);
+      var p=clamp(lt/400,0,1);
+      var scale=easeOutBack(p);
+      var floatY=Math.sin(t*1.6+i*0.8)*6*scale;
+      var ctx2=canv.ctx, W2=canv.w, H2=canv.h;
+      ctx2.clearRect(0,0,W2,H2);
+      ctx2.save();
+      ctx2.translate(W2/2,H2/2);
+      ctx2.scale(scale,scale);
+      ctx2.translate(-W2/2,-H2/2);
+      drawFns[i](ctx2,W2,H2,t,floatY);
+      ctx2.restore();
+    });
+
+    connCtx.clearRect(0,0,W,H);
+    var centers=getIconCenters(['proc-c1','proc-c2','proc-c3','proc-c4'],connParent);
+    if (!centers || !centers[0]) {
+      if (animate) requestAnimationFrame(draw);
+      return;
+    }
+
+    for (var i=0;i<3;i++) {
+      if (elapsed<iconTimes[i]+200) continue;
+
+      var x1=centers[i].x+48;
+      var x2=centers[i+1].x-48;
+      var y=centers[i].y-10;
+
+      connCtx.beginPath();
+      connCtx.moveTo(x1,y);
+      connCtx.lineTo(x2,y);
+      connCtx.strokeStyle='rgba(2,132,199,0.15)';
+      connCtx.lineWidth=2;
+      connCtx.stroke();
+
+      connCtx.beginPath();
+      connCtx.moveTo(x2-8,y-6);
+      connCtx.lineTo(x2,y);
+      connCtx.lineTo(x2-8,y+6);
+      connCtx.strokeStyle='rgba(2,132,199,0.25)';
+      connCtx.lineWidth=2;
+      connCtx.lineCap='round';
+      connCtx.lineJoin='round';
+      connCtx.stroke();
+
+      var arrowElapsed=Math.max(0,elapsed-arrowTimes[i]);
+      var arrowProgress=clamp(arrowElapsed/arrowDur,0,1);
+      var easedP=easeInOut(arrowProgress);
+      var alpha=arrowProgress>0&&arrowProgress<1?Math.sin(easedP*Math.PI):0;
+
+      if (alpha>0.05) {
+        var dotX=x1+(x2-x1)*easedP;
+        var dotY=y;
+        var glow=connCtx.createRadialGradient(dotX,dotY,0,dotX,dotY,14);
+        glow.addColorStop(0,'rgba(2,132,199,'+(alpha*0.5)+')');
+        glow.addColorStop(1,'rgba(2,132,199,0)');
+        connCtx.beginPath();
+        connCtx.arc(dotX,dotY,14,0,Math.PI*2);
+        connCtx.fillStyle=glow;
+        connCtx.fill();
+        connCtx.beginPath();
+        connCtx.arc(dotX,dotY,3,0,Math.PI*2);
+        connCtx.fillStyle='rgba(2,132,199,'+alpha+')';
+        connCtx.fill();
+      }
+    }
+
+    if (animate) requestAnimationFrame(draw);
+  }
+
+  if (animate) {
+    requestAnimationFrame(draw);
+  } else {
+    startTime = -2900;
+    draw(0);
+  }
 })();
 </script>
 

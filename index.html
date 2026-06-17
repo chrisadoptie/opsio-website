@@ -1202,7 +1202,6 @@
 <script>
 (function() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var animate = !window.matchMedia('(max-width: 768px)').matches;
   var dpr = window.devicePixelRatio || 1;
   function setupHD(id) {
     var c = document.getElementById(id);
@@ -1367,10 +1366,7 @@
     }
 
   setupConn();
-  window.addEventListener('resize', function() {
-    setupConn();
-    if (!animate) draw(0);
-  });
+  window.addEventListener('resize', setupConn);
 
   var startTime = null;
   var processVisible = true;
@@ -1383,7 +1379,7 @@
   var drawFns = [drawIphone,drawHeadset,drawBubble,drawCalendar];
 
   function draw(ts) {
-    if (!processVisible) { if (animate) requestAnimationFrame(draw); return; }
+    if (!processVisible) { requestAnimationFrame(draw); return; }
     if (!startTime) startTime=ts;
     var elapsed=(ts-startTime)%CYCLE, t=ts/1000;
     var W=connCanvas.width/dpr, H=connCanvas.height/dpr;
@@ -1406,7 +1402,7 @@
     connCtx.clearRect(0,0,W,H);
     var centers=getIconCenters(['proc-c1','proc-c2','proc-c3','proc-c4'],connParent);
     if (!centers || !centers[0]) {
-      if (animate) requestAnimationFrame(draw);
+      requestAnimationFrame(draw);
       return;
     }
 
@@ -1456,15 +1452,10 @@
       }
     }
 
-    if (animate) requestAnimationFrame(draw);
+    requestAnimationFrame(draw);
   }
 
-  if (animate) {
-    requestAnimationFrame(draw);
-  } else {
-    startTime = -2900;
-    draw(0);
-  }
+  requestAnimationFrame(draw);
 })();
 </script>
 

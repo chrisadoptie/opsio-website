@@ -354,54 +354,6 @@
   flex-shrink: 0;
   margin-top: 2px;
 }
-/* ── Compare table ── */
-.compare {
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid var(--opsio-hairline);
-  background: #fff;
-}
-.compare table { width: 100%; border-collapse: collapse; }
-.compare th, .compare td {
-  padding: 16px 20px;
-  text-align: left;
-  font-size: 14px;
-  border-bottom: 1px solid var(--opsio-hairline);
-  background: #fff;
-}
-.compare th {
-  background: #fff;
-  font-weight: 500;
-  font-size: 13px;
-}
-.compare th:first-child {
-  background: #fff;
-}
-.compare td:first-child {
-  background: #fff;
-}
-.compare th:not(:first-child),
-.compare td:not(:first-child) { text-align: center; }
-.compare tr:last-child td { border-bottom: 0; }
-.compare svg { width: 18px; height: 18px; stroke: #0284C7; fill: none; stroke-width: 2; display: inline; vertical-align: middle; }
-.compare .dash { color: var(--opsio-muted); }
-/* Pro column — strong blue */
-.compare th.highlight-col {
-  background: #0284C7;
-  color: #fff;
-  font-weight: 600;
-}
-.compare td.highlight-col {
-  background: #0369A1;
-  color: rgba(255,255,255,0.95);
-  border-bottom-color: rgba(255,255,255,0.12);
-}
-.compare td.highlight-col svg { stroke: #fff; }
-.compare td.highlight-col .dash { color: rgba(255,255,255,0.3); }
-.compare tr:last-child .highlight-col {
-  border-bottom: 0;
-}
-
 /* ── Steps ── */
 .pkg-steps {
   display: grid;
@@ -970,166 +922,34 @@
   </div>
 </section>
 
-<section class="section tight" style="background: var(--opsio-stone);">
+<section class="section">
   <div class="container">
-    <div class="section-eyebrow">Pakketvergelijking</div>
-    <h2 class="section-title">Essential of Pro: wat past bij u?</h2>
-    <p class="section-lead">Voice Essential biedt alles voor professionele bereikbaarheid. Voice Pro voegt opnames, transcripten en directe bevestigingen toe voor maximale controle.</p>
+    <h2 class="section-title">Welk pakket past bij u?</h2>
+    <p class="section-lead">Vergelijk in één oogopslag de belangrijkste verschillen tussen Essential, Pro en Premium.</p>
 
     <div class="compare">
       <table>
         <thead>
           <tr>
-            <th style="width: 40%; font-size: 18px; font-weight: 600; font-family: var(--font-display); background: #fff;">Functionaliteit</th>
-            <th style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Essential</th>
-            <th class="highlight-col" style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Pro</th>
-            <th style="width: 20%; font-size: 18px; font-weight: 600; font-family: var(--font-display);">Premium</th>
+            <th>Wat zit erin</th>
+            <th>Essential</th>
+            <th>Pro</th>
+            <th>Premium</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>24/7 telefonische bereikbaarheid</td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Professionele Nederlandse telefoonassistent</td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Gesprekssamenvatting na iedere oproep</td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>E-mailnotificaties</td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Gespreksopnames</td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Maandelijkse prestatie-rapportage</td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>E-mailsupport</td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Agenda-integratie</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Afspraken automatisch inplannen</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>WhatsApp-bevestigingen voor klanten</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>SMS-bevestigingen voor klanten</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Leadkwalificatie</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Doorsturen naar de juiste medewerker</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Telefonische support</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Maatwerk automatiseringen</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><span class="dash">—</span></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Integraties met bestaande software</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><span class="dash">—</span></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Geavanceerde workflows</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><span class="dash">—</span></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Automatische klantopvolging</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><span class="dash">—</span></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Herinneringen en notificaties</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><span class="dash">—</span></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Meerdere agenda's en medewerkers</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><span class="dash">—</span></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Prioriteitssupport</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><span class="dash">—</span></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Persoonlijke onboarding</td>
-            <td class="dash">—</td>
-            <td class="highlight-col"><span class="dash">—</span></td>
-            <td><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></td>
-          </tr>
-          <tr>
-            <td>Maandelijks tarief</td>
-            <td>€399</td>
-            <td class="highlight-col">€599</td>
-            <td>Vanaf €999/maand</td>
-          </tr>
-          <tr>
-            <td style="font-weight: 500;">Eenmalige setup</td>
-            <td>€449</td>
-            <td class="highlight-col" style="font-weight: 500; color: #fff;">€799</td>
-            <td>Vanaf €1.499</td>
+          <tr><td>Agenda-integratie</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>Afspraken automatisch inplannen</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>WhatsApp/SMS bevestigingen</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>Telefonische support</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>Maatwerk automatiseringen</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>Prioriteitssupport</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>Persoonlijke onboarding</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr style="background: #071829;">
+            <td style="color: #fff; font-weight: 500;">Maandelijks tarief</td>
+            <td style="color: #fff; font-weight: 500;">€399</td>
+            <td style="color: #fff; font-weight: 500;">€599</td>
+            <td style="color: #fff; font-weight: 500;">Vanaf €999</td>
           </tr>
         </tbody>
       </table>

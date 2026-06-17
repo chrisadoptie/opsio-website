@@ -310,83 +310,17 @@
     margin-right: 0;
   }
   .process-scroll {
-    overflow-x: auto;
-    overflow-y: visible;
+    scroll-snap-type: x mandatory;
     margin: 0 -20px;
     padding: 0 20px 8px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .process-scroll::-webkit-scrollbar {
-    display: none;
-  }
-  .process-scroll > canvas {
-    display: none;
-  }
-  .process-row {
-    display: flex;
-    align-items: stretch;
-    gap: 18px;
-    width: max-content;
-    min-width: 100%;
   }
   .process-step {
-    position: relative;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: start;
-    column-gap: 14px;
-    flex: 0 0 min(78vw, 320px);
-    width: min(78vw, 320px);
-    min-width: 0;
-    padding: 20px 22px;
-    text-align: left;
-    background: #fff;
-    border: 1px solid #E2E8F0;
-    border-radius: 18px;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    text-align: center;
   }
-  .process-step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -18px;
-    width: 18px;
-    height: 2px;
-    transform: translateY(-50%);
-    background: rgba(2,132,199,0.22);
-  }
-  .process-step:not(:last-child)::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -20px;
-    width: 7px;
-    height: 7px;
-    border-top: 2px solid rgba(2,132,199,0.32);
-    border-right: 2px solid rgba(2,132,199,0.32);
-    transform: translateY(-50%) rotate(45deg);
-  }
-  .process-step > canvas {
-    display: none;
-  }
-  .process-step-num {
-    grid-row: 1 / span 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    margin: 0;
-    border-radius: 999px;
-    background: #F0F9FF;
-    border: 1px solid #BAE6FD;
-  }
-  .process-step-title,
-  .process-step-subtitle {
-    min-width: 0;
+  .process-step canvas {
+    max-width: 100%;
   }
 }
 
@@ -574,7 +508,6 @@
 <script>
 (function() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (window.matchMedia('(max-width: 768px)').matches) return;
   var dpr = window.devicePixelRatio || 1;
   function setupHD(id) {
     var c = document.getElementById(id);

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="https://embeds.iubenda.com/widgets/6dcb9b32-bc2f-4510-ac9d-03ba5b0737de.js"></script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Opsio Voice Essential — AI-receptionist voor €399/maand</title>
 <meta name="description" content="Opsio Voice Essential: een professionele AI-receptionist die uw telefoon beantwoordt, FAQ's afhandelt en elke beller netjes opvolgt. Maandelijks opzegbaar vanaf €399." />
 <meta name="robots" content="index, follow" />
@@ -13,6 +13,7 @@
 <meta property="og:description" content="Nooit meer een gemiste oproep. Opsio Voice Essential beantwoordt uw telefoon 24/7 in vloeiend Nederlands." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://opsio.nl/essential.html" />
+<meta property="og:image" content="https://opsio.nl/pexels-artyusufpatel-9330906.jpg" />
 
 <script type="application/ld+json">
 {
@@ -31,95 +32,60 @@
 }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="assets/site.css" />
 <link rel="icon" href="assets/opsio_mark.svg" />
 
 <style>
-/* ── Pakket-hero ── */
-.pkg-hero {
-  padding: 80px 0 64px;
-  border-bottom: 1px solid var(--opsio-hairline);
-}
-.pkg-hero-inner {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.pkg-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #071829;
-  border: 1px solid rgba(255,255,255,0.12);
-  color: #fff;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 999px;
-  margin-bottom: 24px;
-}
-.pkg-badge .dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: #7DD3FC;
-  animation: pulse 1.6s ease-out infinite;
-}
 @keyframes pulse {
   0%   { box-shadow: 0 0 0 0 rgba(125,211,252,0.5); }
   100% { box-shadow: 0 0 0 8px rgba(125,211,252,0); }
-}
-.pkg-hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(38px, 5.5vw, 68px);
-  line-height: 1.0;
-  letter-spacing: -0.03em;
-  font-weight: 500;
-  margin: 0 0 24px;
-  color: var(--opsio-near-black);
-}
-.pkg-hero-lead {
-  font-size: 18px;
-  line-height: 1.55;
-  color: var(--opsio-slate);
-  max-width: 520px;
-  margin: 0 0 36px;
-}
-.pkg-hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.pkg-hero-actions .btn-primary {
-  background: #071829;
-  color: #fff;
-  border: none;
-}
-.pkg-hero-actions .btn-ghost {
-  color: #071829;
 }
 .nav-cta .btn-primary {
   background: #071829;
   color: #fff;
   border: none;
 }
-.pkg-hero-note {
-  font-size: 13px;
-  color: var(--opsio-slate);
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  z-index: 1000;
+  transform: translateY(-160%);
+  background: #071829;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 999px;
 }
-.pkg-hero-note svg {
-  width: 15px; height: 15px;
-  stroke: #0284C7;
-  fill: none;
-  stroke-width: 2;
-  flex-shrink: 0;
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid #0284C7;
+  outline-offset: 2px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.btn,
+.btn-primary,
+.btn-ghost,
+.nav-toggle {
+  touch-action: manipulation;
+}
+.btn-ghost {
+  min-height: 44px;
+  align-items: center;
 }
 
 /* Pricing card in hero */
@@ -226,7 +192,6 @@
   transition: transform 240ms cubic-bezier(0.22,1,0.36,1), box-shadow 240ms;
 }
 .feature-detail:hover {
-  transform: translateY(-4px);
   box-shadow: 0 16px 40px -16px rgba(0,0,0,0.10);
 }
 .feature-detail-icon {
@@ -430,6 +395,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Ga naar hoofdinhoud</a>
 
 <header class="nav-wrap">
   <nav class="nav">
@@ -463,7 +429,7 @@
   </nav>
 </header>
 
-<main>
+<main id="main-content">
 
 <section class="ess-hero">
   <div class="container ess-hero-grid">
@@ -522,6 +488,7 @@
 <script>
 (function() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(max-width: 768px)').matches) return;
   var dpr = window.devicePixelRatio || 1;
   function setupHD(id) {
     var c = document.getElementById(id);
@@ -712,7 +679,7 @@
 
       <div class="feature-detail">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <h3>AI-receptionist</h3>
         <p>Uw assistent beantwoordt inkomende oproepen professioneel, beantwoordt veelgestelde vragen over uw bedrijf en geeft callers duidelijke afspraakinformatie. Geen gemiste bellers meer, ook niet tijdens drukke momenten of buiten openingstijden.</p>
@@ -720,7 +687,7 @@
 
       <div class="feature-detail">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
         <h3>Professionele Nederlandse stem</h3>
         <p>Uw bellers horen een heldere, natuurlijke stem in vloeiend Nederlands. De stem wordt afgestemd op de toon van uw bedrijf, zodat het aanvoelt als een echte medewerker, niet als een automatisch systeem.</p>
@@ -728,7 +695,7 @@
 
       <div class="feature-detail">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
         </div>
         <h3>Notitie + melding na elk gesprek</h3>
         <p>Na elk afgehandeld gesprek ontvangt u of uw assistent direct een melding met de kerninformatie van het gesprek. Zo weet u altijd wie er gebeld heeft en wat de reden was, ook als u er zelf niet bij was.</p>
@@ -736,7 +703,7 @@
 
       <div class="feature-detail">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <h3>Samenvatting per mail</h3>
         <p>U ontvangt een overzichtelijke e-mail met een samenvatting van alle gesprekken van de dag. Zo houdt u grip op uw telefonische bereikbaarheid zonder elk gesprek zelf te hoeven afhandelen of terugluisteren.</p>
@@ -744,7 +711,7 @@
 
       <div class="feature-detail">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <h3>E-mail support</h3>
         <p>Heeft u een vraag of wilt u iets aanpassen aan de manier waarop uw assistent gesprekken afhandelt? Ons team staat voor u klaar via e-mail en reageert binnen één werkdag.</p>
@@ -752,7 +719,7 @@
 
       <div class="feature-detail">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3>Maandelijks opzegbaar</h3>
         <p>Geen lange contracten, geen jaarverplichtingen. U betaalt maand voor maand en kunt op elk moment opzeggen. Zo heeft u volledige controle over uw abonnement, zonder risico.</p>
@@ -802,19 +769,19 @@
         <p style="font-size: 17px; color: var(--opsio-slate); line-height: 1.6; margin: 0 0 8px;">Voice Essential is de juiste keuze als u een ZZP'er of klein MKB-bedrijf heeft en professioneel bereikbaar wil zijn, zonder grote investeringen of technische kennis.</p>
         <ul class="voor-wie-list">
           <li>
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Zelfstandige professionals zoals tandartsen, fysiotherapeuten, advocaten of adviseurs die geen vaste receptie hebben
           </li>
           <li>
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Kleine MKB-bedrijven met maximaal 10 medewerkers waarbij de telefoon regelmatig onbeantwoord blijft
           </li>
           <li>
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Installateurs, makelaars en dienstverlenende bedrijven die ook buiten kantooruren bereikbaar willen zijn
           </li>
           <li>
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Ondernemers die de stap naar Voice AI willen zetten zonder langdurig contract of hoge opstartkosten
           </li>
         </ul>
@@ -826,31 +793,31 @@
         <div class="pkg-price-setup">+ €449 eenmalige setup · excl. btw</div>
         <div class="pkg-price-items">
           <div class="pkg-price-item">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             24/7 telefonische bereikbaarheid
           </div>
           <div class="pkg-price-item">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Professionele Nederlandse telefoonassistent
           </div>
           <div class="pkg-price-item">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Gesprekssamenvatting na iedere oproep
           </div>
           <div class="pkg-price-item">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             E-mailnotificaties
           </div>
           <div class="pkg-price-item">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Gespreksopnames
           </div>
           <div class="pkg-price-item">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Maandelijkse prestatie-rapportage
           </div>
           <div class="pkg-price-item">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             E-mailsupport
           </div>
         </div>
@@ -876,13 +843,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Agenda-integratie</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Afspraken automatisch inplannen</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>WhatsApp/SMS bevestigingen</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Telefonische support</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Maatwerk automatiseringen</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Prioriteitssupport</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Persoonlijke onboarding</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>Agenda-integratie</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Afspraken automatisch inplannen</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>WhatsApp/SMS bevestigingen</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Telefonische support</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Maatwerk automatiseringen</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Prioriteitssupport</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Persoonlijke onboarding</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
           <tr style="background: #071829;">
             <td style="color: #fff; font-weight: 500;">Maandelijks tarief</td>
             <td style="color: #fff; font-weight: 500;">€399</td>
@@ -900,6 +867,29 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Veelgestelde vragen.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Zit ik vast aan een langdurig contract?</summary>
+        <p class="faq-a">Nee. Essential en Pro zijn maandelijks opzegbaar.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Spreekt de digitale assistent goed Nederlands?</summary>
+        <p class="faq-a">Ja. De assistent spreekt professioneel Nederlands en begrijpt natuurlijke gesprekken.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Wat gebeurt er als iemand buiten openingstijden belt?</summary>
+        <p class="faq-a">De assistent neemt gesprekken 24/7 aan en verwerkt deze volgens de ingestelde werkwijze.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Hoe lang duurt de implementatie?</summary>
+        <p class="faq-a">Afhankelijk van het pakket varieert dit van ongeveer één week tot enkele weken.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
 </main>
 

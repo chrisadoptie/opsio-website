@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="https://embeds.iubenda.com/widgets/6dcb9b32-bc2f-4510-ac9d-03ba5b0737de.js"></script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Opsio Voice Premium — Volledig geautomatiseerde frontoffice vanaf €999/maand</title>
 <meta name="description" content="Opsio Voice Premium: de meest complete AI-receptionist met maatwerk automatiseringen, software integraties, geavanceerde workflows en prioriteitssupport." />
 <meta name="robots" content="index, follow" />
@@ -13,6 +13,7 @@
 <meta property="og:description" content="Voice Premium: maatwerk automatiseringen, integraties met uw bestaande software, geavanceerde workflows en persoonlijke onboarding." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://opsio.nl/premium.html" />
+<meta property="og:image" content="https://opsio.nl/pexels-artyusufpatel-9330906.jpg" />
 
 <script type="application/ld+json">
 {
@@ -31,6 +32,8 @@
 }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="assets/site.css" />
 <link rel="icon" href="assets/opsio_mark.svg" />
 
@@ -110,6 +113,46 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 36px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  z-index: 1000;
+  transform: translateY(-160%);
+  background: #071829;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid #0284C7;
+  outline-offset: 2px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.btn,
+.btn-primary,
+.btn-ghost,
+.nav-toggle {
+  touch-action: manipulation;
+}
+.btn-ghost {
+  min-height: 44px;
+  align-items: center;
 }
 /* Mobile */
 @media (max-width: 860px) {
@@ -236,7 +279,6 @@
   transition: transform 240ms cubic-bezier(0.22,1,0.36,1), box-shadow 240ms;
 }
 .feature-detail:hover {
-  transform: translateY(-4px);
   box-shadow: 0 16px 40px -16px rgba(0,0,0,0.10);
 }
 .feature-detail.premium-highlight {
@@ -373,6 +415,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Ga naar hoofdinhoud</a>
 
 <header class="nav-wrap">
   <nav class="nav">
@@ -406,7 +449,7 @@
   </nav>
 </header>
 
-<main>
+<main id="main-content">
 
 <section class="prem-hero">
   <div class="container prem-hero-grid">
@@ -440,7 +483,7 @@
 
             <div class="feature-detail">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <h3>Alles van Essential &amp; Pro</h3>
         <p>De complete AI-receptionist met opnames, transcripten, WhatsApp-bevestigingen, telefonische support — en nu voort gebouwd met maatwerk.</p>
@@ -448,7 +491,7 @@
 
       <div class="feature-detail">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
         </div>
         <h3>Professionele Nederlandse stem, 24/7</h3>
         <p>Uw bellers horen altijd dezelfde heldere, afgestemde stem. De assistent spreekt vloeiend Nederlands en past zijn toon aan uw bedrijf aan.</p>
@@ -458,7 +501,7 @@
 
             <div class="feature-detail premium-highlight">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         </div>
         <span class="premium-tag">Alleen in Premium</span>
         <h3>Maatwerk automatiseringen</h3>
@@ -467,7 +510,7 @@
 
       <div class="feature-detail premium-highlight">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m0-6L13 13"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m0-6L13 13"/></svg>
         </div>
         <span class="premium-tag">Alleen in Premium</span>
         <h3>Software-integraties</h3>
@@ -476,7 +519,7 @@
 
       <div class="feature-detail premium-highlight">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 6l6 6m0 0l6 6m-6-6l6-6m-6 6l-6 6"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="4" width="6" height="6" rx="1.5"/><rect x="9" y="16" width="6" height="6" rx="1.5"/><path d="M9 7h6M12 10v6M18 10v2a4 4 0 0 1-4 4h-2"/></svg>
         </div>
         <span class="premium-tag">Alleen in Premium</span>
         <h3>Geavanceerde workflows</h3>
@@ -485,7 +528,7 @@
 
       <div class="feature-detail premium-highlight">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <span class="premium-tag">Alleen in Premium</span>
         <h3>Automatische klantopvolging</h3>
@@ -494,7 +537,7 @@
 
       <div class="feature-detail premium-highlight">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m0-6L13 13"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m0-6L13 13"/></svg>
         </div>
         <span class="premium-tag">Alleen in Premium</span>
         <h3>Herinneringen &amp; notificaties</h3>
@@ -503,7 +546,7 @@
 
       <div class="feature-detail premium-highlight">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 3c4.418 0 8 1.79 8 4v2c0 2.21-3.582 4-8 4s-8-1.79-8-4V7c0-2.21 3.582-4 8-4z"/><path d="M4 9v5c0 2.21 3.582 4 8 4s8-1.79 8-4v-5"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c4.418 0 8 1.79 8 4v2c0 2.21-3.582 4-8 4s-8-1.79-8-4V7c0-2.21 3.582-4 8-4z"/><path d="M4 9v5c0 2.21 3.582 4 8 4s8-1.79 8-4v-5"/></svg>
         </div>
         <span class="premium-tag">Alleen in Premium</span>
         <h3>Meerdere agenda's &amp; medewerkers</h3>
@@ -512,7 +555,7 @@
 
       <div class="feature-detail premium-highlight" style="grid-column: span 1;">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <span class="premium-tag">Alleen in Premium</span>
         <h3>Prioriteitssupport</h3>
@@ -521,13 +564,16 @@
 
       <div class="feature-detail premium-highlight" style="grid-column: span 2;">
         <div class="feature-detail-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
         </div>
         <span class="premium-tag">Alleen in Premium</span>
         <h3>Persoonlijke onboarding &amp; training</h3>
         <p>Uw team krijgt volledige begeleiding. Training op alle functies, best practices meegegeven, en we helpen u alles goed in te stellen voor maximale impact.</p>
       </div>
 
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 40px;">
+      <a href="contact.html?pakket=premium" class="btn btn-primary btn-lg">Plan een gesprek</a>
     </div>
   </div>
 </section>
@@ -573,19 +619,19 @@
         <p style="font-size: 17px; color: var(--opsio-slate); line-height: 1.6; margin: 0 0 8px;">Voice Premium is voor bedrijven die hun frontoffice compleet willen transformeren. Die niet alleen bereikbaar willen zijn, maar volledig geautomatiseerd en geoptimaliseerd.</p>
         <ul class="voor-wie-list">
           <li>
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Groeiende MKB-bedrijven met complexe processen en meerdere locaties
           </li>
           <li>
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Organisaties die hun bestaande software willen integreren met de AI-receptionist
           </li>
           <li>
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Bedrijven met hoge call-volumes die schaalbare automatisering nodig hebben
           </li>
           <li>
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Ondernemers die hun teams willen bevrijden van repetitief werk
           </li>
         </ul>
@@ -594,27 +640,27 @@
       <div class="pkg-price-card">
         <div class="pkg-price-badge">Meest compleet</div>
         <div class="pkg-price-label">Maandelijks tarief</div>
-        <div class="pkg-price-num">€999<small>+/mnd</small></div>
+        <div class="pkg-price-num">Vanaf €999<small><br>/mnd</small></div>
         <div class="pkg-price-setup">+ Vanaf €1.499 eenmalige setup · excl. btw</div>
         <div class="pkg-price-items">
           <div class="pkg-price-item inherited">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-            Alles van Voice Essential &amp; Pro inbegrepen
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <a href="pro.html" style="color: inherit; text-decoration: none;">Alles van Voice Essential &amp; Pro</a> inbegrepen
           </div>
           <div class="pkg-price-item premium-only">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Maatwerk automatiseringen
           </div>
           <div class="pkg-price-item premium-only">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Software-integraties
           </div>
           <div class="pkg-price-item premium-only">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Geavanceerde workflows
           </div>
           <div class="pkg-price-item premium-only">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
             Prioriteitssupport &amp; persoonlijke onboarding
           </div>
         </div>
@@ -640,13 +686,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Agenda-integratie</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Afspraken automatisch inplannen</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>WhatsApp/SMS bevestigingen</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Telefonische support</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Maatwerk automatiseringen</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Prioriteitssupport</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
-          <tr><td>Persoonlijke onboarding</td><td class="dash">—</td><td class="dash">—</td><td><svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+          <tr><td>Agenda-integratie</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Afspraken automatisch inplannen</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>WhatsApp/SMS bevestigingen</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Telefonische support</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Maatwerk automatiseringen</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Prioriteitssupport</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
+          <tr><td>Persoonlijke onboarding</td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td class="dash"><span aria-hidden="true">—</span><span class="sr-only">Niet inbegrepen</span></td><td><span aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg></span><span class="sr-only">Inbegrepen</span></td></tr>
           <tr style="background: #071829;">
             <td style="color: #fff; font-weight: 500;">Maandelijks tarief</td>
             <td style="color: #fff; font-weight: 500;">€399</td>
@@ -664,6 +710,29 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Veelgestelde vragen.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Zit ik vast aan een langdurig contract?</summary>
+        <p class="faq-a">Nee. Essential en Pro zijn maandelijks opzegbaar.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Spreekt de digitale assistent goed Nederlands?</summary>
+        <p class="faq-a">Ja. De assistent spreekt professioneel Nederlands en begrijpt natuurlijke gesprekken.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Wat gebeurt er als iemand buiten openingstijden belt?</summary>
+        <p class="faq-a">De assistent neemt gesprekken 24/7 aan en verwerkt deze volgens de ingestelde werkwijze.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Hoe lang duurt de implementatie?</summary>
+        <p class="faq-a">Afhankelijk van het pakket varieert dit van ongeveer één week tot enkele weken.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
 </main>
 

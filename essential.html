@@ -303,6 +303,65 @@
   .pkg-steps { grid-template-columns: 1fr; }
   .pkg-price-num { font-size: 48px; }
 }
+@media (max-width: 768px) {
+  .process-flow {
+    margin-top: 32px;
+  }
+  .process-scroll {
+    overflow: visible;
+  }
+  .process-scroll > canvas {
+    display: none;
+  }
+  .process-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    min-width: 0;
+  }
+  .process-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    column-gap: 14px;
+    width: 100%;
+    min-width: 0;
+    padding: 18px 20px;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 18px;
+  }
+  .process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 37px;
+    bottom: -19px;
+    width: 2px;
+    height: 18px;
+    background: rgba(2,132,199,0.18);
+  }
+  .process-step > canvas {
+    display: none;
+  }
+  .process-step-num {
+    grid-row: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    border-radius: 999px;
+    background: #F0F9FF;
+    border: 1px solid #BAE6FD;
+  }
+  .process-step-title,
+  .process-step-subtitle {
+    min-width: 0;
+  }
+}
 
 /* ── Essential-hero: gradient override (alleen horizontale fade, geen radial vignette) ── */
 .ess-hero .industry-hero-image-fade img {

@@ -412,6 +412,19 @@
   .pkg-steps { grid-template-columns: 1fr; }
   .pkg-price-num { font-size: 48px; }
 }
+@media (max-width: 768px) {
+  .feature-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .feature-detail,
+  .feature-detail[style] {
+    grid-column: auto !important;
+    width: 100%;
+    min-width: 0;
+    padding: 28px 24px;
+  }
+}
 </style>
 </head>
 <body>

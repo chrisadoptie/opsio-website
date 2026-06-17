@@ -317,6 +317,7 @@ a { color: inherit; }
   padding: 28px;
   display: flex; flex-direction: column; justify-content: space-between;
   color: #fff;
+  text-decoration: none;
   isolation: isolate;
 }
 .industry::before {
@@ -1589,15 +1590,15 @@ a { color: inherit; }
   margin-top: 22px;
   color: #555;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .process-step-subtitle {
   margin-top: 2px;
-  color: #aaa;
+  color: #666;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -1639,6 +1640,39 @@ a { color: inherit; }
     flex: 0 0 calc(100vw / 3.25);
     min-width: calc(100vw / 3.25);
   }
+}
+
+/* Skip-to-content link — visually hidden until focused */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only:focus-visible {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: auto;
+  height: auto;
+  padding: 12px 20px;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background: #0284C7;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
 }
 
 /* Hide Iubenda's floating privacy controls without disabling consent services. */

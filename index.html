@@ -1039,9 +1039,17 @@
     object-position: center center;
     background: #051223;
   }
+  /* Video controls: rechts, boven de carousel-nav (72px van onder) */
   .hero-video-controls {
-    bottom: 16px;
+    bottom: 72px;
     right: 16px;
+  }
+  /* Carousel-nav: gecentreerd onderaan — no overlap met video-controls */
+  .hero-carousel-nav {
+    bottom: 16px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>

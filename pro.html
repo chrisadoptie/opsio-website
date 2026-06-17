@@ -812,8 +812,7 @@
   var CANVAS_IDS = ['pro-proc-c1','pro-proc-c2','pro-proc-c3','pro-proc-c4','pro-proc-c5','pro-proc-c6'];
   var DRAW_FNS   = [drawIphone, drawHeadset, drawTargetCard, drawCalendar, drawCheckmarkCard, drawDocCard];
 
-  window.addEventListener('load', function() {
-    var canvases = CANVAS_IDS.map(function(id) { return setupHD(id); });
+  var canvases = CANVAS_IDS.map(function(id) { return setupHD(id); });
     if (canvases.some(function(c) { return !c; })) return;
 
     var connCanvas = document.getElementById('pro-proc-conn');
@@ -880,7 +879,6 @@
       requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
-  });
 })();
 </script>
 

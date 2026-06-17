@@ -683,8 +683,7 @@
   var CANVAS_IDS = ['ess-proc-c1','ess-proc-c2','ess-proc-c3'];
   var DRAW_FNS   = [drawIphone, drawHeadset, drawCheckmarkCard];
 
-  window.addEventListener('load', function() {
-    var canvases = CANVAS_IDS.map(function(id) { return setupHD(id); });
+  var canvases = CANVAS_IDS.map(function(id) { return setupHD(id); });
     if (canvases.some(function(c) { return !c; })) return;
 
     var connCanvas = document.getElementById('ess-proc-conn');
@@ -751,7 +750,6 @@
       requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
-  });
 })();
 </script>
 

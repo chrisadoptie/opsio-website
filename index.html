@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<script type="text/javascript" src="https://embeds.iubenda.com/widgets/6dcb9b32-bc2f-4510-ac9d-03ba5b0737de.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="text/javascript" src="https://embeds.iubenda.com/widgets/6dcb9b32-bc2f-4510-ac9d-03ba5b0737de.js"></script>
 <title>Opsio — Voice AI receptionist voor lokale ondernemers</title>
 <meta name="description" content="Uw telefoon altijd beantwoord, ook als u er niet bij kunt. Opsio is de digitale receptionist voor drukke ondernemers in Nederland." />
 <link rel="stylesheet" href="assets/site.css" />
@@ -937,6 +939,111 @@
     transition: none !important;
   }
 }
+
+/* === 15. Hero touch targets: 44×44px on mobile === */
+@media (max-width: 768px) {
+  /* Carousel dots: transparent padding extends touch area to 44px */
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    padding: 18px;
+    box-sizing: content-box;
+    background: transparent !important;
+    position: relative;
+  }
+  .hero-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    transform: translate(-50%, -50%);
+    transition: background 300ms, transform 300ms;
+  }
+  .hero-dot--active {
+    transform: none;
+    background: transparent;
+  }
+  .hero-dot--active::after {
+    background: #fff;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  /* Carousel arrows: 44×44px */
+  .hero-carousel-arrow { width: 44px; height: 44px; }
+
+  /* Video play/mute buttons: 44×44px */
+  .hero-video-btn { width: 44px; height: 44px; }
+
+  /* Demo orb: 44×44px */
+  .hero-demo-orb { width: 44px; height: 44px; }
+
+  /* Hero pill: 44px min tap height */
+  .hero-pill { min-height: 44px; }
+
+  /* Nav toggle: already handled in site.css @media 960px */
+}
+
+/* === 16. Hero actions: vertical column layout on mobile === */
+@media (max-width: 768px) {
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 300px);
+  }
+  .hero-actions .btn {
+    justify-content: center;
+  }
+}
+
+/* === 17. Process canvas: respect container width === */
+@media (max-width: 768px) {
+  .process-step canvas {
+    max-width: 100%;
+  }
+}
+
+/* === 18. Process step title: less top spacing on mobile === */
+@media (max-width: 768px) {
+  .process-step-title { margin-top: 14px; }
+}
+
+/* === 19. Nav padding alignment on mobile === */
+@media (max-width: 768px) {
+  .nav { padding: 14px 18px; }
+}
+
+/* === 20. Moving band scroll hint (mobile-only) === */
+.moving-band-hint { display: none; }
+@media (max-width: 768px) {
+  .moving-band-hint {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    color: var(--opsio-muted);
+    padding: 8px 0 4px;
+    background: #fff;
+    user-select: none;
+  }
+}
+
+/* === 21. Hero slide 2 video: volledig beeld zichtbaar op mobiel, niet uitgesneden === */
+@media (max-width: 768px) {
+  .hero-slide video {
+    object-fit: contain;
+    object-position: center center;
+    background: #051223;
+  }
+  .hero-video-controls {
+    bottom: 16px;
+    right: 16px;
+  }
+}
 </style>
 
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
@@ -1009,7 +1116,7 @@
       </div>
 
       <div class="hero-slide">
-        <video id="hero-vid" muted playsinline>
+        <video id="hero-vid" muted playsinline preload="none">
           <source src="assets/video/Opsio_nl_Ad.mp4" type="video/mp4">
         </video>
         <div class="hero-video-controls">
@@ -1044,6 +1151,7 @@
     </div>
   </div>
 </section>
+<p class="moving-band-hint" aria-hidden="true">← veeg →</p>
 
 <section id="hoe-het-werkt" class="process-section" style="padding: 80px 0; background: #f8f7f4; position: relative; overflow: hidden;">
   <div class="container">
@@ -1085,6 +1193,7 @@
 
 <script>
 (function() {
+  if (window.matchMedia('(max-width: 768px)').matches) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var dpr = window.devicePixelRatio || 1;
   function setupHD(id) {
@@ -1920,7 +2029,7 @@ function showDemoToast(msg) {
   t.textContent = msg;
   Object.assign(t.style, {
     position: 'fixed',
-    bottom: '24px',
+    bottom: '88px',
     left: '50%',
     transform: 'translateX(-50%)',
     zIndex: '9999',
@@ -1968,9 +2077,8 @@ function openDemo() {
 
 <script>
 (function() {
-  // Skip decorative canvas on mobile and when reduced motion is preferred
-  if (window.matchMedia('(max-width: 768px)').matches ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var animate = !window.matchMedia('(max-width: 768px)').matches;
   var canvas = document.getElementById('hero-wave-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
@@ -2010,7 +2118,7 @@ function openDemo() {
   }
 
   function draw(ts) {
-    if (!heroVisible) { requestAnimationFrame(draw); return; }
+    if (!heroVisible) { if (animate) requestAnimationFrame(draw); return; }
     var t = ts / 1000;
     var w = canvas.width / window.devicePixelRatio;
     var h = canvas.height / window.devicePixelRatio;
@@ -2059,19 +2167,24 @@ function openDemo() {
       ctx.fill();
     });
 
-    requestAnimationFrame(draw);
+    if (animate) requestAnimationFrame(draw);
   }
 
   resize();
   var w = canvas.width / window.devicePixelRatio;
   var h = canvas.height / window.devicePixelRatio;
   initParticles(w, h);
-  requestAnimationFrame(draw);
+  if (animate) {
+    requestAnimationFrame(draw);
+  } else {
+    draw(3000);
+  }
   window.addEventListener('resize', function() {
     resize();
     var w = canvas.width / window.devicePixelRatio;
     var h = canvas.height / window.devicePixelRatio;
     initParticles(w, h);
+    if (!animate) draw(3000);
   });
 })();
 </script>

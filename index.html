@@ -2023,13 +2023,11 @@ function openDemo() {
     requestAnimationFrame(draw);
   }
 
-  window.addEventListener('load', function() {
-    resize();
-    var w = canvas.width / window.devicePixelRatio;
-    var h = canvas.height / window.devicePixelRatio;
-    initParticles(w, h);
-    requestAnimationFrame(draw);
-  });
+  resize();
+  var w = canvas.width / window.devicePixelRatio;
+  var h = canvas.height / window.devicePixelRatio;
+  initParticles(w, h);
+  requestAnimationFrame(draw);
   window.addEventListener('resize', function() {
     resize();
     var w = canvas.width / window.devicePixelRatio;
